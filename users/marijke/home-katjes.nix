@@ -127,7 +127,7 @@
 
   home.file.".bashrc" = {
   text = ''
-alias la="eza -l --icons --git"
+alias la="eza -al --icons --git"
 
 eval "$(starship init bash)"
     '';
