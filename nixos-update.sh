@@ -3,9 +3,6 @@
 set -uxo pipefail
 
 cd "flakes" || exit 1
-
-sed -i 's@nixos-25.05@nixos-25.11@' flake.nix
-
 nix flake update
 
 nixos-rebuild switch --flake . --use-remote-sudo     # in future release changed to "--sudo"
