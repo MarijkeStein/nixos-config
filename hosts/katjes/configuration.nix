@@ -182,6 +182,7 @@
     wget
     zip
 
+    bluez
     eog
     evince
     gimp
