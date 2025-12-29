@@ -16,6 +16,7 @@
     configurationLimit = 10;
   };
   boot.loader.efi.canTouchEfiVariables = true;
+  boot.supportedFilesystems = [ "nfs" ];
 
   hardware.bluetooth = {
     enable = true;
@@ -100,6 +101,8 @@
   # Configure console keymap
   console.keyMap = "de";
 
+  services.rpcbind.enable = true;
+
   # Enable CUPS to print documents.
   services.printing.enable = true;
 
@@ -152,6 +155,7 @@
     killall
     mc
     mmv
+    nfs-utils
     pciutils
     tree
     unzip
