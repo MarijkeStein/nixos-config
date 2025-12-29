@@ -9,7 +9,7 @@
      nixosConfigurations = {
        "nixos" = nixpkgs.lib.nixosSystem {
          system = "x86_64-linux";
-         modules = [ ../hosts/rz-marijke/configuration.nix
+         modules = [ ../hosts/katjes/configuration.nix
                      ./bluetooth.nix ];
        };
      };
