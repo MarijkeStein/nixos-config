@@ -28,9 +28,10 @@
       {
         # "lpinfo -v" shows the device URI of found printers
         name = "HP_M400dn";
-        deviceUri = "usb://HP/LaserJet%20Pro%20M404-M405?serial=PHCL326231";
+        model = "everywhere";
+        # deviceUri = "ipp://HP%20LaserJet%20Pro%20M404-M405%20%5B814EDC%5D%20(USB)._ipp._tcp.local/";
+        deviceUri = "ipp://127.0.0.1:60000/ipp/print";
         location = "B123";
-        model = "drv:///HP/hp-laserjet_pro_m404-m405-ps.ppd";
       }
     ];
     ensureDefaultPrinter = "HP_M400dn";
@@ -103,8 +104,24 @@
 
   services.rpcbind.enable = true;
 
-  # Enable CUPS to print documents.
+  # CUPS printing
   services.printing.enable = true;
+
+  # CUPS IPP-over-USB bridge
+  services.ipp-usb.enable = true;
+#  services.avahi = {
+#    enable = true;
+#    nssmdns4 = true; # Allows resolving .local addresses
+#    openFirewall = true;
+#  };
+#  systemd.services.ensure-printers = {
+#    after = [ "ipp-usb.service" "cups.service" "avahi-daemon.service" ];
+#    requires = [ "ipp-usb.service" "avahi-daemon.service" ];
+#  };
+  systemd.services.ensure-printers = {
+    after = [ "ipp-usb.service" "cups.service" ];
+    requires = [ "ipp-usb.service" ];
+  };
 
   # Enable sound with pipewire.
   services.pulseaudio.enable = false;
@@ -200,8 +217,6 @@
 
     openssl
     openvpn
-
-    hplip                   # HP Linux Imaging and Printing, supporting the HP LaserJet Pro M404dn printer
   ];
 
   nixpkgs.config.permittedInsecurePackages = [
