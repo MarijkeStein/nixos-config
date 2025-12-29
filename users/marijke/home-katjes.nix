@@ -129,6 +129,7 @@ in
     };
     extraConfig = {
       core.editor = "mcedit";
+      init.defaultBranch = "main";
     };
   };
 
