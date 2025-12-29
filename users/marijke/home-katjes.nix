@@ -1,14 +1,6 @@
 { config, pkgs, ... }:
 
-let
-    #monitorConfig = "laptop-only";
-    monitorConfig = "laptop-and-monitors";
-in
 {
-  imports = [
-      ./${monitorConfig}.nix
-  ];
-
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
   home.username = "mstein";
@@ -170,8 +162,9 @@ disable-ccid
   xfconf = {
     settings = {
       xfce4-desktop = {
-#         "backdrop/screen0/monitoreDP-1/workspace0/image-style" = 0;
-#         "backdrop/screen0/monitoreDP-1/workspace1/image-style" = 0;
+        "backdrop/screen0/monitorDP-2/workspace1/image-style" = 1;
+        "backdrop/screen0/monitorDP-2/workspace1/last-image" = "/home/mstein/.wallpapers/HfMDK-black.png";
+        "backdrop/screen0/monitorDP-2/workspace1/rgba1" = [ 0.000000 0.000000 0.000000 1.000000 ];
         "desktop-icons/file-icons/show-filesystem" = 0;
         "desktop-icons/file-icons/show-trash" = 1;
       };
@@ -182,6 +175,10 @@ disable-ccid
 
       xfce4-panel = {
         "panels/dark-mode" = true;
+
+        "panels/panel-1/icon-size" = 16;
+        "panels/panel-1/output-name" = "DP-2";
+        "panels/panel-1/size" = 30;
 
         "plugin-1" = "applicationsmenu";
 
@@ -221,7 +218,8 @@ disable-ccid
       };
 
       xsettings = {
-#         "MonospaceFontName" = "Gtk/JetBrainsMono Nerd Font 10";
+        "Gtk/FontName" = "Sans 11.5";
+        "MonospaceFontName" = "Gtk/JetBrainsMono Nerd Font 10";
         "Net/IconThemeName" = "Adwaita";
         "Net/ThemeName" = "Adwaita-dark";
       };
