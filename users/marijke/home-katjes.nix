@@ -182,9 +182,9 @@ disable-ccid
       xfce4-panel = {
         "panels/dark-mode" = true;
 
-        "panels/panel-1/icon-size" = 16;
+        "panels/panel-1/icon-size" = 12;
         "panels/panel-1/output-name" = "DP-2";
-        "panels/panel-1/size" = 30;
+        "panels/panel-1/size" = 24;
 
         "plugin-1" = "applicationsmenu";
 
@@ -224,7 +224,7 @@ disable-ccid
       };
 
       xsettings = {
-        "Gtk/FontName" = "Sans 11.5";
+        "Gtk/FontName" = "Sans 10";
         "MonospaceFontName" = "Gtk/JetBrainsMono Nerd Font 10";
         "Net/IconThemeName" = "Adwaita";
         "Net/ThemeName" = "Adwaita-dark";
