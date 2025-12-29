@@ -2,7 +2,7 @@
 
 set -euxo pipefail
 
-MONITORPORT=DP-1
+MONITORPORT=DP-2
 
 autorandr --match-edid --load B123
 
