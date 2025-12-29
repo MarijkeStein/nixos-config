@@ -125,11 +125,13 @@
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
 
+  #virtualisation.docker.enable = true;
+
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.mstein = {
     isNormalUser = true;
     description = "Marijke Stein";
-    extraGroups = [ "lp" "networkmanager" "wheel" ];
+    extraGroups = [ "docker" "lp" "networkmanager" "wheel" ];
     packages = with pkgs; [
     #  thunderbird
     ];
@@ -193,6 +195,8 @@
     cifs-utils
     nmap
     wirelesstools
+
+    docker
 
     openssl
     openvpn
