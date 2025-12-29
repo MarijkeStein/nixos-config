@@ -111,13 +111,18 @@
       user = {
         name = "Marijke Stein";
         email = "marijke.stein@hfmdk-frankfurt.de";
+        signingkey = "4047B8F11C43DC00";
       };
       alias = {
         co = "checkout";
         st = "status";
       };
+      commit.gpgsign = "true";
       core.editor = "mcedit";
       init.defaultBranch = "main";
+      push.autoSetupRemote = true;
+      signing.format = "openpgp";
+      signing.signByDefault = true;
     };
   };
 
@@ -146,8 +151,13 @@ disable-ccid
 #    ATTRS{idVendor}=="20a0", ATTRS{idProduct}=="4108", ENV{ID_SMARTCARD_READER}="1", TAG+="uaccess"
 #  '';
 
-  services.gpg-agent.enable = true;
-  services.gpg-agent.pinentry.package = pkgs.pinentry-gtk2;
+  services.gpg-agent = {
+    defaultCacheTtl = 30000;
+    enable = true;
+    enableBashIntegration = true;
+    enableFishIntegration = true;
+    pinentry.package = pkgs.pinentry-gtk2;
+  };
 
   gtk.enable = true;
   gtk.theme.name = "Adwaita-dark";
