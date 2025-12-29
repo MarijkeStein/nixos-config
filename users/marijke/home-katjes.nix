@@ -35,6 +35,12 @@ in
     pkgs.fend
     pkgs.nmap
 
+#    pkgs.alacritty
+#    pkgs.alacritty-theme
+#    pkgs.dracula-theme
+#    pkgs.dracula-qt5-theme
+#    pkgs.papirus-icon-theme
+#
     pkgs.espanso
     pkgs.xfce.xfconf
 
@@ -52,12 +58,14 @@ in
     pkgs.flac
     pkgs.vorbis-tools
 
-    pkgs.fluffychat
+    #pkgs.fluffychat
     pkgs.nextcloud-client
     pkgs.remmina
 
     pkgs.gitkraken
     pkgs.jetbrains.pycharm-community-bin
+    pkgs.meld
+    pkgs.mesa
     pkgs.python313
     pkgs.python313Packages.ipython
     pkgs.rustup
@@ -82,12 +90,10 @@ in
   ];
 
 
-/*
   nixpkgs.config.permittedInsecurePackages = [
     "fluffychat-linux-1.27.0"
     "olm-3.2.16"
   ];
-*/
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.ls file'.
