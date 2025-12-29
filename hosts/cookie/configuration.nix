@@ -39,7 +39,7 @@
 
   # Enable networking
   networking.networkmanager.enable = true;
-  
+
   # Set your time zone.
   time.timeZone = "Europe/Berlin";
 
@@ -77,7 +77,7 @@
   # Enable CUPS to print documents.
   services.printing.enable = true;
   services.printing.drivers = [ pkgs.cups-filters pkgs.gutenprint ];
-  
+
   hardware.printers = {
     ensureDefaultPrinter = "Brother9570";
     ensurePrinters = [
@@ -111,7 +111,7 @@
 
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
-  
+
   users.groups.family.gid = 2020;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
@@ -211,6 +211,7 @@
     hyphenDicts.de-de
     libreoffice
 
+    tex-fmt
     texliveTeTeX
     gnumake
 

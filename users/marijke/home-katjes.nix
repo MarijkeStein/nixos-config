@@ -18,8 +18,6 @@
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = [
-    # # Adds the 'hello' command to your environment. It prints a friendly
-    # # "Hello, world!" when run.
     pkgs.nix-output-monitor
 
     pkgs.autorandr
@@ -27,12 +25,7 @@
     pkgs.fend
     pkgs.nmap
 
-#    pkgs.alacritty
-#    pkgs.alacritty-theme
-#    pkgs.dracula-theme
-#    pkgs.dracula-qt5-theme
-#    pkgs.papirus-icon-theme
-#
+    pkgs.devilspie2
     pkgs.espanso
     pkgs.xfce.xfconf
 
@@ -44,7 +37,7 @@
     pkgs.marksman
 
     pkgs.corefonts
-    pkgs.vistafonts
+    pkgs.vista-fonts
 
     pkgs.cdparanoia
     pkgs.flac
@@ -55,7 +48,7 @@
     pkgs.remmina
 
     pkgs.gitkraken
-    pkgs.jetbrains.pycharm-community-bin
+    pkgs.jetbrains.pycharm
     pkgs.meld
     pkgs.mesa
     pkgs.python313
@@ -63,6 +56,7 @@
     pkgs.rustup
     pkgs.starship
     pkgs.uv
+    pkgs.waveterm
 
     pkgs.fluffychat
 
@@ -113,13 +107,15 @@
 
   programs.git = {
     enable = true;
-    userName = "Marijke Stein";
-    userEmail = "marijke.stein@hfmdk-frankfurt.de";
-    aliases = {
-      co = "checkout";
-      st = "status";
-    };
-    extraConfig = {
+    settings = {
+      user = {
+        name = "Marijke Stein";
+        email = "marijke.stein@hfmdk-frankfurt.de";
+      };
+      alias = {
+        co = "checkout";
+        st = "status";
+      };
       core.editor = "mcedit";
       init.defaultBranch = "main";
     };
