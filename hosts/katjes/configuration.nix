@@ -181,6 +181,8 @@
     hyphenDicts.de-de
     libreoffice
 
+    gcc
+
     ccid
     nitrokey-udev-rules
     pam_u2f
