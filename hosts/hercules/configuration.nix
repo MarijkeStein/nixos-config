@@ -218,7 +218,10 @@
   xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-xapp ];
 
   # Enable the OpenSSH daemon.
-  services.openssh.enable = true;
+  services.openssh = {
+    enable = true;
+    settings.PermitRootLogin = "yes";
+  };
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
