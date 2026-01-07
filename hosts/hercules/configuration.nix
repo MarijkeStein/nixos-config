@@ -120,7 +120,7 @@
     group = "family";
     isNormalUser = true;
     description = "Marijke Stein";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "lp" "networkmanager" "wheel" ];
     packages = with pkgs; [
     #  thunderbird
     ];
@@ -131,7 +131,7 @@
     group = "family";
     isNormalUser = true;
     description = "Konstantin Stein";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "lp" "networkmanager" "wheel" ];
     packages = with pkgs; [
     #  thunderbird
     ];
