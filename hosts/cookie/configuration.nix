@@ -46,6 +46,23 @@
   # Enable networking
   networking.networkmanager.enable = true;
 
+  # Garbage collection
+  nix.gc = {
+    automatic = true;
+    dates = "weekly";
+    options = "--delete-older-than 30d";
+    persistent = true;
+    randomizedDelaySec = "3h";
+  };
+
+  nix = {
+    settings = {
+      experimental-features = [ "nix-command" "flakes" ];
+#      flake-registry = "${inputs.flake-registry}/flake-registry.json";
+    };
+    package = pkgs.lix;
+  };
+
   # Set your time zone.
   time.timeZone = "Europe/Berlin";
 
