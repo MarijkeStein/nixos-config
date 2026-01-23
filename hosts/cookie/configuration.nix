@@ -17,6 +17,12 @@
   hardware.bluetooth = {
     enable = true;
     powerOnBoot = true;
+    settings = {
+      General = {
+        Experimental = true;
+        Enable = "Source,Sink,Media,Socket";
+      };
+    };
   };
 
   fileSystems."/pub" = {
@@ -101,6 +107,17 @@
     alsa.enable = true;
     alsa.support32Bit = true;
     pulse.enable = true;
+    wireplumber.extraConfig = {
+    "10-bluez" = {
+      "monitor.bluez.properties" = {
+        "bluez5.enable-sbc-xq" = true;
+        "bluez5.enable-msbc" = true;
+        "bluez5.enable-hw-volume" = true;
+        "bluez5.roles" = [ "hsp_hs" "hsp_ag" "hfp_hf" "hfp_ag" "a2dp_sink" "a2dp_source" ];
+        };
+      };
+    };
+
     # If you want to use JACK applications, uncomment this
     #jack.enable = true;
 
@@ -175,15 +192,18 @@
     wget
     zip
 
+    blueman
     bluez
     eog
     evince
     gimp
     gnome-terminal
+    gnomeExtensions.bluetooth-battery-meter
     keepassxc
     mate.mate-calc
     mtpfs
     pinentry-gtk2
+    pulseaudio
     signal-desktop
     system-config-printer
     thunderbird
@@ -228,6 +248,8 @@
   # };
 
   # List services that you want to enable:
+
+  services.blueman.enable = true;
 
   services.gvfs.enable = true;
 
