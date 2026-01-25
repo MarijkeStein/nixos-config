@@ -81,7 +81,7 @@
   # Enable CUPS to print documents.
   services.printing.enable = true;
   services.printing.drivers = [ pkgs.cups-filters pkgs.gutenprint ];
-  
+
   hardware.printers = {
     ensureDefaultPrinter = "Brother9570";
     ensurePrinters = [
@@ -170,6 +170,7 @@
     system-config-printer
     thunderbird
     totem
+    v4l-utils
     vlc
     xdg-desktop-portal-gtk              # e.g. Gtk FileChooser used by various tools
     xfce.thunar-volman
