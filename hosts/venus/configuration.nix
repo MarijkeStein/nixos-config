@@ -27,6 +27,10 @@
     device = "192.168.0.250:/Backup";
     fsType = "nfs";
   };
+  fileSystems."/pub/videos" = {
+    device = "192.168.0.250:/Multimedia";
+    fsType = "nfs";
+  };
   boot.supportedFilesystems = [ "nfs" ];
 
 
