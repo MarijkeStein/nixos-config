@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+
+# as root:
+
+sudo nix-channel --add https://github.com/nix-community/home-manager/archive/release-25.05.tar.gz home-manager
+sudo nix-channel --update
+
+# as user:
+
+export NIX_CONFIG="experimental-features = nix-command flakes"
+nix-shell '<home-manager>' -A install
+
+
+# EOF
