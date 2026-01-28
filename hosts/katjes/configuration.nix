@@ -220,6 +220,8 @@
 
     openssl
     openvpn
+    update-systemd-resolved
+    update-resolv-conf
   ];
 
   nixpkgs.config.permittedInsecurePackages = [
@@ -239,6 +241,15 @@
 
   services.openssh.enable = true;
 
+  systemd.services.openvpn-dns-link = {
+    description = "Link openvpn-update-systemd-resolved to a predictable path";
+    script = ''
+      mkdir -p /etc/openvpn/scripts
+      ln -sf ${pkgs.openvpn}/libexec/update-systemd-resolved /etc/openvpn/scripts/update-systemd-resolved
+    '';
+    wantedBy = [ "multi-user.target" ];
+  };
+
   security.pam.u2f = {
     enable = true;
     settings = {
@@ -255,6 +266,9 @@
   };
 
   services.pcscd.enable = true;
+
+  # für OpenVPN:
+  services.resolved.enable = true;
 
   xdg.portal.enable = true;
   services.flatpak.enable = true;
