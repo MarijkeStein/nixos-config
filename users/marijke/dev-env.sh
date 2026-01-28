@@ -2,7 +2,7 @@
 
 set -euxo pipefail
 
-pycharm-community &
+pycharm &
 
 signal-desktop &
 
