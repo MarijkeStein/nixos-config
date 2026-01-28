@@ -194,6 +194,7 @@
     system-config-printer
     thunderbird
     totem
+    v4l-utils
     vlc
 
     hyphen
@@ -212,6 +213,7 @@
 
     cifs-utils
     nmap
+    samba
     wirelesstools
 
     docker
