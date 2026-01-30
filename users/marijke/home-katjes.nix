@@ -22,6 +22,7 @@
 
     pkgs.autorandr
     pkgs.borgbackup
+    pkgs.eza
     pkgs.fend
     pkgs.nmap
 
@@ -105,6 +106,13 @@
     EDITOR = "mcedit";
   };
 
+  programs.bash = {
+    enable = true;
+    shellAliases = {
+      la="eza -al --icons --git";
+    };
+  };
+
   programs.git = {
     enable = true;
     settings = {
@@ -126,12 +134,9 @@
     };
   };
 
-  home.file.".bashrc" = {
-  text = ''
-alias la="eza -al --icons --git"
-
-eval "$(starship init bash)"
-    '';
+  programs.starship = {
+    enable = true;
+    enableBashIntegration = true;
   };
 
   # for NitroKey:
