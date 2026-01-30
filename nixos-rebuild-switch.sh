@@ -8,9 +8,9 @@ cd "hosts/${HOSTNAME}"
 
 if [[ -d "flakes" ]]
 then
-    nixos-rebuild switch --use-remote-sudo --flake .
+    nixos-rebuild switch --sudo --flake ./flakes
 else
-    nixos-rebuild switch --use-remote-sudo
+    nixos-rebuild switch --sudo
 fi
 
 
