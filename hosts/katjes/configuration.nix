@@ -41,7 +41,7 @@
     la = "eza -ahl";
   };
 
-  networking.hostName = "katjes"; # Define your hostname.
+  networking.hostName = "katjes";
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Configure network proxy if necessary
@@ -218,11 +218,18 @@
 
     docker
 
+    k3s
+    kubernetes-helm
+
     openssl
     openvpn
     update-systemd-resolved
     update-resolv-conf
   ];
+
+  environment.variables = {
+    KUBECONFIG = "/etc/rancher/k3s/k3s.yaml";
+  };
 
   nixpkgs.config.permittedInsecurePackages = [
     "pynitrokey"
@@ -238,6 +245,12 @@
   # };
 
   # List services that you want to enable:
+
+  services.k3s = {
+    enable = true;
+    role = "server";
+    extraFlags = "--write-kubeconfig-mode 644";    # readable by users in the 'wheel' group
+  };
 
   services.openssh.enable = true;
 
@@ -275,7 +288,8 @@
   xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-xapp ];
 
   # Open ports in the firewall.
-  # networking.firewall.allowedTCPPorts = [ ... ];
+  networking.firewall.allowedTCPPorts = [ 6443 ];
+
   # networking.firewall.allowedUDPPorts = [ ... ];
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;

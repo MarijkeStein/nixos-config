@@ -3,7 +3,7 @@
 set -uxo pipefail
 
 HOSTNAME=$(hostname)
-cd "hosts/${HOSTNAME}"
+cd "hosts/${HOSTNAME}" || exit 1
 
 
 if [[ -d "flakes" ]]
