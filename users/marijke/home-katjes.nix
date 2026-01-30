@@ -104,6 +104,7 @@
 
   home.sessionVariables = {
     EDITOR = "mcedit";
+    GIT_SSH_COMMAND = "ssh -i ~/.ssh/2025-09-05_mstein-FIDO2";
   };
 
   programs.bash = {
