@@ -2,10 +2,17 @@
 
 set -uxo pipefail
 
-cd "flakes" || exit 1
-nix flake update
+HOSTNAME=$(hostname)
+cd "hosts/${HOSTNAME}" || exit 1
 
-nixos-rebuild switch --flake . --use-remote-sudo     # in future release changed to "--sudo"
+
+if [[ -d "flakes" ]]
+then
+    nix flake update
+    nixos-rebuild switch --sudo --flake ./flakes
+else
+    nixos-rebuild switch --use-remote-sudo     # in future release changed to "--sudo"
+fi
 
 
 # EOF
