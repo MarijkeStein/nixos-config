@@ -176,6 +176,7 @@
     mate.mate-calc
     mtpfs
     pinentry-gtk2
+    pipewire
     signal-desktop
     system-config-printer
     thunderbird
