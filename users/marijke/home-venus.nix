@@ -36,6 +36,7 @@
     #pkgs.vistafonts
 
     pkgs.cdparanoia
+    pkgs.handbrake
     pkgs.makemkv
     pkgs.flac
     pkgs.vorbis-tools

@@ -10,7 +10,8 @@
       ./hardware-configuration.nix
     ];
 
-  # Bootloader.
+  boot.kernelModules = [ "sg" ];
+
   boot.loader.grub.enable = true;
   boot.loader.grub.device = "/dev/sda";
   boot.loader.grub.useOSProber = true;
@@ -22,6 +23,11 @@
 
   hardware.sane.enable = true;
   hardware.sane.extraBackends = [ pkgs.sane-airscan ];
+
+  fileSystems."/mnt/scratch" = {
+    device = "/dev/sdb2";
+    fsType = "ext4";
+  };
 
   fileSystems."/pub" = {
     device = "192.168.0.250:/Backup";
