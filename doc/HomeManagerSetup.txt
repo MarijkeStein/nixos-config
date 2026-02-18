@@ -3,13 +3,60 @@
 
 # as root:
 
-sudo nix-channel --add https://github.com/nix-community/home-manager/archive/release-25.05.tar.gz home-manager
+sudo nix-channel --add https://github.com/nix-community/home-manager/archive/release-25.11.tar.gz home-manager
 sudo nix-channel --update
 
 # as user:
 
 export NIX_CONFIG="experimental-features = nix-command flakes"
 nix-shell '<home-manager>' -A install
+
+
+
+
+
+
+Falls das hier kommt, bitte (vorübergehend?) home-manager aus der eigenen home.nix rausnehmen:
+
+
+Erstelle initiale Home Manager Generation...
+
+these 3 derivations will be built:
+  /nix/store/pv7br64qrhbvhgjs65x8nipb559r6ybq-home-manager-path.drv
+  /nix/store/980ychzpf3j578zdzsgl3hq39lnwqrwi-activation-script.drv
+  /nix/store/3gc4mam6yxs63zc5czks8dq485fyc1gw-home-manager-generation.drv
+building '/nix/store/pv7br64qrhbvhgjs65x8nipb559r6ybq-home-manager-path.drv'...
+pkgs.buildEnv error: two given paths contain a conflicting subpath:
+  `/nix/store/9ahvk3p9sbq8dn13x67wmx6w48g4zvpn-home-manager-0-unstable-2025-11-17/bin/home-manager' and
+  `/nix/store/1xr3al6wgb8dzfvfmi884a4av64xc4f5-home-manager/bin/home-manager'
+hint: this may be caused by two different versions of the same package in buildEnv's `paths` parameter
+hint: `pkgs.nix-diff` can be used to compare derivations
+error: Cannot build '/nix/store/pv7br64qrhbvhgjs65x8nipb559r6ybq-home-manager-path.drv'.
+       Reason: builder failed with exit code 25.
+       Output paths:
+         /nix/store/c6glbyrf48458fdidklc83jkw7bv4jk0-home-manager-path
+       Last 5 log lines:
+       > pkgs.buildEnv error: two given paths contain a conflicting subpath:
+       >   `/nix/store/9ahvk3p9sbq8dn13x67wmx6w48g4zvpn-home-manager-0-unstable-2025-11-17/bin/home-manager' and
+       >   `/nix/store/1xr3al6wgb8dzfvfmi884a4av64xc4f5-home-manager/bin/home-manager'
+       > hint: this may be caused by two different versions of the same package in buildEnv's `paths` parameter
+       > hint: `pkgs.nix-diff` can be used to compare derivations
+       For full logs, run:
+         nix-store -l /nix/store/pv7br64qrhbvhgjs65x8nipb559r6ybq-home-manager-path.drv
+error: Cannot build '/nix/store/3gc4mam6yxs63zc5czks8dq485fyc1gw-home-manager-generation.drv'.
+       Reason: 1 dependency failed.
+       Output paths:
+         /nix/store/vknkdmmbs3rq6yxkghq8c4w300gj7nkk-home-manager-generation
+/nix/store/czplmfraydckx30h03qg2l4v2wyk141x-home-manager/bin/home-manager: Zeile 836: /tmp/nix-shell-1791-3616650320/home-manager-build.TY818KyxP6/generation/activate: No such file or directory
+Ups, die Installation schlug fehl. Bitte erstellen Sie ein Issue unter
+
+     https://github.com/nix-community/home-manager/issues
+
+falls der Fehler auf Home Manager zurückzuführen ist.
+
+
+
+
 
 
 # EOF

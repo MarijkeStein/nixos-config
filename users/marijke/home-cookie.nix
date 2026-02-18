@@ -110,8 +110,8 @@ alias la="eza -l --icons --git"
 eval "$(starship init bash)"
     '';
   };
-  
-  
+
+
   # Flatpak:
   #xdg.portal.enable = true;
   #services.flatpak.enable = true;

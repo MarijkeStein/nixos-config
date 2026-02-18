@@ -21,8 +21,6 @@
     # # Adds the 'hello' command to your environment. It prints a friendly
     # # "Hello, world!" when run.
 
-    pkgs.home-manager
-
     pkgs.borgbackup
     pkgs.espanso
     pkgs.xfce.xfconf
@@ -38,18 +36,21 @@
     #pkgs.vistafonts
 
     pkgs.cdparanoia
+    pkgs.makemkv
     pkgs.flac
     pkgs.vorbis-tools
 
     #pkgs.fluffychat
 
     pkgs.gitkraken
-    pkgs.jetbrains.pycharm-community-bin
+    #pkgs.jetbrains.pycharm
+    pkgs.meld
     pkgs.python313
     pkgs.python313Packages.ipython
     pkgs.rustup
     pkgs.starship
     pkgs.uv
+    pkgs.waveterm
 
 
     # # It is sometimes useful to fine-tune packages, for example, by applying
@@ -92,23 +93,24 @@
 
   programs.git = {
     enable = true;
-    userName = "Marijke Stein";
-    userEmail = "marijke.stein@gmx.de";
-    aliases = {
-      co = "checkout";
-      st = "status";
-    };
-    extraConfig = {
+    settings = {
+      user = {
+        name = "Marijke Stein";
+        email = "marijke.stein@gmx.de";
+      };
+      alias = {
+        co = "checkout";
+        st = "status";
+      };
       core.editor = "mcedit";
+      init.defaultBranch = "main";
+      push.autoSetupRemote = true;
     };
   };
 
-  home.file.".bashrc" = {
-  text = ''
-alias la="eza -l --icons --git"
-
-eval "$(starship init bash)"
-    '';
+  programs.starship = {
+    enable = true;
+    enableBashIntegration = true;
   };
 
 

@@ -128,7 +128,7 @@
     group = "family";
     isNormalUser = true;
     description = "Marijke Stein";
-    extraGroups = [ "lp" "networkmanager" "scanner" "wheel" ];
+    extraGroups = [ "cdrom" "lp" "networkmanager" "scanner" "wheel" ];
     packages = with pkgs; [
     #  thunderbird
     ];
