@@ -50,6 +50,7 @@
 
     pkgs.gitkraken
     pkgs.jetbrains.pycharm
+    pkgs.jetbrains.webstorm
     pkgs.meld
     pkgs.mesa
     pkgs.python313
@@ -60,6 +61,7 @@
     pkgs.waveterm
 
     pkgs.fluffychat
+    pkgs.linphone
 
 
     # # It is sometimes useful to fine-tune packages, for example, by applying
