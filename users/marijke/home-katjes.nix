@@ -33,7 +33,9 @@
     pkgs.libsForQt5.qt5ct
     pkgs.kdePackages.kate
     pkgs.kdePackages.kconfig
+    pkgs.kdePackages.kolourpaint
     pkgs.kdePackages.konsole
+    pkgs.krita
     pkgs.kdePackages.okular
     pkgs.marksman
 

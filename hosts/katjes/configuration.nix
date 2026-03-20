@@ -192,6 +192,7 @@
     keepassxc
     mate.mate-calc
     pinentry-gtk2
+    pipewire
     signal-desktop
     system-config-printer
     thunderbird
