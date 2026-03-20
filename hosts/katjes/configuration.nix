@@ -182,9 +182,11 @@
     wget
     zip
 
+    backintime-qt
     bluez
     eog
     evince
+    fcron
     gimp
     gnome-terminal
     keepassxc
