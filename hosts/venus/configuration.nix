@@ -191,6 +191,7 @@
     unzip
     usbutils
     wget
+    zellij
     zip
 
     bluez
@@ -203,7 +204,6 @@
     mtpfs
     pinentry-gtk2
     pipewire
-    signal-desktop
     system-config-printer
     thunderbird
     totem
