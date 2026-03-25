@@ -72,12 +72,6 @@
     LC_TIME = "de_DE.UTF-8";
   };
 
-  services.avahi = {
-    enable = true;
-    nssmdns4 = true;
-    openFirewall = true;
-  };
-
   # Enable the X11 windowing system.
   services.xserver.enable = true;
 
@@ -94,19 +88,9 @@
   # Configure console keymap
   console.keyMap = "de";
 
-  services.printing = {
-    enable = true;
-    drivers = [ pkgs.brlaser pkgs.cups-filters pkgs.gutenprint ];
-    package = pkgs.cups.overrideAttrs (old: rec {
-      version = "2.4.16";
-      src = pkgs.fetchFromGitHub {
-        owner = "OpenPrinting";
-        repo = "cups";
-        rev = "v${version}";
-        hash = "sha256-Rre2eOIdy61hG8/T5L6YIunxXl8Yn2Yv9W5Apt6L3/E=";
-        };
-      });
-  };
+  # Enable CUPS to print documents.
+  services.printing.enable = true;
+  services.printing.drivers = [ pkgs.cups-filters pkgs.gutenprint ];
 
   hardware.printers = {
     ensureDefaultPrinter = "Brother9570";
@@ -114,24 +98,14 @@
       {
         name = "Brother9570";
         description = "Brother MFC-L9570CDW";
-        deviceUri = "ipp://192.168.0.100/ipp/print";
-        #model = "everywhere";
-        model = "driverless:ipp://192.168.0.100/ipp/print";
+        deviceUri = "ipp://192.168.0.100:631/ipp/print";
+        model = "everywhere";
         ppdOptions = {
           PageSize = "A4";
-          ColorModel = "RGB";
         };
       }
     ];
   };
-
-  systemd.services.cups.after = [ "network-online.target" ];
-  systemd.services.cups.wants = [ "network-online.target" ];
-  systemd.services.ensure-printers = {
-    after = [ "network-online.target" "cups.service" ];
-    wants = [ "network-online.target" ];
-  };
-
 
   # Enable sound with pipewire.
   services.pulseaudio.enable = false;
@@ -245,22 +219,15 @@
 
   services.blueman.enable = true;
 
-  services.dbus.packages = [ pkgs.gcr ];
-
-  services.flatpak.enable = true;
-
   services.gvfs.enable = true;
+
+  # Flatpak:
+  xdg.portal.enable = true;
+  services.flatpak.enable = true;
+  xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-xapp ];
 
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
-
-  # Flatpak + CUPS:
-  xdg.portal = {
-    enable = true;
-    extraPortals = [ pkgs.xdg-desktop-portal-gtk
-                     pkgs.xdg-desktop-portal-xapp ];
-  };
-
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
