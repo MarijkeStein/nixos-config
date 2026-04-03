@@ -224,7 +224,6 @@
     wirelesstools
 
     docker
-
     k3s
     kubernetes-helm
 
@@ -242,7 +241,6 @@
     "pynitrokey"
   ];
 
-
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;
@@ -254,7 +252,7 @@
   # List services that you want to enable:
 
   services.k3s = {
-    enable = true;
+    enable = false;
     role = "server";
     extraFlags = "--write-kubeconfig-mode 644";    # readable by users in the 'wheel' group
   };

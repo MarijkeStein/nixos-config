@@ -4,6 +4,6 @@ local window_name = get_window_name()
 
 if (class_name == "jetbrains-pycharm") then
     set_window_workspace(1);
-    set_window_geometry(0, 25, 2050, 1380)
+--     set_window_geometry(0, 25, 2050, 1380)
 end
 
