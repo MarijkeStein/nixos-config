@@ -178,11 +178,13 @@
     mc
     mmv
     nfs-utils
+    ox
     pciutils
     tree
     unzip
     usbutils
     wget
+    zellij
     zip
 
     backintime-qt
@@ -196,7 +198,6 @@
     mate.mate-calc
     pinentry-gtk2
     pipewire
-    signal-desktop
     system-config-printer
     thunderbird
     totem
