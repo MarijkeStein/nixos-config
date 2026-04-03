@@ -68,6 +68,7 @@
     package = pkgs.lix;
   };
 
+  programs.fish.enable = true;
 
   # Set your time zone.
   time.timeZone = "Europe/Berlin";
@@ -152,6 +153,7 @@
     packages = with pkgs; [
     #  thunderbird
     ];
+    shell = pkgs.fish;
   };
 
   # Install firefox.
@@ -168,6 +170,7 @@
     curl
     eza
     file
+    fish
     git
     gnupg
     htop
