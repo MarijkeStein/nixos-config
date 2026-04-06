@@ -54,6 +54,23 @@
   # Enable networking
   networking.networkmanager.enable = true;
 
+  # Garbage collection
+  nix.gc = {
+    automatic = true;
+    dates = "weekly";
+    options = "--delete-older-than 90d";
+    persistent = true;
+    randomizedDelaySec = "3h";
+  };
+
+  nix = {
+    settings = {
+      experimental-features = [ "nix-command" "flakes" ];
+#      flake-registry = "${inputs.flake-registry}/flake-registry.json";
+    };
+    package = pkgs.lix;
+  };
+
   # Set your time zone.
   time.timeZone = "Europe/Berlin";
 
@@ -160,6 +177,7 @@
     killall
     mc
     mmv
+    ox
     pciutils
     tree
     unzip
@@ -168,16 +186,18 @@
     zellij
     zip
 
+    blueman
     bluez
     eog
     evince
     gimp
     gnome-terminal
+    gnomeExtensions.bluetooth-battery-meter
     keepassxc
     mate.mate-calc
     mtpfs
     pinentry-gtk2
-    pipewire
+    pulseaudio
     system-config-printer
     thunderbird
     totem
@@ -234,6 +254,13 @@
   # networking.firewall.allowedUDPPorts = [ ... ];
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
+
+  system.autoUpgrade = {
+    enable = true;
+    allowReboot = false;
+    dates = "daily";
+    randomizedDelaySec = "30min";
+  };
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions

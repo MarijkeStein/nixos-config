@@ -50,7 +50,7 @@
   nix.gc = {
     automatic = true;
     dates = "weekly";
-    options = "--delete-older-than 30d";
+    options = "--delete-older-than 90d";
     persistent = true;
     randomizedDelaySec = "3h";
   };
@@ -202,11 +202,13 @@
     killall
     mc
     mmv
+    ox
     pciutils
     tree
     unzip
     usbutils
     wget
+    zellij
     zip
 
     blueman
@@ -221,7 +223,6 @@
     mtpfs
     pinentry-gtk2
     pulseaudio
-    signal-desktop
     system-config-printer
     thunderbird
     totem
