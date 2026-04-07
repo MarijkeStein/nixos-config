@@ -292,12 +292,14 @@
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
 
-  system.autoUpgrade = {
-    enable = true;
-    allowReboot = false;
-    dates = "daily";
-    randomizedDelaySec = "30min";
-  };
+#  # Do not auto-update mobile devices as this may significantly slow down the boot process if on slow network
+#
+#  system.autoUpgrade = {
+#    enable = true;
+#    allowReboot = false;
+#    dates = "daily";
+#    randomizedDelaySec = "30min";
+#  };
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
