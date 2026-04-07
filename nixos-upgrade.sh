@@ -10,11 +10,11 @@ if [[ -d "flakes" ]]
 then
     sed -i 's@nixos-25.05@nixos-25.11@' flake.nix
     nix flake update
-    nixos-rebuild switch --flake . --use-remote-sudo     # in future release changed to "--sudo"
+    nixos-rebuild switch --flake . --sudo
 else
     sudo nix-channel   --add https://nixos.org/channels/nixos-25.11 nixos
     sudo nix-channel   --update
-    nixos-rebuild --use-remote-sudo --upgrade switch     # in future release changed to "--sudo"
+    nixos-rebuild --sudo --upgrade switch
 fi
 
 
