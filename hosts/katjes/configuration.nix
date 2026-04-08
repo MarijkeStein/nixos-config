@@ -183,6 +183,7 @@
     tree
     unzip
     usbutils
+    yazi
     wget
     zellij
     zip
