@@ -70,6 +70,11 @@
 
   programs.fish.enable = true;
 
+  programs.hyprland = {
+      enable = true;
+      xwayland.enable = true;
+  };
+
   # Set your time zone.
   time.timeZone = "Europe/Berlin";
 
@@ -90,6 +95,8 @@
 
   # X11 + XFCE
   services.autorandr.enable = true;
+  #services.xserver.displayManager.ssdm.enable = true;
+  #services.xserver.displayManager.sddm.wayland.enable = true;
   services.xserver.enable = true;
   services.xserver.displayManager.lightdm.enable = true;
   services.xserver.desktopManager.xfce.enable = true;
@@ -205,6 +212,14 @@
     v4l-utils
     vlc
 
+    hyprland
+    kitty
+    waybar
+    mako
+    hyprpaper
+    hyprlock
+    rofi
+
     hyphen
     hyphenDicts.de_DE
     hyphenDicts.de-de
@@ -291,7 +306,7 @@
 
   xdg.portal.enable = true;
   services.flatpak.enable = true;
-  xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-xapp ];
+  xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-xapp pkgs.xdg-desktop-portal-gtk ];
 
   # Open ports in the firewall.
   networking.firewall.allowedTCPPorts = [ 6443 ];
