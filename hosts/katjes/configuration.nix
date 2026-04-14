@@ -233,6 +233,8 @@
     pam_u2f
     pcsc-tools
 
+    direnv
+    nix-direnv
     nix-index
 
     cifs-utils
