@@ -4,7 +4,7 @@ set -euxo pipefail
 
 keepassxc &
 
-gnome-terminal --full-screen -- zellij &
+#gnome-terminal --full-screen -- zellij &
 
 sleep 1
 
