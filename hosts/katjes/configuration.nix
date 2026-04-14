@@ -187,6 +187,7 @@
     nfs-utils
     ox
     pciutils
+    smartmontools
     tree
     unzip
     usbutils
@@ -303,6 +304,8 @@
 
   # für OpenVPN:
   services.resolved.enable = true;
+
+  services.smartd.enable = true;
 
   xdg.portal.enable = true;
   services.flatpak.enable = true;

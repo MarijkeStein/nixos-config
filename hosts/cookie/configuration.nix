@@ -204,6 +204,7 @@
     mmv
     ox
     pciutils
+    smartmontools
     tree
     unzip
     usbutils
@@ -278,6 +279,8 @@
 
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
+
+  services.smartd.enable = true;
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];

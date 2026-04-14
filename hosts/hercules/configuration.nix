@@ -159,6 +159,7 @@
     mc
     mmv
     pciutils
+    smartmontools
     tree
     unzip
     usbutils
@@ -220,6 +221,8 @@
   services.blueman.enable = true;
 
   services.gvfs.enable = true;
+
+  services.smartd.enable = true;
 
   # Flatpak:
   xdg.portal.enable = true;
