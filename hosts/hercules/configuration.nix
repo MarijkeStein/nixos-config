@@ -77,7 +77,7 @@
   # Enable CUPS to print documents.
   services.printing.enable = true;
   services.printing.drivers = [ pkgs.cups-filters pkgs.gutenprint ];
-  
+
   hardware.printers = {
     ensureDefaultPrinter = "Brother9570";
     ensurePrinters = [

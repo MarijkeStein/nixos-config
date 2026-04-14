@@ -142,6 +142,7 @@
   programs.starship = {
     enable = true;
     enableBashIntegration = true;
+    enableFishIntegration = true;
   };
 
   # for NitroKey:
