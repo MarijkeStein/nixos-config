@@ -30,6 +30,8 @@
     pkgs.espanso
     pkgs.xfce.xfconf
 
+    pkgs.adwaita-qt
+    pkgs.adwaita-qt6
     pkgs.libsForQt5.qt5ct
     pkgs.kdePackages.kate
     pkgs.kdePackages.kconfig
@@ -64,7 +66,6 @@
     pkgs.waveterm
 
     pkgs.fluffychat
-
 
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the
@@ -173,8 +174,11 @@ disable-ccid
   gtk.enable = true;
   gtk.theme.name = "Adwaita-dark";
 
-  qt.enable = true;
-  qt.style.name = "darker";
+  qt = {
+    enable = true;
+    platformTheme.name = "qtct";       # Use the 'qtct' (Qt Configuration Tool) for both Qt5 and Qt6
+    style.name = "Adwaita-Dark";
+  };
 
   xfconf = {
     settings = {
