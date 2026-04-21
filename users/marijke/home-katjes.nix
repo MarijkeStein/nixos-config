@@ -46,6 +46,8 @@
 
     pkgs.cdparanoia
     pkgs.flac
+    pkgs.ffmpeg
+    pkgs.imagemagick
     pkgs.vorbis-tools
 
     pkgs.nextcloud-client
