@@ -212,14 +212,18 @@
     zip
 
     backintime-qt
+    blueman
     bluez
     eog
     evince
     fcron
     gimp
     gnome-terminal
+    gnomeExtensions.bluetooth-battery-meter
     keepassxc
+    libwebp
     mate.mate-calc
+    mtpfs
     pinentry-gtk2
     pipewire
     system-config-printer
@@ -227,6 +231,8 @@
     totem
     v4l-utils
     vlc
+    xdg-desktop-portal-gtk              # e.g. Gtk FileChooser used by various tools
+    xfce.thunar-volman
 
     hyprland
     kitty
