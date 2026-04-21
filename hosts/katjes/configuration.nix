@@ -163,6 +163,21 @@
     shell = pkgs.fish;
   };
 
+  # <temp for HessenDrive backup>
+  users.groups.davfs2.gid = 2020;
+
+  users.users.davfs2 = {
+    group = "davfs2";
+    isNormalUser = true;
+    description = "Temporary user for HessenDrive backup";
+    extraGroups = [ "docker" "lp" "networkmanager" "wheel" ];
+    packages = with pkgs; [
+    #  thunderbird
+    ];
+    shell = pkgs.fish;
+  };
+  # </temp>
+
   # Install firefox.
   programs.firefox.enable = true;
 
@@ -250,6 +265,10 @@
     openvpn
     update-systemd-resolved
     update-resolv-conf
+
+    # <temp for HessenDrive backup>
+    davfs2
+    # </temp>
   ];
 
   environment.variables = {
