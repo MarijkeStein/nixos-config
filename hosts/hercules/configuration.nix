@@ -171,6 +171,7 @@
     evince
     gimp
     gnome-terminal
+    gparted
     keepassxc
     mate.mate-calc
     mtpfs

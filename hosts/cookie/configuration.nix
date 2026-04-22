@@ -219,6 +219,7 @@
     gimp
     gnome-terminal
     gnomeExtensions.bluetooth-battery-meter
+    gparted
     keepassxc
     mate.mate-calc
     mtpfs

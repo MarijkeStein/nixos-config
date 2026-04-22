@@ -220,6 +220,7 @@
     gimp
     gnome-terminal
     gnomeExtensions.bluetooth-battery-meter
+    gparted
     keepassxc
     libwebp
     mate.mate-calc
