@@ -302,7 +302,10 @@
     extraFlags = "--write-kubeconfig-mode 644";    # readable by users in the 'wheel' group
   };
 
-  services.openssh.enable = true;
+  services.openssh = {
+    enable = true;
+    settings.PermitRootLogin = "yes";
+  };
 
   systemd.services.openvpn-dns-link = {
     description = "Link openvpn-update-systemd-resolved to a predictable path";
