@@ -53,7 +53,6 @@
   # Enable networking
   networking.networkmanager.enable = true;
 
-  # Garbage collection
   nix.gc = {
     automatic = true;
     dates = "weekly";

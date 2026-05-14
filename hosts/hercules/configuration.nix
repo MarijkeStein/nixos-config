@@ -59,6 +59,14 @@
     LC_TIME = "de_DE.UTF-8";
   };
 
+  nix.gc = {
+    automatic = true;
+    dates = "weekly";
+    options = "--delete-older-than 90d";
+    persistent = true;
+    randomizedDelaySec = "3h";
+  };
+
   # Enable the X11 windowing system.
   services.xserver.enable = true;
 
