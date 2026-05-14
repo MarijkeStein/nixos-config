@@ -10,6 +10,7 @@
       ./hardware-configuration.nix
     ];
 
+  boot.blacklistedKernelModules = [ "nouveau" ];
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
   boot.supportedFilesystems = [ "nfs" ];
@@ -19,10 +20,30 @@
     fsType = "nfs";
   };
 
+  environment.sessionVariables.NVD_BACKEND = "direct";
+
   hardware.bluetooth = {
     enable = true;
     powerOnBoot = true;
   };
+
+  hardware.graphics = {
+    enable = true;
+    extraPackages = with pkgs; [
+      libva
+      nvidia-vaapi-driver
+      nvtopPackages.nvidia
+    ];
+  };
+
+  hardware.nvidia.open = true;
+
+  fileSystems."/pub" = {
+    device = "192.168.0.250:/Backup";
+    fsType = "nfs";
+  };
+  boot.supportedFilesystems = [ "nfs" ];
+
 
   programs.bash.shellAliases = {
     la = "eza -ahl";
@@ -32,7 +53,7 @@
   };
 
   networking.hostName = "hercules"; # Define your hostname.
-  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
+  networking.wireless.enable = false;  # Enables wireless support via wpa_supplicant.
 
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
@@ -120,6 +141,7 @@
 
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
+  services.xserver.videoDrivers = [ "nvidia" ];
 
   users.groups.family.gid = 2020;
 
@@ -167,12 +189,14 @@
     killall
     mc
     mmv
+    ox
     pciutils
     smartmontools
     tree
     unzip
     usbutils
     wget
+    zellij
     zip
 
     bluez
@@ -203,11 +227,17 @@
     pkgs.backintime-qt
     pkgs.cron
     pkgs.fcron
+    pkgs.libxcb-cursor
 
     hyphen
     hyphenDicts.de_DE
     hyphenDicts.de-de
     libreoffice
+
+    # hardware burn-in tests
+    memtest_vulkan
+    memtester
+    mprime
   ];
 
   programs.steam = {
