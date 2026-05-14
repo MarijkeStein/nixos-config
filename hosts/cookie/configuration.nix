@@ -155,6 +155,7 @@
     isNormalUser = true;
     description = "Marijke Stein";
     extraGroups = [ "networkmanager" "wheel" ];
+    shell = pkgs.fish;
     packages = with pkgs; [
     #  thunderbird
     ];
@@ -182,8 +183,9 @@
     ];
   };
 
-  # Install firefox.
   programs.firefox.enable = true;
+
+  programs.fish.enable = true;
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
@@ -196,6 +198,7 @@
     curl
     eza
     file
+    fish
     git
     gnupg
     htop

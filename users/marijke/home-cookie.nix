@@ -21,7 +21,7 @@
     # # Adds the 'hello' command to your environment. It prints a friendly
     # # "Hello, world!" when run.
 
-    pkgs.home-manager
+    # pkgs.home-manager
 
     pkgs.borgbackup
     pkgs.espanso
@@ -44,7 +44,7 @@
     #pkgs.fluffychat
 
     pkgs.gitkraken
-    pkgs.jetbrains.pycharm-community-bin
+    pkgs.jetbrains.pycharm
     pkgs.python313
     pkgs.python313Packages.ipython
     pkgs.rustup
@@ -90,35 +90,52 @@
     EDITOR = "mcedit";
   };
 
+  programs.bash = {
+    enable = true;
+    shellAliases = {
+      la="eza -al --icons --git";
+    };
+  };
+
   programs.git = {
     enable = true;
-    userName = "Marijke Stein";
-    userEmail = "marijke.stein@gmx.de";
-    aliases = {
-      co = "checkout";
-      st = "status";
-    };
-    extraConfig = {
+    settings = {
+      user = {
+        name = "Marijke Stein";
+        email = "marijke.stein@gmx.de";
+        #signingkey = "4047B8F11C43DC00";
+      };
+      alias = {
+        co = "checkout";
+        st = "status";
+      };
+      commit.gpgsign = "false";
       core.editor = "mcedit";
+      init.defaultBranch = "main";
+      push.autoSetupRemote = true;
+      signing.format = "openpgp";
+      signing.signByDefault = false;
     };
   };
 
-  home.file.".bashrc" = {
-  text = ''
-alias la="eza -l --icons --git"
-
-eval "$(starship init bash)"
-    '';
+  programs.starship = {
+    enable = true;
+    enableBashIntegration = true;
+    enableFishIntegration = true;
   };
-
 
   # Flatpak:
   #xdg.portal.enable = true;
   #services.flatpak.enable = true;
   #xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-xapp ];
 
-  services.gpg-agent.enable = true;
-  services.gpg-agent.pinentry.package = pkgs.pinentry-gtk2;
+  services.gpg-agent = {
+    defaultCacheTtl = 30000;
+    enable = true;
+    enableBashIntegration = true;
+    enableFishIntegration = true;
+    pinentry.package = pkgs.pinentry-gtk2;
+  };
 
   gtk.enable = true;
   gtk.theme.name = "Adwaita-dark";
