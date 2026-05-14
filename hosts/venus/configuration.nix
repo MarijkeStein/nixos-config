@@ -15,14 +15,12 @@
   boot.loader.grub.enable = true;
   boot.loader.grub.device = "/dev/sda";
   boot.loader.grub.useOSProber = true;
+  boot.supportedFilesystems = [ "nfs" ];
 
   hardware.bluetooth = {
     enable = true;
     powerOnBoot = true;
   };
-
-  hardware.sane.enable = true;
-  hardware.sane.extraBackends = [ pkgs.sane-airscan ];
 
   fileSystems."/mnt/scratch" = {
     device = "/dev/sdb2";
@@ -33,12 +31,9 @@
     device = "192.168.0.250:/Backup";
     fsType = "nfs";
   };
-#  fileSystems."/pub/videos" = {
-#    device = "192.168.0.250:/Multimedia";
-#    fsType = "nfs";
-#  };
-  boot.supportedFilesystems = [ "nfs" ];
 
+  hardware.sane.enable = true;
+  hardware.sane.extraBackends = [ pkgs.sane-airscan ];
 
   programs.bash.shellAliases = {
     la = "eza -ahl";

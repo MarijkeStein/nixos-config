@@ -10,23 +10,18 @@
       ./hardware-configuration.nix
     ];
 
-  # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
   boot.supportedFilesystems = [ "nfs" ];
-
-  hardware.bluetooth = {
-    enable = true;
-    powerOnBoot = true;
-  };
 
   fileSystems."/pub" = {
     device = "192.168.0.250:/Backup";
     fsType = "nfs";
   };
-  fileSystems."/pub/videos" = {
-    device = "192.168.0.250:/Multimedia";
-    fsType = "nfs";
+
+  hardware.bluetooth = {
+    enable = true;
+    powerOnBoot = true;
   };
 
   programs.bash.shellAliases = {

@@ -10,9 +10,9 @@
       ./hardware-configuration.nix
     ];
 
-  # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
+  boot.supportedFilesystems = [ "nfs" ];
 
   hardware.bluetooth = {
     enable = true;
@@ -29,8 +29,6 @@
     device = "192.168.0.250:/Backup";
     fsType = "nfs";
   };
-  boot.supportedFilesystems = [ "nfs" ];
-
 
   programs.bash.shellAliases = {
     la = "eza -ahl";
