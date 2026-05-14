@@ -37,7 +37,6 @@
     zip
 
     # user applications and utilities
-    backintime-qt
     bluez
     eog
     evince
