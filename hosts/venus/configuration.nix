@@ -11,7 +11,6 @@
     ];
 
   boot.kernelModules = [ "sg" ];
-
   boot.loader.grub.enable = true;
   boot.loader.grub.device = "/dev/sda";
   boot.loader.grub.useOSProber = true;
@@ -36,6 +35,9 @@
   hardware.sane.extraBackends = [ pkgs.sane-airscan ];
 
   programs.bash.shellAliases = {
+    la = "eza -ahl";
+  };
+  programs.fish.shellAliases = {
     la = "eza -ahl";
   };
 

@@ -33,6 +33,9 @@
   programs.bash.shellAliases = {
     la = "eza -ahl";
   };
+  programs.fish.shellAliases = {
+    la = "eza -ahl";
+  };
 
   networking.hostName = "cookie"; # Define your hostname.
   #networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.

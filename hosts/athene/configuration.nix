@@ -27,6 +27,9 @@
   programs.bash.shellAliases = {
     la = "eza -ahl";
   };
+  programs.fish.shellAliases = {
+    la = "eza -ahl";
+  };
 
   networking.hostName = "athene"; # Define your hostname.
   networking.wireless.enable = false;  # Enables wireless support via wpa_supplicant.
