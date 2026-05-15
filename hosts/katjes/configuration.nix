@@ -249,10 +249,12 @@
     hyphenDicts.de-de
     libreoffice
 
+    gnumake
     gcc
 
     ccid
     nitrokey-udev-rules
+    opensc                                        # provides 'pkcs15-tool'
     pam_u2f
     pcsc-tools
 

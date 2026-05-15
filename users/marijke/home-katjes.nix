@@ -41,6 +41,12 @@
     pkgs.kdePackages.okular
     pkgs.marksman
 
+    pkgs.tex-fmt
+    pkgs.texliveFull
+    pkgs.ghostscript
+    pkgs.gnumake
+    pkgs.kile
+
     pkgs.corefonts
     pkgs.vista-fonts
 
@@ -68,6 +74,8 @@
     pkgs.waveterm
 
     pkgs.fluffychat
+
+    pkgs.qrencode
 
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the
@@ -185,9 +193,10 @@ disable-ccid
   xfconf = {
     settings = {
       xfce4-desktop = {
-        "backdrop/screen0/monitorDP-2/workspace1/image-style" = 1;
-        "backdrop/screen0/monitorDP-2/workspace1/last-image" = "/home/mstein/.wallpapers/HfMDK-black.png";
-        "backdrop/screen0/monitorDP-2/workspace1/rgba1" = [ 0.000000 0.000000 0.000000 1.000000 ];
+        "backdrop/screen0/monitoreDP-1/workspace1/image-style" = 1;
+        "backdrop/screen0/monitoreDP-1/workspace1/last-image" = "/home/mstein/.wallpapers/HfMDK-black.png";
+        "backdrop/screen0/monitoreDP-1/workspace1/rgba1" = [ 0.000000 0.000000 0.000000 1.000000 ];
+
         "desktop-icons/file-icons/show-filesystem" = 0;
         "desktop-icons/file-icons/show-trash" = 1;
       };
@@ -200,7 +209,7 @@ disable-ccid
         "panels/dark-mode" = true;
 
         "panels/panel-1/icon-size" = 12;
-        "panels/panel-1/output-name" = "DP-2";
+        "panels/panel-1/output-name" = "eDP-1";
         "panels/panel-1/size" = 24;
 
         "plugin-1" = "applicationsmenu";
@@ -241,7 +250,7 @@ disable-ccid
       };
 
       xsettings = {
-        "Gtk/FontName" = "Sans 10";
+        "Gtk/FontName" = "DejaVu Sans 10";
         "MonospaceFontName" = "Gtk/JetBrainsMono Nerd Font 10";
         "Net/IconThemeName" = "Adwaita";
         "Net/ThemeName" = "Adwaita-dark";
