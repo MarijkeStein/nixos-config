@@ -152,12 +152,14 @@
   # services.xserver.libinput.enable = true;
 
   #virtualisation.docker.enable = true;
+  virtualisation.virtualbox.host.enable = true;
+  virtualisation.virtualbox.host.enableExtensionPack = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.mstein = {
     isNormalUser = true;
     description = "Marijke Stein";
-    extraGroups = [ "docker" "lp" "networkmanager" "wheel" ];
+    extraGroups = [ "docker" "lp" "networkmanager" "vboxusers" "wheel" ];
     packages = with pkgs; [
     #  thunderbird
     ];
@@ -267,9 +269,9 @@
     samba
     wirelesstools
 
-    docker
-    k3s
-    kubernetes-helm
+#    docker
+#    k3s
+#    kubernetes-helm
 
     openssl
     openvpn
