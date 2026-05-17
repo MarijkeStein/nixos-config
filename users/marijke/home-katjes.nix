@@ -211,7 +211,7 @@ disable-ccid
         "panels/dark-mode" = true;
 
         "panels/panel-1/icon-size" = 12;
-        "panels/panel-1/output-name" = "eDP-1";
+#        "panels/panel-1/output-name" = "eDP-1";
         "panels/panel-1/size" = 24;
 
         "plugin-1" = "applicationsmenu";
@@ -252,8 +252,8 @@ disable-ccid
       };
 
       xsettings = {
-        "Gtk/FontName" = "DejaVu Sans 10";
-        "MonospaceFontName" = "Gtk/JetBrainsMono Nerd Font 10";
+#        "Gtk/FontName" = "DejaVu Sans 10";
+#        "MonospaceFontName" = "Gtk/JetBrainsMono Nerd Font 10";
         "Net/IconThemeName" = "Adwaita";
         "Net/ThemeName" = "Adwaita-dark";
       };
