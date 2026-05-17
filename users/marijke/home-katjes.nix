@@ -63,9 +63,11 @@
     pkgs.claude-monitor
     pkgs.gitkraken
     pkgs.jetbrains.pycharm
+    pkgs.jetbrains.rust-rover
     pkgs.jetbrains.webstorm
     pkgs.meld
     pkgs.mesa
+    pkgs.pkg-config
     pkgs.python313
     pkgs.python313Packages.ipython
     pkgs.rustup
