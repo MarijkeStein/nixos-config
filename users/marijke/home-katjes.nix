@@ -73,7 +73,6 @@
     pkgs.rustup
     pkgs.starship
     pkgs.uv
-    pkgs.waveterm
 
     pkgs.fluffychat
 

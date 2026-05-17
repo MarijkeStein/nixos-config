@@ -51,7 +51,6 @@
     pkgs.rustup
     pkgs.starship
     pkgs.uv
-    pkgs.waveterm
 
 
     # # It is sometimes useful to fine-tune packages, for example, by applying
