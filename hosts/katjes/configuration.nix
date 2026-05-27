@@ -95,6 +95,8 @@
     # Development
     gnumake
     gcc
+    fontconfig
+    pkg-config
 
     # FIDO2
     ccid
