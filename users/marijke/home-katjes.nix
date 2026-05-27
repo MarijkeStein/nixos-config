@@ -25,9 +25,11 @@
     pkgs.eza
     pkgs.fend
     pkgs.nmap
+    pkgs.starship
 
     pkgs.devilspie2
     pkgs.espanso
+    pkgs.qrencode
     pkgs.xfce.xfconf
 
     pkgs.adwaita-qt
@@ -44,7 +46,6 @@
     pkgs.tex-fmt
     pkgs.texliveFull
     pkgs.ghostscript
-    pkgs.gnumake
     pkgs.kile
 
     pkgs.corefonts
@@ -57,26 +58,42 @@
     pkgs.vorbis-tools
 
     pkgs.nextcloud-client
+    pkgs.fluffychat
     pkgs.remmina
 
     pkgs.claude-code
     pkgs.claude-monitor
     pkgs.gitkraken
-    pkgs.jetbrains.pycharm
-    pkgs.jetbrains.rust-rover
-    pkgs.jetbrains.webstorm
+    pkgs.gnumake
+    pkgs.just
     pkgs.meld
-    pkgs.mesa
-    pkgs.pkg-config
+
+    pkgs.jetbrains.pycharm
     pkgs.python313
     pkgs.python313Packages.ipython
-    pkgs.rustup
-    pkgs.starship
     pkgs.uv
 
-    pkgs.fluffychat
+    pkgs.jetbrains.rust-rover
+    pkgs.pkg-config
+    pkgs.rustup
 
-    pkgs.qrencode
+    pkgs.jetbrains.webstorm
+
+    # AnnTracks
+    pkgs.mesa
+
+    # LBH
+    pkgs.expat
+    pkgs.expat.dev
+    pkgs.fontconfig
+    pkgs.fontconfig.dev
+    pkgs.freetype
+    pkgs.freetype.dev
+    pkgs.libxkbcommon
+    pkgs.xorg.libX11
+    pkgs.xorg.libXcursor
+    pkgs.xorg.libXi
+    pkgs.xorg.libXrandr
 
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the
