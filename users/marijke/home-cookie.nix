@@ -42,6 +42,7 @@
     pkgs.vorbis-tools
 
     #pkgs.fluffychat
+    pkgs.signal-export
 
     pkgs.gitkraken
     pkgs.jetbrains.pycharm
