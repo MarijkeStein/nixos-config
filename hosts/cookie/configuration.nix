@@ -254,9 +254,10 @@
     hyphenDicts.de-de
     libreoffice
 
-    tex-fmt
-    texliveTeTeX
     gnumake
+    just
+    tex-fmt
+    texliveFull
 
     nmap
     wirelesstools
