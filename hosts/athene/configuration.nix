@@ -84,7 +84,8 @@
 
     # LaTeX
     tex-fmt
-    texliveTeTeX
+    texliveFull
+    ghostscript
     gnumake
   ];
 
