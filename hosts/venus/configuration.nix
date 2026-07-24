@@ -168,6 +168,12 @@
 
   security.rtkit.enable = true;
 
+  services.avahi = {
+    enable = true;
+    nssmdns4 = true;
+    openFirewall = true;
+  };
+
   services.blueman.enable = true;
 
   services.flatpak.enable = true;
