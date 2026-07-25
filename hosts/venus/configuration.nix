@@ -21,12 +21,14 @@
     curl
     eza
     file
+    fish
     git
     gnupg
     htop
     killall
     mc
     mmv
+    nfs-utils
     ox
     pciutils
     smartmontools
@@ -42,14 +44,17 @@
     bluez
     eog
     evince
+    fcron
     gimp
     gnome-terminal
     gnomeExtensions.bluetooth-battery-meter
     gparted
     keepassxc
+    libwebp
     mate.mate-calc
     mtpfs
     pinentry-gtk2
+    pipewire
     pulseaudio
     system-config-printer
     thunderbird
@@ -78,13 +83,25 @@
     hyphenDicts.de-de
     libreoffice
 
+    # Development
+    gcc
+    fontconfig
+    pkg-config
+    gnumake
+    just
+
     # LaTeX
     tex-fmt
-    texliveTeTeX
-    gnumake
+    texliveFull
+
+    # NixOS-AddOn's
+    direnv
+    nix-direnv
+    nix-index
 
     # Scanner support
     (xsane.override { gimpSupport = true; })
+
 
     # Unfree software
     ungoogled-chromium
@@ -162,6 +179,7 @@
 
   programs.firefox.enable = true;
 
+  programs.fish.enable = true;
   programs.fish.shellAliases = {
     la = "eza -ahl";
   };
@@ -185,15 +203,15 @@
     settings.PermitRootLogin = "yes";
   };
 
-  services.printing.enable = true;
-  services.printing.drivers = [ pkgs.cups-filters pkgs.gutenprint ];
-
   services.pipewire = {
     enable = true;
     alsa.enable = true;
     alsa.support32Bit = true;
     pulse.enable = true;
   };
+
+  services.printing.enable = true;
+  services.printing.drivers = [ pkgs.cups-filters pkgs.gutenprint ];
 
   services.pulseaudio.enable = false;
 
@@ -233,11 +251,13 @@
     isNormalUser = true;
     description = "Marijke Stein";
     extraGroups = [ "cdrom" "lp" "networkmanager" "scanner" "wheel" ];
+    shell = pkgs.fish;
     packages = with pkgs; [
     #  thunderbird
     ];
   };
 
   xdg.portal.enable = true;
-  xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-xapp ];
+  xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-xapp pkgs.xdg-desktop-portal-gtk ];
 }
+

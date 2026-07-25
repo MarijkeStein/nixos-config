@@ -1,12 +1,8 @@
-# Edit this configuration file to define what should be installed on
-# your system.  Help is available in the configuration.nix(5) man page
-# and in the NixOS manual (accessible by running ‘nixos-help’).
-
 { config, pkgs, ... }:
 
 {
   imports =
-    [ # Include the results of the hardware scan.
+    [
       ./hardware-configuration.nix
     ];
 
@@ -17,6 +13,7 @@
   console.keyMap = "de";
 
   environment.systemPackages = with pkgs; [
+    # base utilities
     bat
     bottom
     curl
@@ -29,6 +26,7 @@
     killall
     mc
     mmv
+    nfs-utils
     ox
     pciutils
     smartmontools
@@ -39,18 +37,22 @@
     zellij
     zip
 
+    # user applications and utilities
     blueman
     bluez
     eog
     evince
+    fcron
     gimp
     gnome-terminal
     gnomeExtensions.bluetooth-battery-meter
     gparted
     keepassxc
+    libwebp
     mate-calc
     mtpfs
     pinentry-gtk2
+    pipewire
     pulseaudio
     system-config-printer
     thunar-volman
@@ -59,6 +61,7 @@
     vlc
     xdg-desktop-portal-gtk              # e.g. Gtk FileChooser used by various tools
 
+    # KDE tools
     libsForQt5.qt5ct
     kdePackages.kate
     kdePackages.kconfig
@@ -66,23 +69,34 @@
     kdePackages.okular
     marksman
 
+    # Backup
     pkgs.backintime-qt
     pkgs.cron
     pkgs.fcron
 
-    #corefonts
-    #vistafonts
-
+    # Office and fonts
     hyphen
     hyphenDicts.de_DE
     hyphenDicts.de-de
     libreoffice
 
+    # Development
+    gcc
+    fontconfig
+    pkg-config
     gnumake
     just
+
+    # LaTeX
     tex-fmt
     texliveFull
 
+    # NixOS-AddOn's
+    direnv
+    nix-direnv
+    nix-index
+
+    # Networking AddOn's
     nmap
     wirelesstools
   ];
@@ -164,6 +178,23 @@
 
   security.rtkit.enable = true;
 
+  services.avahi = {
+    enable = true;
+    nssmdns4 = true;
+    openFirewall = true;
+  };
+
+  services.blueman.enable = true;
+
+  services.flatpak.enable = true;
+
+  services.gvfs.enable = true;
+
+  services.openssh = {
+    enable = true;
+    settings.PermitRootLogin = "yes";
+  };
+
   services.pipewire = {
     enable = true;
     alsa.enable = true;
@@ -179,17 +210,6 @@
         };
       };
     };
-  };
-
-  services.blueman.enable = true;
-
-  services.flatpak.enable = true;
-
-  services.gvfs.enable = true;
-
-  services.openssh = {
-    enable = true;
-    settings.PermitRootLogin = "yes";
   };
 
   services.printing.enable = true;
@@ -216,6 +236,15 @@
 #    randomizedDelaySec = "30min";
 #  };
 
+
+  # This value determines the NixOS release from which the default
+  # settings for stateful data, like file locations and database versions
+  # on your system were taken. It‘s perfectly fine and recommended to leave
+  # this value at the release version of the first install of this system.
+  # Before changing this value read the documentation for this option
+  # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
+  system.stateVersion = "25.05"; # Did you read the comment?
+
   time.timeZone = "Europe/Berlin";
 
   users.groups.family.gid = 2020;
@@ -225,7 +254,7 @@
     group = "family";
     isNormalUser = true;
     description = "Sabine Stein";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "lp" "networkmanager" "wheel" ];
     packages = with pkgs; [
     #  thunderbird
     ];
@@ -236,7 +265,7 @@
     group = "family";
     isNormalUser = true;
     description = "Carolin Stein";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "lp" "networkmanager" "wheel" ];
     packages = with pkgs; [
     #  thunderbird
     ];
@@ -247,7 +276,7 @@
     group = "family";
     isNormalUser = true;
     description = "Marijke Stein";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "lp" "networkmanager" "wheel" ];
     shell = pkgs.fish;
     packages = with pkgs; [
     #  thunderbird
@@ -255,13 +284,6 @@
   };
 
   xdg.portal.enable = true;
-  xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-xapp ];
-
-  # This value determines the NixOS release from which the default
-  # settings for stateful data, like file locations and database versions
-  # on your system were taken. It‘s perfectly fine and recommended to leave
-  # this value at the release version of the first install of this system.
-  # Before changing this value read the documentation for this option
-  # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
-  system.stateVersion = "25.05"; # Did you read the comment?
+  xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-xapp pkgs.xdg-desktop-portal-gtk ];
 }
+
