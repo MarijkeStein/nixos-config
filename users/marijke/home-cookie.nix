@@ -1,10 +1,8 @@
 { config, pkgs, ... }:
 
 {
-  # Home Manager needs a bit of information about you and the paths it should
-  # manage.
-  home.username = "marijke";
   home.homeDirectory = "/home/marijke";
+  home.username = "marijke";
 
   # This value determines the Home Manager release that your configuration is
   # compatible with. This helps avoid breakage when a new Home Manager release
@@ -15,33 +13,14 @@
   # release notes.
   home.stateVersion = "25.05"; # Please read the comment before changing.
 
-  # The home.packages option allows you to install Nix packages into your
-  # environment.
   home.packages = [
-    # # Adds the 'hello' command to your environment. It prints a friendly
-    # # "Hello, world!" when run.
-
-    # pkgs.home-manager
-
-    pkgs.borgbackup
     pkgs.espanso
     pkgs.xfce.xfconf
-
-    pkgs.libsForQt5.qt5ct
-    pkgs.kdePackages.kate
-    pkgs.kdePackages.kconfig
-    pkgs.kdePackages.konsole
-    pkgs.kdePackages.okular
-    pkgs.marksman
-
-    #pkgs.corefonts
-    #pkgs.vistafonts
 
     pkgs.cdparanoia
     pkgs.flac
     pkgs.vorbis-tools
 
-    #pkgs.fluffychat
     pkgs.signal-export
 
     pkgs.gitkraken
