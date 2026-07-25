@@ -23,7 +23,9 @@
 
     pkgs.signal-export
 
+    pkgs.beam29Packages.erlang
     pkgs.gitkraken
+    pkgs.gleam
     pkgs.jetbrains.pycharm
     pkgs.python313
     pkgs.python313Packages.ipython
