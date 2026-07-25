@@ -48,16 +48,16 @@
     gnomeExtensions.bluetooth-battery-meter
     gparted
     keepassxc
-    mate.mate-calc
+    mate-calc
     mtpfs
     pinentry-gtk2
     pulseaudio
     system-config-printer
+    thunar-volman
     thunderbird
     totem
     vlc
     xdg-desktop-portal-gtk              # e.g. Gtk FileChooser used by various tools
-    xfce.thunar-volman
 
     libsForQt5.qt5ct
     kdePackages.kate
@@ -264,5 +264,4 @@
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "25.05"; # Did you read the comment?
-
 }
