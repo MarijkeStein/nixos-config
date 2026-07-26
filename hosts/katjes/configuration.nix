@@ -54,6 +54,7 @@
     libwebp
     mate.mate-calc
     mtpfs
+    noto-fonts-color-emoji
     pinentry-gtk2
     pipewire
     system-config-printer
