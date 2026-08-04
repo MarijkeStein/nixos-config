@@ -126,10 +126,6 @@
     openvpn
     update-systemd-resolved
     update-resolv-conf
-
-    # <temp for HessenDrive backup>
-    davfs2
-    # </temp>
   ];
 
 #   environment.variables = {
@@ -141,19 +137,19 @@
     powerOnBoot = true;
   };
 
-  hardware.printers = {
-    ensurePrinters = [
-      {
-        # "lpinfo -v" shows the device URI of found printers
-        name = "HP_M400dn";
-        model = "everywhere";
-        # deviceUri = "ipp://HP%20LaserJet%20Pro%20M404-M405%20%5B814EDC%5D%20(USB)._ipp._tcp.local/";
-        deviceUri = "ipp://127.0.0.1:60000/ipp/print";
-        location = "B123";
-      }
-    ];
-    ensureDefaultPrinter = "HP_M400dn";
-  };
+#   hardware.printers = {
+#     ensurePrinters = [
+#       {
+#         # "lpinfo -v" shows the device URI of found printers
+#         name = "HP_M400dn";
+#         model = "everywhere";
+#         # deviceUri = "ipp://HP%20LaserJet%20Pro%20M404-M405%20%5B814EDC%5D%20(USB)._ipp._tcp.local/";
+#         deviceUri = "ipp://127.0.0.1:60000/ipp/print";
+#         location = "B123";
+#       }
+#     ];
+#     ensureDefaultPrinter = "HP_M400dn";
+#   };
 
   i18n.defaultLocale = "en_US.UTF-8";
   i18n.extraLocaleSettings = {
@@ -305,21 +301,6 @@
     ];
     shell = pkgs.fish;
   };
-
-  # <temp for HessenDrive backup>
-  users.groups.davfs2.gid = 2020;
-
-  users.users.davfs2 = {
-    group = "davfs2";
-    isNormalUser = true;
-    description = "Temporary user for HessenDrive backup";
-    extraGroups = [ "docker" "lp" "networkmanager" "wheel" ];
-    packages = with pkgs; [
-    #  thunderbird
-    ];
-    shell = pkgs.fish;
-  };
-  # </temp>
 
   #virtualisation.docker.enable = true;
   virtualisation.virtualbox.host.enable = true;
