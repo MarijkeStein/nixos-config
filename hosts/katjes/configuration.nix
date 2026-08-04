@@ -52,18 +52,19 @@
     gparted
     keepassxc
     libwebp
-    mate.mate-calc
+    mate-calc
+    mediainfo
     mtpfs
     noto-fonts-color-emoji
     pinentry-gtk2
     pipewire
     system-config-printer
+    thunar-volman
     thunderbird
     totem
     v4l-utils
     vlc
     xdg-desktop-portal-gtk              # e.g. Gtk FileChooser used by various tools
-    xfce.thunar-volman
 
     # KDE tools
     libsForQt5.qt5ct
