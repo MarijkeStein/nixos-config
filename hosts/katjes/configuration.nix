@@ -316,8 +316,8 @@
   };
 
   #virtualisation.docker.enable = true;
-  virtualisation.virtualbox.host.enable = true;
-  virtualisation.virtualbox.host.enableExtensionPack = true;
+#   virtualisation.virtualbox.host.enable = true;
+#   virtualisation.virtualbox.host.enableExtensionPack = true;
 
   xdg.portal.enable = true;
   xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-xapp pkgs.xdg-desktop-portal-gtk ];
