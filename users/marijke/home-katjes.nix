@@ -1,8 +1,6 @@
 { config, pkgs, ... }:
 
 {
-  # Home Manager needs a bit of information about you and the paths it should
-  # manage.
   home.username = "mstein";
   home.homeDirectory = "/home/mstein";
 
@@ -73,9 +71,10 @@
     pkgs.python313Packages.ipython
     pkgs.uv
 
+   # Rust
+    pkgs.cargo
     pkgs.jetbrains.rust-rover
     pkgs.pkg-config
-    pkgs.rustup
 
     pkgs.jetbrains.webstorm
 
@@ -90,10 +89,10 @@
     pkgs.freetype
     pkgs.freetype.dev
     pkgs.libxkbcommon
-    pkgs.xorg.libX11
-    pkgs.xorg.libXcursor
-    pkgs.xorg.libXi
-    pkgs.xorg.libXrandr
+    pkgs.libX11
+    pkgs.libXcursor
+    pkgs.libXi
+    pkgs.libXrandr
 
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the

@@ -45,6 +45,7 @@
     bluez
     eog
     evince
+    fend
     fcron
     gimp
     gnome-terminal
@@ -76,6 +77,7 @@
 
     # Backup
     pkgs.backintime-qt
+    pkgs.borgbackup
     pkgs.cron
     pkgs.fcron
 
@@ -94,9 +96,9 @@
     libreoffice
 
     # Development
-    gnumake
-    gcc
     fontconfig
+    gcc
+    gnumake
     pkg-config
 
     # FIDO2
