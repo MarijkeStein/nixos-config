@@ -19,32 +19,27 @@
     pkgs.nix-output-monitor
 
     pkgs.autorandr
-    pkgs.borgbackup
-    pkgs.eza
-    pkgs.fend
-    pkgs.nmap
     pkgs.starship
-
     pkgs.devilspie2
     pkgs.espanso
     pkgs.qrencode
     pkgs.xfce.xfconf
 
-    pkgs.adwaita-qt
-    pkgs.adwaita-qt6
-    pkgs.libsForQt5.qt5ct
-    pkgs.kdePackages.kate
-    pkgs.kdePackages.kconfig
-    pkgs.kdePackages.kolourpaint
-    pkgs.kdePackages.konsole
-    pkgs.krita
-    pkgs.kdePackages.okular
-    pkgs.marksman
+#     pkgs.adwaita-qt
+#     pkgs.adwaita-qt6
+#     pkgs.libsForQt5.qt5ct
+#     pkgs.kdePackages.kate
+#     pkgs.kdePackages.kconfig
+#     pkgs.kdePackages.kolourpaint
+#     pkgs.kdePackages.konsole
+#     pkgs.krita
+#     pkgs.kdePackages.okular
+#     pkgs.marksman
 
-    pkgs.tex-fmt
-    pkgs.texliveFull
-    pkgs.ghostscript
-    pkgs.kile
+#     pkgs.tex-fmt
+#     pkgs.texliveFull
+#     pkgs.ghostscript
+#     pkgs.kile
 
     pkgs.corefonts
     pkgs.vista-fonts
@@ -136,7 +131,6 @@
 
   home.sessionVariables = {
     EDITOR = "mcedit";
-    GIT_SSH_COMMAND = "ssh -i ~/.ssh/2025-09-05_mstein-FIDO2";
   };
 
   programs.bash = {

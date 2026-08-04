@@ -196,7 +196,8 @@
   nix.gc = {
     automatic = true;
     dates = "weekly";
-    options = "--delete-older-than 90d";
+    options = "--delete-generations +10";
+#     options = "--delete-older-than 90d";
     persistent = true;
     randomizedDelaySec = "3h";
   };
@@ -280,6 +281,8 @@
     layout = "de";
     variant = "";
   };
+
+  system.copySystemConfiguration = true;
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
