@@ -182,6 +182,7 @@
     bottom
     curl
     eza
+    fastfetch
     file
     git
     gnupg

@@ -21,6 +21,7 @@
     bottom
     curl
     eza
+    fastfetch
     file
     fish
     git
