@@ -50,6 +50,7 @@
     gnomeExtensions.bluetooth-battery-meter
 #    gparted
     keepassxc
+    libinput
     libwebp
     mate-calc
 #    mediainfo
@@ -86,9 +87,22 @@
 #     hyprpaper
 #     hyprlock
 #     rofi
+    alacritty
+    bibata-cursors
+    cava
+    dgop
     dms-shell
+    foot
+    fprintd
+    khal
+    mako
+    matugen
     niri
+    quickshell
+    swaybg
+    waybar
     wayland
+    wlogout
 
 #    # Office and fonts
 #    hyphen
@@ -220,6 +234,8 @@
     la = "eza -ahl";
   };
 
+  programs.niri.enable = true;
+
 #  security.pam.services = {
 #    login.u2fAuth = true;
 #    sudo.u2fAuth = true;
@@ -239,7 +255,14 @@
 
 #  services.autorandr.enable = true;
 
+  services.displayManager.sddm = {
+    enable = true;
+    wayland.enable = true;
+  };
+
 #  services.flatpak.enable = true;
+
+  services.greetd.enable = true;
 
 #   services.k3s = {
 #     enable = false;
@@ -248,6 +271,8 @@
 #   };
 
 #  services.ipp-usb.enable = true;
+
+  services.libinput.enable = true;
 
   services.openssh = {
     enable = true;
@@ -307,7 +332,7 @@
 
   time.timeZone = "Europe/Berlin";
 
-  users.users.marijke = {
+  users.users."marijke" = {
     isNormalUser = true;
     description = "Marijke Stein";
     extraGroups = [ "lp" "networkmanager" "wheel" ];
@@ -321,6 +346,6 @@
 #   virtualisation.virtualbox.host.enable = true;
 #   virtualisation.virtualbox.host.enableExtensionPack = true;
 
-  xdg.portal.enable = true;
-  xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-xapp pkgs.xdg-desktop-portal-gtk ];
+#  xdg.portal.enable = true;
+#  xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-xapp pkgs.xdg-desktop-portal-gtk ];
 }
