@@ -106,6 +106,11 @@
     gnumake
     pkg-config
 
+    # Gleam + Erlang
+    beam29Packages.erlang
+    jetbrains.idea
+    gleam
+
     # FIDO2
     ccid
     nitrokey-udev-rules
