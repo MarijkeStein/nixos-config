@@ -95,6 +95,11 @@
     hyphenDicts.de-de
     libreoffice
 
+    # LaTeX
+    tex-fmt
+    texliveFull
+    ghostscript
+
     # Development
     fontconfig
     gcc
