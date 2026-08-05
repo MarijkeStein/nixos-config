@@ -235,6 +235,10 @@
     };
   };
 
+  security.pki.certificateFiles = [
+    ./hfmdk-eduroam-root.crt
+  ];
+
   security.rtkit.enable = true;
 
   services.autorandr.enable = true;
@@ -283,7 +287,7 @@
     variant = "";
   };
 
-  system.copySystemConfiguration = true;
+  # system.copySystemConfiguration = true;
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
