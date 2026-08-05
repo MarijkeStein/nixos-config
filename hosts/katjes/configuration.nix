@@ -168,6 +168,8 @@
     powerOnBoot = true;
   };
 
+  hardware.nvidia.modesetting.enable = true;
+
 #   hardware.printers = {
 #     ensurePrinters = [
 #       {
@@ -202,7 +204,8 @@
 
   networking.networkmanager.enable = true;
 
-  networking.wireless.enable = true;
+#   conflicts with NetworkManager
+#   networking.wireless.enable = true;
 
   nix = {
     settings = {
@@ -214,8 +217,8 @@
   nix.gc = {
     automatic = true;
     dates = "weekly";
-    options = "--delete-generations +10";
-#     options = "--delete-older-than 90d";
+#     options = "--delete-generations +10";
+    options = "--delete-older-than 90d";
     persistent = true;
     randomizedDelaySec = "3h";
   };
@@ -264,7 +267,15 @@
 
   services.flatpak.enable = true;
 
-  services.greetd.enable = true;
+  services.greetd = {
+    enable = true;
+    settings = {
+      default_session = {
+        command = "${pkgs.greetd.tuigreet}/bin/tuigreet --time --cmd niri";
+        user = "greeter";
+      };
+    };
+  };
 
 #   services.k3s = {
 #     enable = false;
@@ -308,6 +319,8 @@
 #    variant = "";
 #  };
 
+  services.xserver.videoDrivers = [ "nvidia" ];
+
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
   # on your system were taken. It‘s perfectly fine and recommended to leave
@@ -347,5 +360,5 @@
 #   virtualisation.virtualbox.host.enableExtensionPack = true;
 
   xdg.portal.enable = true;
-  xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-xapp pkgs.xdg-desktop-portal-gtk ];
+  xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-xapp pkgs.xdg-desktop-portal-gtk pkgs.xdg-desktop-portal-wlr ];
 }
