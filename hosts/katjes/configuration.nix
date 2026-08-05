@@ -53,6 +53,7 @@
     gnomeExtensions.bluetooth-battery-meter
     gparted
     keepassxc
+    libinput
     libwebp
     mate-calc
     mediainfo
@@ -89,6 +90,22 @@
 #     hyprpaper
 #     hyprlock
 #     rofi
+    alacritty
+    bibata-cursors
+    cava
+    dgop
+    dms-shell
+    foot
+    fprintd
+    khal
+    mako
+    matugen
+    niri
+    quickshell
+    swaybg
+    waybar
+    wayland
+    wlogout
 
     # Office and fonts
     hyphen
@@ -185,7 +202,7 @@
 
   networking.networkmanager.enable = true;
 
-#   networking.wireless.enable = true;
+  networking.wireless.enable = true;
 
   nix = {
     settings = {
@@ -220,6 +237,8 @@
     la = "eza -ahl";
   };
 
+  programs.niri.enable = true;
+
   security.pam.services = {
     login.u2fAuth = true;
     sudo.u2fAuth = true;
@@ -245,6 +264,8 @@
 
   services.flatpak.enable = true;
 
+  services.greetd.enable = true;
+
 #   services.k3s = {
 #     enable = false;
 #     role = "server";
@@ -252,6 +273,8 @@
 #   };
 
   services.ipp-usb.enable = true;
+
+  services.libinput.enable = true;
 
   services.openssh = {
     enable = true;
@@ -277,17 +300,13 @@
 
   services.smartd.enable = true;
 
-  #services.xserver.displayManager.ssdm.enable = true;
-  #services.xserver.displayManager.sddm.wayland.enable = true;
-  services.xserver.enable = true;
-  services.xserver.displayManager.lightdm.enable = true;
-  services.xserver.desktopManager.xfce.enable = true;
-  services.xserver.xkb = {
-    layout = "de";
-    variant = "";
-  };
-
-  # system.copySystemConfiguration = true;
+#  services.xserver.enable = true;
+#  services.xserver.displayManager.lightdm.enable = true;
+#  services.xserver.desktopManager.xfce.enable = true;
+#  services.xserver.xkb = {
+#    layout = "de";
+#    variant = "";
+#  };
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
