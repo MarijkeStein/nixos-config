@@ -118,16 +118,16 @@
     texliveFull
     ghostscript
 
-    # Development
+    # General dev tools
     fontconfig
     gcc
     gnumake
+    just
     pkg-config
 
-    # Gleam + Erlang
-    beam29Packages.erlang
-    jetbrains.idea
-    gleam
+    # Rust dev
+    cargo
+    jetbrains.rust-rover
 
     # FIDO2
     ccid

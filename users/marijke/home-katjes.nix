@@ -66,11 +66,19 @@
     pkgs.python313Packages.ipython
     pkgs.uv
 
-   # Rust
-    pkgs.cargo
-    pkgs.jetbrains.rust-rover
-    pkgs.pkg-config
+    # Gleam dev
+    pkgs.beam28Packages.erlang
+    pkgs.erlang_28
+    pkgs.gleam
+    pkgs.jetbrains.idea
 
+    ## IntelliJ (and probably Rust-Rover don't like to run 'cargo' from a frequently changing HomeManager path)
+#     # Rust dev
+#     pkgs.cargo
+#     pkgs.jetbrains.rust-rover
+#     pkgs.pkg-config
+
+    # Web dev
     pkgs.jetbrains.webstorm
 
     # AnnTracks
