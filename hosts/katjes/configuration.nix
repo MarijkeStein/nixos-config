@@ -168,8 +168,6 @@
     powerOnBoot = true;
   };
 
-  hardware.nvidia.modesetting.enable = true;
-
 #   hardware.printers = {
 #     ensurePrinters = [
 #       {
@@ -267,16 +265,6 @@
 
   services.flatpak.enable = true;
 
-  services.greetd = {
-    enable = true;
-    settings = {
-      default_session = {
-        command = "${pkgs.greetd.tuigreet}/bin/tuigreet --time --cmd niri";
-        user = "greeter";
-      };
-    };
-  };
-
 #   services.k3s = {
 #     enable = false;
 #     role = "server";
@@ -311,15 +299,13 @@
 
   services.smartd.enable = true;
 
-#  services.xserver.enable = true;
-#  services.xserver.displayManager.lightdm.enable = true;
-#  services.xserver.desktopManager.xfce.enable = true;
-#  services.xserver.xkb = {
-#    layout = "de";
-#    variant = "";
-#  };
-
-  services.xserver.videoDrivers = [ "nvidia" ];
+  services.xserver.enable = true;
+  services.xserver.displayManager.lightdm.enable = true;
+  services.xserver.desktopManager.xfce.enable = true;
+  services.xserver.xkb = {                      # also used/needed by Wayland
+    layout = "de";
+    variant = "";
+  };
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
@@ -359,6 +345,9 @@
 #   virtualisation.virtualbox.host.enable = true;
 #   virtualisation.virtualbox.host.enableExtensionPack = true;
 
-  xdg.portal.enable = true;
-  xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-xapp pkgs.xdg-desktop-portal-gtk pkgs.xdg-desktop-portal-wlr ];
+  xdg.portal = {
+    enable = true;
+    extraPortals = [ pkgs.xdg-desktop-portal-gtk pkgs.xdg-desktop-portal-gnome ];
+    config.common.default = "*";
+  };
 }
