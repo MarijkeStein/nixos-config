@@ -128,6 +128,7 @@
     # Rust dev
     cargo
     jetbrains.rust-rover
+    rustup
 
     # FIDO2
     ccid
