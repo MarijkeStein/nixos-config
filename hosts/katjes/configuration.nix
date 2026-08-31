@@ -1,8 +1,7 @@
 { config, pkgs, ... }:
 
 {
-  imports =
-    [
+  imports = [
       ./hardware-configuration.nix
     ];
 
@@ -57,10 +56,12 @@
     libwebp
     mate-calc
     mediainfo
+    meld
     mtpfs
     noto-fonts-color-emoji
     pinentry-gtk2
     pipewire
+    pulseaudio
     system-config-printer
     thunar-volman
     thunderbird
@@ -68,6 +69,7 @@
     v4l-utils
     vlc
     xdg-desktop-portal-gtk              # e.g. Gtk FileChooser used by various tools
+    xfce4-screensaver
 
     # KDE tools
     libsForQt5.qt5ct
@@ -108,9 +110,14 @@
     wlogout
 
     # Office and fonts
+    hunspell
+    hunspellDicts.de_DE
+    hunspellDicts.en_US
     hyphen
     hyphenDicts.de_DE
     hyphenDicts.de-de
+    hyphenDicts.en_US
+    hyphenDicts.en-us
     libreoffice
 
     # LaTeX
@@ -200,7 +207,6 @@
   # networking.firewall.allowedTCPPorts = [ 6443 ];    # Kubernetes
 
   networking.hostName = "katjes";
-
   networking.networkmanager.enable = true;
 
 #   conflicts with NetworkManager
@@ -264,7 +270,11 @@
 
   services.autorandr.enable = true;
 
+  services.blueman.enable = true;
+
   services.flatpak.enable = true;
+
+  services.gvfs.enable = true;
 
 #   services.k3s = {
 #     enable = false;
@@ -281,18 +291,18 @@
     settings.PermitRootLogin = "yes";
   };
 
-  services.printing.enable = true;
-
-  services.pcscd.enable = true;
-
-  services.pulseaudio.enable = false;
-
   services.pipewire = {
     enable = true;
     alsa.enable = true;
     alsa.support32Bit = true;
     pulse.enable = true;
   };
+
+  services.printing.enable = true;
+
+  services.pcscd.enable = true;
+
+  services.pulseaudio.enable = false;
 
   services.resolved.enable = true;               # needed by OpenVPN
 

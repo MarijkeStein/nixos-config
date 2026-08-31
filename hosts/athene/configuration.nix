@@ -29,35 +29,44 @@
     nfs-utils
     ox
     pciutils
+    smartmontools
     tree
     unzip
     usbutils
-    yazi
     wget
     zellij
     zip
 
     # user applications and utilities
+    blueman
     bluez
     eog
     evince
+    fend
+    fcron
     gimp
     gnome-terminal
     gnomeExtensions.bluetooth-battery-meter
+    gparted
     keepassxc
-    mate.mate-calc
+    libinput
+    libwebp
+    mate-calc
+    mediainfo
     meld
     mtpfs
+    noto-fonts-color-emoji
     pinentry-gtk2
     pipewire
     pulseaudio
     system-config-printer
+    thunar-volman
     thunderbird
     totem
+    v4l-utils
     vlc
     xdg-desktop-portal-gtk              # e.g. Gtk FileChooser used by various tools
-    xfce.thunar-volman
-    xfce.xfce4-screensaver
+    xfce4-screensaver
 
     # KDE tools
     libsForQt5.qt5ct
@@ -69,6 +78,7 @@
 
     # Backup
     pkgs.backintime-qt
+    pkgs.borgbackup
     pkgs.cron
     pkgs.fcron
 
@@ -87,7 +97,13 @@
     tex-fmt
     texliveFull
     ghostscript
+
+    # General dev tools
+    fontconfig
+    gcc
     gnumake
+    just
+    pkg-config
   ];
 
   fileSystems."/pub" = {
@@ -129,7 +145,7 @@
   };
 
   networking.hostName = "athene";
-  networking.wireless.enable = false;
+  #networking.wireless.enable = false;
   networking.networkmanager.enable = true;
 
   nix.gc = {
@@ -161,6 +177,8 @@
 
   services.gvfs.enable = true;
 
+  services.libinput.enable = true;
+
   services.openssh = {
     enable = true;
     settings.PermitRootLogin = "yes";
@@ -189,6 +207,8 @@
   services.pulseaudio.enable = false;
 
   services.rpcbind.enable = true;
+
+  services.smartd.enable = true;
 
   services.xserver.enable = true;
   services.xserver.displayManager.lightdm.enable = true;
