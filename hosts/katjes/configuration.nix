@@ -72,11 +72,12 @@
     xfce4-screensaver
 
     # KDE tools
-    libsForQt5.qt5ct
     kdePackages.kate
     kdePackages.kconfig
+    kdePackages.kolourpaint
     kdePackages.konsole
     kdePackages.okular
+    libsForQt5.qt5ct
     marksman
 
     # Backup

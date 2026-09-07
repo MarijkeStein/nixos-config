@@ -68,6 +68,7 @@
     # KDE tools
     kdePackages.kate
     kdePackages.kconfig
+    kdePackages.kolourpaint
     kdePackages.konsole
     kdePackages.okular
     libsForQt5.qt5ct
