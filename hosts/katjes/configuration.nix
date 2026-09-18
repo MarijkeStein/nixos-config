@@ -152,6 +152,7 @@
     nix-index
 
     # Networking AddOn's
+    bindfs
     cifs-utils
     nmap
     samba
