@@ -49,6 +49,7 @@
     gnome-terminal
     gnomeExtensions.bluetooth-battery-meter
 #    gparted
+    imagemagick
     keepassxc
     libinput
     libwebp
