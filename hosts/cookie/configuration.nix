@@ -79,6 +79,7 @@
     pkgs.fcron
 
     # Office and fonts
+    fira-sans
     hyphen
     hyphenDicts.de_DE
     hyphenDicts.de-de
