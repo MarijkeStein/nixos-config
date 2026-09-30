@@ -24,6 +24,7 @@
     pkgs.signal-export
 
     pkgs.beam29Packages.erlang
+    pkgs.claude-code
     pkgs.gitkraken
     pkgs.gleam
     pkgs.jetbrains.pycharm
