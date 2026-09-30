@@ -11,7 +11,7 @@ then
     nix flake update
     nixos-rebuild switch --sudo --flake ./flakes
 else
-    nixos-rebuild switch --use-remote-sudo     # in future release changed to "--sudo"
+    nixos-rebuild switch --sudo
 fi
 
 
