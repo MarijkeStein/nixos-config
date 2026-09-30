@@ -1,0 +1,32 @@
+# sudo borg init --encryption=repokey-blake2 /pub/backup/snapshots/borg/cookie
+# sudo borg key export /pub/backup/snapshots/borg/cookie /pub/backup/LTS/Core/Passwords/borg-cookie.key
+#
+# borgmatic mount --archive latest --mount-point /tmp/restore
+
+
+source_directories:
+    - /home
+
+repositories:
+    - path: /pub/backup/snapshots/borg/cookie
+      label: DE-OFF-01-COOKIE
+
+exclude_caches: true
+exclude_patterns:
+    - '*/.cache'
+
+encryption_passcommand: "cat /root/.borg-passphrase-cookie"
+
+keep_daily: 30
+keep_weekly: 4
+keep_monthly: 60   # 5 years
+keep_yearly: 20
+
+checks:
+  - name: repository
+    frequency: 2 weeks
+  - name: archives
+    frequency: 1 month
+
+check_last: 3
+

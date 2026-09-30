@@ -75,6 +75,7 @@
     # Backup
     pkgs.backintime-qt
     pkgs.borgbackup
+    pkgs.borgmatic
     pkgs.cron
     pkgs.fcron
 
