@@ -10,6 +10,7 @@
       ../../modules/desktop-office.nix
       ../../modules/desktop-latex.nix
       ../../modules/desktop-fonts.nix
+      ../../modules/dev-generic.nix
     ];
 
   boot.loader.systemd-boot.enable = true;
@@ -18,13 +19,6 @@
 
   console.keyMap = "de";
 
-  environment.systemPackages = with pkgs; [
-    # General dev tools
-    gcc
-    gnumake
-    just
-    pkg-config
-  ];
 
   fileSystems."/pub" = {
     device = "192.168.0.250:/Backup";

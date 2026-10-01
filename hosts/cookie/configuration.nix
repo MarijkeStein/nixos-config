@@ -10,6 +10,8 @@
       ../../modules/desktop-office.nix
       ../../modules/desktop-latex.nix
       ../../modules/desktop-fonts.nix
+      ../../modules/dev-generic.nix
+      ../../modules/dev-python.nix
     ];
 
   boot.loader.systemd-boot.enable = true;
@@ -24,13 +26,6 @@
     handbrake
     flac
     vorbis-tools
-
-    # General dev tools
-    claude-code
-    gcc
-    gnumake
-    just
-    pkg-config
 
     # Gleam/Erlang dev
     beam28Packages.erlang

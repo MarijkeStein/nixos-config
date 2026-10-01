@@ -10,6 +10,9 @@
       ../../modules/desktop-office.nix
       ../../modules/desktop-latex.nix
       ../../modules/desktop-fonts.nix
+      ../../modules/dev-generic.nix
+      ../../modules/dev-rust.nix
+      ../../modules/dev-web.nix
     ];
 
   boot.loader.systemd-boot = {
@@ -51,22 +54,6 @@
     ffmpeg
     handbrake
     vorbis-tools
-
-    # General dev tools
-    claude-code
-    claude-monitor
-    gcc
-    gnumake
-    just
-    pkg-config
-
-    # Rust dev
-    cargo
-    jetbrains.rust-rover
-    rustup
-
-    # Web dev
-    jetbrains.webstorm
 
     # FIDO2
     ccid

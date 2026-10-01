@@ -50,12 +50,6 @@
 #    texliveFull
 #    ghostscript
 
-#    # Development
-#    fontconfig
-#    gcc
-#    gnumake
-#    pkg-config
-
 #    # Gleam + Erlang
 #    beam29Packages.erlang
 #    jetbrains.idea

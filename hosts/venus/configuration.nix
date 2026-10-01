@@ -10,6 +10,7 @@
       ../../modules/desktop-office.nix
       ../../modules/desktop-latex.nix
       ../../modules/desktop-fonts.nix
+      ../../modules/dev-generic.nix
     ];
 
   boot.kernelModules = [ "sg" ];
@@ -27,23 +28,6 @@
     flac
     makemkv
     vorbis-tools
-
-    # General dev tools
-    gcc
-    gnumake
-    just
-    pkg-config
-
-#     # Python dev
-#     jetbrains.pycharm
-#     python313
-#     python313Packages.ipython
-#     uv
-
-#     # Rust dev
-#     cargo
-#     jetbrains.rust-rover
-#     rustup
 
     # Scanner support
     (xsane.override { gimpSupport = true; })
