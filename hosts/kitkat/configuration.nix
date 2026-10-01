@@ -78,10 +78,11 @@
 #    marksman
 
 #    # Backup
-#    pkgs.backintime-qt
-#    pkgs.borgbackup
-#    pkgs.cron
-#    pkgs.fcron
+#     pkgs.backintime-qt
+#     pkgs.borgbackup
+#     pkgs.borgmatic
+#     pkgs.cron
+#     pkgs.fcron
 
 #     hyprland
 #     kitty

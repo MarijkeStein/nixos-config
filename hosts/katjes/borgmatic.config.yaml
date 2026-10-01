@@ -2,18 +2,18 @@ source_directories:
     - /home
 
 repositories:
-    - path: /pub/backup/snapshots/borg/cookie
-      label: DE-OFF-01-COOKIE
+    - path: /home/mstein/misc/volumes/pub/backup/snapshots/borg/katjes
+      label: DE-FRA-01-KATJES
 
 exclude_caches: true
 exclude_patterns:
     - '*/.cache'
 
-encryption_passcommand: "cat /root/.borg-passphrase-cookie"
+encryption_passcommand: "cat /root/.borg-passphrase-katjes"
 
-keep_daily: 30
-keep_weekly: 4
-keep_monthly: 60   # 5 years
+keep_daily: 90
+keep_weekly: 52
+keep_monthly: 120   # 10 years
 keep_yearly: 20
 
 checks:

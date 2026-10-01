@@ -1,14 +1,3 @@
-# sudo borg init --encryption=repokey-blake2 /pub/backup/snapshots/borg/venus
-# sudo borg key export /pub/backup/snapshots/borg/venus /pub/backup/LTS/Core/Passwords/borg-venus.key
-#
-# mkdir /etc/borgmatic && cd /etc/borgmatic && ln -s /home/marijke/code/nixos-config/hosts/venus/borgmatic.config.yaml config.yaml && cd
-# cat > /root/.borg-passphrase-venus
-#
-# borgmatic create --verbosity 1
-#
-# borgmatic mount --archive latest --mount-point /tmp/restore
-
-
 source_directories:
     - /home
 
