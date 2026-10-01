@@ -6,6 +6,7 @@
       ./hardware-configuration.nix
       ../../modules/base.nix
       ../../modules/desktop-apps.nix
+      ../../modules/security-fido2.nix
     ];
 
   boot.loader.systemd-boot.enable = true;
@@ -55,13 +56,6 @@
 #    jetbrains.idea
 #    gleam
 
-    # FIDO2
-    ccid
-    nitrokey-udev-rules
-    opensc                                        # provides 'pkcs15-tool'
-    pam_u2f
-    pcsc-tools
-
 #    # Networking AddOn's
 #    cifs-utils
 #    nmap
@@ -73,11 +67,6 @@
 #    k3s
 #    kubernetes-helm
 
-#    # VPN
-#    openssl
-#    openvpn
-#    update-systemd-resolved
-#    update-resolv-conf
   ];
 
 #   environment.variables = {

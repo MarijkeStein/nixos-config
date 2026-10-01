@@ -12,6 +12,7 @@
       ../../modules/desktop-fonts.nix
       ../../modules/dev-generic.nix
       ../../modules/dev-python.nix
+      ../../modules/desktop-media.nix
     ];
 
   boot.loader.systemd-boot.enable = true;
@@ -21,12 +22,6 @@
   console.keyMap = "de";
 
   environment.systemPackages = with pkgs; [
-    # Multimedia
-    cdparanoia
-    handbrake
-    flac
-    vorbis-tools
-
     # Gleam/Erlang dev
     beam28Packages.erlang
     erlang_28

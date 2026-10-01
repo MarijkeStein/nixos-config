@@ -13,6 +13,9 @@
       ../../modules/dev-generic.nix
       ../../modules/dev-rust.nix
       ../../modules/dev-web.nix
+      ../../modules/desktop-media.nix
+      ../../modules/security-fido2.nix
+      ../../modules/network-vpn.nix
     ];
 
   boot.loader.systemd-boot = {
@@ -48,20 +51,6 @@
     wayland
     wlogout
 
-    # Multimedia
-    cdparanoia
-    flac
-    ffmpeg
-    handbrake
-    vorbis-tools
-
-    # FIDO2
-    ccid
-    nitrokey-udev-rules
-    opensc                                        # provides 'pkcs15-tool'
-    pam_u2f
-    pcsc-tools
-
     # Networking AddOn's
     bindfs
     cifs-utils
@@ -74,11 +63,6 @@
 #    k3s
 #    kubernetes-helm
 
-    # VPN
-    openssl
-    openvpn
-    update-systemd-resolved
-    update-resolv-conf
   ];
 
 #   environment.variables = {

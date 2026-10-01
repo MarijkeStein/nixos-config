@@ -11,6 +11,7 @@
       ../../modules/desktop-latex.nix
       ../../modules/desktop-fonts.nix
       ../../modules/dev-generic.nix
+      ../../modules/desktop-media.nix
     ];
 
   boot.kernelModules = [ "sg" ];
@@ -22,13 +23,6 @@
   console.keyMap = "de";
 
   environment.systemPackages = with pkgs; [
-    # Multimedia
-    cdparanoia
-    handbrake
-    flac
-    makemkv
-    vorbis-tools
-
     # Scanner support
     (xsane.override { gimpSupport = true; })
 
