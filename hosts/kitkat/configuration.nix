@@ -68,11 +68,6 @@
     pam_u2f
     pcsc-tools
 
-    # NixOS-AddOn's
-    direnv
-    nix-direnv
-    nix-index
-
 #    # Networking AddOn's
 #    cifs-utils
 #    nmap

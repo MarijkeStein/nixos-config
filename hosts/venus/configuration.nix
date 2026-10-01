@@ -45,11 +45,6 @@
 #     jetbrains.rust-rover
 #     rustup
 
-    # NixOS-AddOn's
-    direnv
-    nix-direnv
-    nix-index
-
     # Scanner support
     (xsane.override { gimpSupport = true; })
 

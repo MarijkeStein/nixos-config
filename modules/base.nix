@@ -5,6 +5,7 @@
     bat
     bottom
     curl
+    direnv
     eza
     fastfetch
     fend
@@ -18,6 +19,8 @@
     mc
     mmv
     nfs-utils
+    nix-direnv
+    nix-index
     ox
     pciutils
     smartmontools

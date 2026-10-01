@@ -46,11 +46,6 @@
 #     # Hexaglot dev
 #     jetbrains.idea
 
-    # NixOS-AddOn's
-    direnv
-    nix-direnv
-    nix-index
-
     # Networking AddOn's
     nmap
     wirelesstools
