@@ -32,6 +32,7 @@
     ox
     pciutils
     smartmontools
+    starship
     tree
     unzip
     usbutils
@@ -92,6 +93,8 @@
     hyphen
     hyphenDicts.de_DE
     hyphenDicts.de-de
+    hyphenDicts.en_US
+    hyphenDicts.en-us
     libreoffice
 
     # LaTeX
@@ -104,11 +107,32 @@
     fontconfig
     noto-fonts-color-emoji
 
+    # Multimedia
+    cdparanoia
+    handbrake
+    flac
+    vorbis-tools
+
     # General dev tools
+    claude-code
     gcc
     gnumake
     just
     pkg-config
+
+    # Gleam/Erlang dev
+    beam28Packages.erlang
+    erlang_28
+    gleam
+
+    # Python dev
+    jetbrains.pycharm
+    python313
+    python313Packages.ipython
+    uv
+
+#     # Hexaglot dev
+#     jetbrains.idea
 
     # NixOS-AddOn's
     direnv

@@ -34,6 +34,7 @@
     ox
     pciutils
     smartmontools
+    starship
     tree
     unzip
     usbutils
@@ -49,6 +50,7 @@
     evince
     fend
     fcron
+    fluffychat
     gimp
     gnome-terminal
     gnomeExtensions.bluetooth-battery-meter
@@ -112,7 +114,7 @@
     wayland
     wlogout
 
-    # Office and fonts
+    # Office
     hunspell
     hunspellDicts.de_DE
     hunspellDicts.en_US
@@ -133,7 +135,16 @@
     fontconfig
     noto-fonts-color-emoji
 
+    # Multimedia
+    cdparanoia
+    flac
+    ffmpeg
+    handbrake
+    vorbis-tools
+
     # General dev tools
+    claude-code
+    claude-monitor
     gcc
     gnumake
     just
@@ -143,6 +154,9 @@
     cargo
     jetbrains.rust-rover
     rustup
+
+    # Web dev
+    jetbrains.webstorm
 
     # FIDO2
     ccid

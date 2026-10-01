@@ -16,70 +16,18 @@
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = [
+    pkgs.autorandr
     pkgs.nix-output-monitor
 
-    pkgs.autorandr
-    pkgs.starship
     pkgs.devilspie2
-    pkgs.espanso
     pkgs.qrencode
-    pkgs.xfce.xfconf
 
-#     pkgs.adwaita-qt
-#     pkgs.adwaita-qt6
-#     pkgs.libsForQt5.qt5ct
-#     pkgs.kdePackages.kate
-#     pkgs.kdePackages.kconfig
-#     pkgs.kdePackages.kolourpaint
-#     pkgs.kdePackages.konsole
-#     pkgs.krita
-#     pkgs.kdePackages.okular
-#     pkgs.marksman
-
-#     pkgs.tex-fmt
-#     pkgs.texliveFull
-#     pkgs.ghostscript
-#     pkgs.kile
-
-    pkgs.corefonts
-    pkgs.vista-fonts
-
-    pkgs.cdparanoia
-    pkgs.flac
-    pkgs.ffmpeg
-    pkgs.imagemagick
-    pkgs.vorbis-tools
+    # Fonts
+    corefonts
+    vista-fonts
 
     pkgs.nextcloud-client
-    pkgs.fluffychat
     pkgs.remmina
-
-    pkgs.claude-code
-    pkgs.claude-monitor
-    pkgs.gitkraken
-    pkgs.gnumake
-    pkgs.just
-    pkgs.meld
-
-    pkgs.jetbrains.pycharm
-    pkgs.python313
-    pkgs.python313Packages.ipython
-    pkgs.uv
-
-    # Gleam dev
-    pkgs.beam28Packages.erlang
-    pkgs.erlang_28
-    pkgs.gleam
-    pkgs.jetbrains.idea
-
-    ## IntelliJ (and probably Rust-Rover don't like to run 'cargo' from a frequently changing HomeManager path)
-#     # Rust dev
-#     pkgs.cargo
-#     pkgs.jetbrains.rust-rover
-#     pkgs.pkg-config
-
-    # Web dev
-    pkgs.jetbrains.webstorm
 
     # AnnTracks
     pkgs.mesa

@@ -1,10 +1,8 @@
 { config, pkgs, ... }:
 
 {
-  # Home Manager needs a bit of information about you and the paths it should
-  # manage.
-  home.username = "marijke";
   home.homeDirectory = "/home/marijke";
+  home.username = "marijke";
 
   # This value determines the Home Manager release that your configuration is
   # compatible with. This helps avoid breakage when a new Home Manager release
@@ -15,9 +13,8 @@
   # release notes.
   home.stateVersion = "25.05"; # Please read the comment before changing.
 
-  # The home.packages option allows you to install Nix packages into your
-  # environment.
   home.packages = [
+    makemkv
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
@@ -55,9 +52,12 @@
         co = "checkout";
         st = "status";
       };
+      commit.gpgsign = "false";
       core.editor = "mcedit";
       init.defaultBranch = "main";
       push.autoSetupRemote = true;
+      signing.format = "openpgp";
+      signing.signByDefault = false;
     };
   };
 
@@ -87,12 +87,11 @@
 
   programs.starship = {
     enable = true;
-    enableBashIntegration = true;
+    enableFishIntegration = true;
   };
 
   programs.zellij = {
     enable = true;
-    enableBashIntegration = true;
     enableFishIntegration = true;
   };
 
@@ -101,8 +100,13 @@
   #services.flatpak.enable = true;
   #xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-xapp ];
 
-  services.gpg-agent.enable = true;
-  services.gpg-agent.pinentry.package = pkgs.pinentry-gtk2;
+  services.gpg-agent = {
+    defaultCacheTtl = 30000;
+    enable = true;
+    enableBashIntegration = true;
+    enableFishIntegration = true;
+    pinentry.package = pkgs.pinentry-gtk2;
+  };
 
   gtk.gtk4.theme = null;
   gtk.enable = true;

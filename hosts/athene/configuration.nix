@@ -31,6 +31,7 @@
     ox
     pciutils
     smartmontools
+    starship
     tree
     unzip
     usbutils

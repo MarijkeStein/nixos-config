@@ -15,25 +15,7 @@
 
   home.packages = [
     pkgs.espanso
-    pkgs.xfce.xfconf
-
-    pkgs.cdparanoia
-    pkgs.flac
-    pkgs.vorbis-tools
-
     pkgs.signal-export
-
-    pkgs.beam29Packages.erlang
-    pkgs.claude-code
-    pkgs.gitkraken
-    pkgs.gleam
-    pkgs.jetbrains.pycharm
-    pkgs.python313
-    pkgs.python313Packages.ipython
-    pkgs.rustup
-    pkgs.starship
-    pkgs.uv
-
 
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the
@@ -101,9 +83,37 @@
     };
   };
 
+  programs.ssh = {
+    enable = true;
+    enableDefaultConfig = false;   # defaults will be removed in future release and get replaced by "*" (see below)
+    settings = {
+      "github.com" = {
+        Hostname = "github.com";
+        User = "git";
+        IdentityFile = "~/.ssh/Marijke2025-GitHub";
+      };
+      "*" = {
+        ForwardAgent = false;
+        AddKeysToAgent = "no";
+        Compression = false;
+        ServerAliveInterval = 0;
+        ServerAliveCountMax = 3;
+        HashKnownHosts = false;
+        UserKnownHostsFile = "~/.ssh/known_hosts";
+        ControlMaster = "no";
+        ControlPath = "~/.ssh/master-%r@%n:%p";
+        ControlPersist = "no";
+      };
+    };
+  };
+
   programs.starship = {
     enable = true;
-    enableBashIntegration = true;
+    enableFishIntegration = true;
+  };
+
+  programs.zellij = {
+    enable = true;
     enableFishIntegration = true;
   };
 
@@ -120,6 +130,7 @@
     pinentry.package = pkgs.pinentry-gtk2;
   };
 
+  gtk.gtk4.theme = null;
   gtk.enable = true;
   gtk.theme.name = "Adwaita-dark";
 
