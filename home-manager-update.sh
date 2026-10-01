@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
 set -euxo pipefail
 
@@ -8,9 +8,9 @@ nix-channel --update
 
 if [[ -d "flakes" ]]
 then
-    exec home-manager switch --extra-experimental-features flakes
+    exec home-manager switch -b backup --extra-experimental-features flakes
 else
-    exec home-manager switch
+    exec home-manager switch -b backup
 fi
 
 
