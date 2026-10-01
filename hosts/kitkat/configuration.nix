@@ -15,13 +15,6 @@
   console.keyMap = "de";
 
   environment.systemPackages = with pkgs; [
-#    # Backup
-#     pkgs.backintime-qt
-#     pkgs.borgbackup
-#     pkgs.borgmatic
-#     pkgs.cron
-#     pkgs.fcron
-
 #     hyprland
 #     kitty
 #     waybar

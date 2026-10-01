@@ -6,6 +6,10 @@
       ../../modules/base.nix
       ../../modules/desktop-apps.nix
       ../../modules/desktop-kde.nix
+      ../../modules/backup.nix
+      ../../modules/desktop-office.nix
+      ../../modules/desktop-latex.nix
+      ../../modules/desktop-fonts.nix
     ];
 
   boot.loader.systemd-boot.enable = true;
@@ -15,31 +19,7 @@
   console.keyMap = "de";
 
   environment.systemPackages = with pkgs; [
-    # Backup
-    pkgs.backintime-qt
-    pkgs.borgbackup
-    pkgs.borgmatic
-    pkgs.cron
-    pkgs.fcron
-
-    # Office and fonts
-    hunspell
-    hunspellDicts.de_DE
-    hunspellDicts.en_US
-    hyphen
-    hyphenDicts.de_DE
-    hyphenDicts.de-de
-    hyphenDicts.en_US
-    hyphenDicts.en-us
-    libreoffice
-
-    # LaTeX
-    tex-fmt
-    texliveFull
-    ghostscript
-
     # General dev tools
-    fontconfig
     gcc
     gnumake
     just

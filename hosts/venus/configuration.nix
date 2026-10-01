@@ -6,6 +6,10 @@
       ../../modules/base.nix
       ../../modules/desktop-apps.nix
       ../../modules/desktop-kde.nix
+      ../../modules/backup.nix
+      ../../modules/desktop-office.nix
+      ../../modules/desktop-latex.nix
+      ../../modules/desktop-fonts.nix
     ];
 
   boot.kernelModules = [ "sg" ];
@@ -17,25 +21,6 @@
   console.keyMap = "de";
 
   environment.systemPackages = with pkgs; [
-    # Backup
-    backintime-qt
-    borgbackup
-    borgmatic
-    cron
-    fcron
-
-    # Office
-    hunspell
-    hunspellDicts.de_DE
-    hunspellDicts.en_US
-    hyphen
-    hyphenDicts.de_DE
-    hyphenDicts.de-de
-    hyphenDicts.en_US
-    hyphenDicts.en-us
-    libreoffice
-    nerd-fonts.jetbrains-mono
-
     # Multimedia
     cdparanoia
     handbrake
@@ -44,7 +29,6 @@
     vorbis-tools
 
     # General dev tools
-    fontconfig
     gcc
     gnumake
     just
@@ -60,10 +44,6 @@
 #     cargo
 #     jetbrains.rust-rover
 #     rustup
-
-    # LaTeX
-    tex-fmt
-    texliveFull
 
     # NixOS-AddOn's
     direnv

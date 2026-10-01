@@ -6,6 +6,9 @@
       ../../modules/base.nix
       ../../modules/desktop-apps.nix
       ../../modules/desktop-kde.nix
+      ../../modules/backup.nix
+      ../../modules/desktop-office.nix
+      ../../modules/desktop-fonts.nix
     ];
 
   boot.blacklistedKernelModules = [ "nouveau" ];
@@ -18,27 +21,6 @@
   environment.sessionVariables.NVD_BACKEND = "direct";
 
   environment.systemPackages = with pkgs; [
-    # Backup
-    backintime-qt
-    borgbackup
-    borgmatic
-    cron
-    fcron
-
-    # Office
-    hunspell
-    hunspellDicts.de_DE
-    hunspellDicts.en_US
-    hyphen
-    hyphenDicts.de_DE
-    hyphenDicts.de-de
-    hyphenDicts.en_US
-    hyphenDicts.en-us
-    libreoffice
-
-    # Fonts
-    nerd-fonts.jetbrains-mono
-
     # Burn-in tests
     memtest_vulkan
     memtester
