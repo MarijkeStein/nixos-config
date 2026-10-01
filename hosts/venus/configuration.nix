@@ -3,6 +3,7 @@
 {
   imports = [
       ./hardware-configuration.nix
+      ../../modules/base.nix
     ];
 
   boot.kernelModules = [ "sg" ];
@@ -14,33 +15,6 @@
   console.keyMap = "de";
 
   environment.systemPackages = with pkgs; [
-    # base utilities
-    bat
-    bottom
-    curl
-    eza
-    fastfetch
-    file
-    fish
-    git
-    gnupg
-    helix
-    htop
-    killall
-    mc
-    mmv
-    nfs-utils
-    ox
-    pciutils
-    smartmontools
-    starship
-    tree
-    unzip
-    usbutils
-    wget
-    zellij
-    zip
-
     # user applications and utilities
     alacritty
     blueman
