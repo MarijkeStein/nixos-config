@@ -186,6 +186,7 @@
     file
     git
     gnupg
+    helix
     htop
     killall
     mc

@@ -23,6 +23,7 @@
     fish
     git
     gnupg
+    helix
     htop
     killall
     mc
