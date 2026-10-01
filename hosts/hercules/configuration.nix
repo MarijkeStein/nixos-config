@@ -201,6 +201,7 @@
     zellij
     zip
 
+    alacritty
     bluez
     eog
     evince

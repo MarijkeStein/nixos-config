@@ -42,6 +42,7 @@
     zip
 
     # user applications and utilities
+    alacritty
     blueman
     bluez
     eog
@@ -96,7 +97,6 @@
 #     hyprpaper
 #     hyprlock
 #     rofi
-    alacritty
     bibata-cursors
     cava
     dgop

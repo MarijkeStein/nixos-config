@@ -42,6 +42,7 @@
     zip
 
     # user applications and utilities
+    alacritty
     blueman
     bluez
     eog
