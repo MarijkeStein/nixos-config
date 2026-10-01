@@ -5,6 +5,7 @@
     [
       ./hardware-configuration.nix
       ../../modules/base.nix
+      ../../modules/desktop-apps.nix
     ];
 
   boot.loader.systemd-boot.enable = true;
@@ -14,36 +15,6 @@
   console.keyMap = "de";
 
   environment.systemPackages = with pkgs; [
-    # user applications and utilities
-    alacritty
-    blueman
-    bluez
-    eog
-    evince
-    fend
-    fcron
-#    gimp
-    gnome-terminal
-    gnomeExtensions.bluetooth-battery-meter
-#    gparted
-    imagemagick
-    keepassxc
-    libinput
-    libwebp
-    mate-calc
-#    mediainfo
-#    mtpfs
-    noto-fonts-color-emoji
-    pinentry-gtk2
-    pipewire
-    system-config-printer
-    thunar-volman
-#    thunderbird
-#    totem
-#    v4l-utils
-#    vlc
-    xdg-desktop-portal-gtk              # e.g. Gtk FileChooser used by various tools
-
 #    # KDE tools
 #    kdePackages.kate
 #    kdePackages.kconfig
