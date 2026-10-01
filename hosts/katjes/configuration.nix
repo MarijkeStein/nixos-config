@@ -61,7 +61,6 @@
     mediainfo
     meld
     mtpfs
-    noto-fonts-color-emoji
     pinentry-gtk2
     pipewire
     pulseaudio
@@ -129,8 +128,12 @@
     texliveFull
     ghostscript
 
-    # General dev tools
+    # Fonts
+    fira-sans
     fontconfig
+    noto-fonts-color-emoji
+
+    # General dev tools
     gcc
     gnumake
     just

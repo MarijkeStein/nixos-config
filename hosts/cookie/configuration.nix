@@ -45,6 +45,7 @@
     bluez
     eog
     evince
+    fend
     fcron
     gimp
     gnome-terminal
@@ -54,6 +55,8 @@
     keepassxc
     libwebp
     mate-calc
+    mediainfo
+    meld
     mtpfs
     pinentry-gtk2
     pipewire
@@ -62,6 +65,7 @@
     thunar-volman
     thunderbird
     totem
+    v4l-utils
     vlc
     xdg-desktop-portal-gtk              # e.g. Gtk FileChooser used by various tools
 
@@ -81,23 +85,30 @@
     pkgs.cron
     pkgs.fcron
 
-    # Office and fonts
-    fira-sans
+    # Office
+    hunspell
+    hunspellDicts.de_DE
+    hunspellDicts.en_US
     hyphen
     hyphenDicts.de_DE
     hyphenDicts.de-de
     libreoffice
 
-    # Development
-    gcc
-    fontconfig
-    pkg-config
-    gnumake
-    just
-
     # LaTeX
     tex-fmt
     texliveFull
+    ghostscript
+
+    # Fonts
+    fira-sans
+    fontconfig
+    noto-fonts-color-emoji
+
+    # General dev tools
+    gcc
+    gnumake
+    just
+    pkg-config
 
     # NixOS-AddOn's
     direnv
@@ -166,6 +177,7 @@
   nix.gc = {
     automatic = true;
     dates = "weekly";
+#     options = "--delete-generations +10";
     options = "--delete-older-than 90d";
     persistent = true;
     randomizedDelaySec = "3h";
@@ -291,7 +303,10 @@
     ];
   };
 
-  xdg.portal.enable = true;
-  xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-xapp pkgs.xdg-desktop-portal-gtk ];
+  xdg.portal = {
+    enable = true;
+    extraPortals = [ pkgs.xdg-desktop-portal-gtk pkgs.xdg-desktop-portal-gnome ];
+    config.common.default = "*";
+  };
 }
 
