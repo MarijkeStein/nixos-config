@@ -2,10 +2,8 @@
 
 {
   environment.systemPackages = with pkgs; [
-    cdparanoia
-    ffmpeg
-    flac
-    handbrake
-    vorbis-tools
+    docker
   ];
+
+  virtualisation.docker.enable = true;
 }

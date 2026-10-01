@@ -57,17 +57,8 @@
     nmap
     samba
     wirelesstools
-
-    # Virtualization
-#    docker
-#    k3s
-#    kubernetes-helm
-
   ];
 
-#   environment.variables = {
-#     KUBECONFIG = "/etc/rancher/k3s/k3s.yaml";
-#   };
 
   hardware.bluetooth = {
     enable = true;
@@ -102,7 +93,6 @@
   };
 
   # networking.firewall.enable = false;
-  # networking.firewall.allowedTCPPorts = [ 6443 ];    # Kubernetes
 
   networking.hostName = "katjes";
   networking.networkmanager.enable = true;
@@ -174,11 +164,6 @@
 
   services.gvfs.enable = true;
 
-#   services.k3s = {
-#     enable = false;
-#     role = "server";
-#     extraFlags = "--write-kubeconfig-mode 644";    # readable by users in the 'wheel' group
-#   };
 
   services.ipp-usb.enable = true;
 
@@ -247,7 +232,6 @@
     shell = pkgs.fish;
   };
 
-  #virtualisation.docker.enable = true;
 #   virtualisation.virtualbox.host.enable = true;
 #   virtualisation.virtualbox.host.enableExtensionPack = true;
 

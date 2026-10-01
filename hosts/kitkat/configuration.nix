@@ -39,39 +39,7 @@
     waybar
     wayland
     wlogout
-
-#    # Office and fonts
-#    hyphen
-#    hyphenDicts.de_DE
-#    hyphenDicts.de-de
-#    libreoffice
-
-#    # LaTeX
-#    tex-fmt
-#    texliveFull
-#    ghostscript
-
-#    # Gleam + Erlang
-#    beam29Packages.erlang
-#    jetbrains.idea
-#    gleam
-
-#    # Networking AddOn's
-#    cifs-utils
-#    nmap
-#    samba
-#    wirelesstools
-
-#    # Virtualization
-#    docker
-#    k3s
-#    kubernetes-helm
-
   ];
-
-#   environment.variables = {
-#     KUBECONFIG = "/etc/rancher/k3s/k3s.yaml";
-#   };
 
   hardware.bluetooth = {
     enable = true;
@@ -104,9 +72,6 @@
     LC_TELEPHONE = "de_DE.UTF-8";
     LC_TIME = "de_DE.UTF-8";
   };
-
-  # networking.firewall.enable = false;
-  # networking.firewall.allowedTCPPorts = [ 6443 ];    # Kubernetes
 
   networking.hostName = "kitkat";
 
@@ -176,12 +141,6 @@
 #  services.flatpak.enable = true;
 
   services.greetd.enable = true;
-
-#   services.k3s = {
-#     enable = false;
-#     role = "server";
-#     extraFlags = "--write-kubeconfig-mode 644";    # readable by users in the 'wheel' group
-#   };
 
 #  services.ipp-usb.enable = true;
 
@@ -255,7 +214,7 @@
     shell = pkgs.fish;
   };
 
-#   virtualisation.docker.enable = true;
+
 #   virtualisation.virtualbox.host.enable = true;
 #   virtualisation.virtualbox.host.enableExtensionPack = true;
 

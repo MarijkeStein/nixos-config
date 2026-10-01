@@ -27,6 +27,7 @@
     (xsane.override { gimpSupport = true; })
 
     # Unfree standalone applications
+    makemkv
     ungoogled-chromium
   ];
 
