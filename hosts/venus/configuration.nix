@@ -33,6 +33,7 @@
     ox
     pciutils
     smartmontools
+    starship
     tree
     unzip
     usbutils
@@ -44,6 +45,7 @@
     blueman
     bluez
     eog
+    espanso
     evince
     fcron
     gimp
@@ -53,20 +55,22 @@
     imagemagick
     keepassxc
     libwebp
-    mate.mate-calc
+    mate-calc
     mtpfs
     pinentry-gtk2
     pipewire
     pulseaudio
     system-config-printer
+    thunar-volman
     thunderbird
     totem
     v4l-utils
     vlc
     xdg-desktop-portal-gtk              # e.g. Gtk FileChooser used by various tools
-    xfce.thunar-volman
+    xfconf
 
     # KDE tools
+    bash-language-server
     kdePackages.kate
     kdePackages.kconfig
     kdePackages.kolourpaint
@@ -76,22 +80,44 @@
     marksman
 
     # Backup
-    pkgs.backintime-qt
-    pkgs.cron
-    pkgs.fcron
+    backintime-qt
+    borgbackup
+    borgmatic
+    cron
+    fcron
 
     # Office and fonts
     hyphen
     hyphenDicts.de_DE
     hyphenDicts.de-de
     libreoffice
+    nerd-fonts.jetbrains-mono
 
-    # Development
-    gcc
+    # Multimedia
+    cdparanoia
+    handbrake
+    flac
+    makemkv
+    vorbis-tools
+
+    # General dev tools
     fontconfig
-    pkg-config
+    gcc
     gnumake
     just
+    meld
+    pkg-config
+
+#     # Python dev
+#     jetbrains.pycharm
+#     python313
+#     python313Packages.ipython
+#     uv
+
+#     # Rust dev
+#     cargo
+#     jetbrains.rust-rover
+#     rustup
 
     # LaTeX
     tex-fmt

@@ -18,53 +18,6 @@
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = [
-    # # Adds the 'hello' command to your environment. It prints a friendly
-    # # "Hello, world!" when run.
-
-    pkgs.borgbackup
-    pkgs.espanso
-    pkgs.xfce.xfconf
-
-    pkgs.libsForQt5.qt5ct
-    pkgs.kdePackages.kate
-    pkgs.kdePackages.kconfig
-    pkgs.kdePackages.konsole
-    pkgs.kdePackages.okular
-    pkgs.marksman
-
-    #pkgs.corefonts
-    #pkgs.vistafonts
-
-    pkgs.cdparanoia
-    pkgs.handbrake
-    pkgs.makemkv
-    pkgs.flac
-    pkgs.vorbis-tools
-
-    #pkgs.fluffychat
-
-    pkgs.gitkraken
-    #pkgs.jetbrains.pycharm
-    pkgs.meld
-    pkgs.python313
-    pkgs.python313Packages.ipython
-    pkgs.rustup
-    pkgs.starship
-    pkgs.uv
-
-
-    # # It is sometimes useful to fine-tune packages, for example, by applying
-    # # overrides. You can do that directly here, just don't forget the
-    # # parentheses. Maybe you want to install Nerd Fonts with a limited number of
-    # # fonts?
-    # (pkgs.nerdfonts.override { fonts = [ "FantasqueSansMono" ]; })
-
-    # # You can also create simple shell scripts directly inside your
-    # # configuration. For example, this adds a command 'my-hello' to your
-    # # environment:
-    # (pkgs.writeShellScriptBin "my-hello" ''
-    #   echo "Hello, ${config.home.username}!"
-    # '')
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
@@ -113,6 +66,11 @@
     enableBashIntegration = true;
   };
 
+  programs.zellij = {
+    enable = true;
+    enableBashIntegration = true;
+    enableFishIntegration = true;
+  };
 
   # Flatpak:
   #xdg.portal.enable = true;
