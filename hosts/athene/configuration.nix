@@ -5,6 +5,7 @@
       ./hardware-configuration.nix
       ../../modules/base.nix
       ../../modules/desktop-apps.nix
+      ../../modules/desktop-kde.nix
     ];
 
   boot.loader.systemd-boot.enable = true;
@@ -14,15 +15,6 @@
   console.keyMap = "de";
 
   environment.systemPackages = with pkgs; [
-    # KDE tools
-    kdePackages.kate
-    kdePackages.kconfig
-    kdePackages.kolourpaint
-    kdePackages.konsole
-    kdePackages.okular
-    libsForQt5.qt5ct
-    marksman
-
     # Backup
     pkgs.backintime-qt
     pkgs.borgbackup

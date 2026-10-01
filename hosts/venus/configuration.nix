@@ -5,6 +5,7 @@
       ./hardware-configuration.nix
       ../../modules/base.nix
       ../../modules/desktop-apps.nix
+      ../../modules/desktop-kde.nix
     ];
 
   boot.kernelModules = [ "sg" ];
@@ -16,16 +17,6 @@
   console.keyMap = "de";
 
   environment.systemPackages = with pkgs; [
-    # KDE tools
-    bash-language-server
-    kdePackages.kate
-    kdePackages.kconfig
-    kdePackages.kolourpaint
-    kdePackages.konsole
-    kdePackages.okular
-    libsForQt5.qt5ct
-    marksman
-
     # Backup
     backintime-qt
     borgbackup
