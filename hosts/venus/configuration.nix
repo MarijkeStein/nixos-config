@@ -1,8 +1,7 @@
 { config, pkgs, ... }:
 
 {
-  imports =
-    [
+  imports = [
       ./hardware-configuration.nix
     ];
 
@@ -25,6 +24,7 @@
     fish
     git
     gnupg
+    helix
     htop
     killall
     mc
@@ -48,15 +48,20 @@
     eog
     espanso
     evince
+    fend
     fcron
+    fluffychat
     gimp
     gnome-terminal
     gnomeExtensions.bluetooth-battery-meter
     gparted
     imagemagick
     keepassxc
+    libinput
     libwebp
     mate-calc
+    mediainfo
+    meld
     mtpfs
     pinentry-gtk2
     pipewire
@@ -87,10 +92,15 @@
     cron
     fcron
 
-    # Office and fonts
+    # Office
+    hunspell
+    hunspellDicts.de_DE
+    hunspellDicts.en_US
     hyphen
     hyphenDicts.de_DE
     hyphenDicts.de-de
+    hyphenDicts.en_US
+    hyphenDicts.en-us
     libreoffice
     nerd-fonts.jetbrains-mono
 
@@ -106,7 +116,6 @@
     gcc
     gnumake
     just
-    meld
     pkg-config
 
 #     # Python dev
@@ -132,8 +141,7 @@
     # Scanner support
     (xsane.override { gimpSupport = true; })
 
-
-    # Unfree software
+    # Unfree standalone applications
     ungoogled-chromium
   ];
 

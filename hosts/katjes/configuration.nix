@@ -335,7 +335,7 @@
   services.xserver.enable = true;
   services.xserver.displayManager.lightdm.enable = true;
   services.xserver.desktopManager.xfce.enable = true;
-  services.xserver.xkb = {                      # also used/needed by Wayland
+  services.xserver.xkb = {
     layout = "de";
     variant = "";
   };
@@ -368,9 +368,6 @@
     isNormalUser = true;
     description = "Marijke Stein";
     extraGroups = [ "docker" "lp" "networkmanager" "vboxusers" "wheel" ];
-    packages = with pkgs; [
-    #  thunderbird
-    ];
     shell = pkgs.fish;
   };
 

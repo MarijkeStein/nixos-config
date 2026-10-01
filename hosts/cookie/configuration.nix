@@ -1,8 +1,7 @@
 { config, pkgs, ... }:
 
 {
-  imports =
-    [
+  imports = [
       ./hardware-configuration.nix
     ];
 
@@ -48,12 +47,14 @@
     evince
     fend
     fcron
+    fluffychat
     gimp
     gnome-terminal
     gnomeExtensions.bluetooth-battery-meter
     gparted
     imagemagick
     keepassxc
+    libinput
     libwebp
     mate-calc
     mediainfo
@@ -188,7 +189,7 @@
     LC_TIME = "de_DE.UTF-8";
   };
 
-  networking.hostName = "cookie"; # Define your hostname.
+  networking.hostName = "cookie";
   networking.networkmanager.enable = true;
 
   nix = {
@@ -322,9 +323,6 @@
     description = "Marijke Stein";
     extraGroups = [ "lp" "networkmanager" "wheel" ];
     shell = pkgs.fish;
-    packages = with pkgs; [
-    #  thunderbird
-    ];
   };
 
   xdg.portal = {
