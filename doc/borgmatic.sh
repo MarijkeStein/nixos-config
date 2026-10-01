@@ -9,8 +9,9 @@ export KEY_PATH="/pub/backup/LTS/Core/Passwords/borg-${HOSTNAME}.key"
 mkdir "${REPO_PATH}"
 chmod 0700 "${REPO_PATH}"
 
-sudo borg init --encryption=repokey-blake2 "${REPO_PATH}"
-sudo borg key export "${KEY_PATH}"
+borg init --encryption=repokey-blake2 "${REPO_PATH}"
+bat "${KEY_PATH}"
+borg key export "${REPO_PATH}" > "${KEY_PATH}"
 
 mkdir /etc/borgmatic
 cd /etc/borgmatic
