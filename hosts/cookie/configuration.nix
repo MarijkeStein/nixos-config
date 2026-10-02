@@ -11,6 +11,7 @@
       ../../modules/desktop-latex.nix
       ../../modules/desktop-fonts.nix
       ../../modules/dev-generic.nix
+      ../../modules/dev-gleam.nix
       ../../modules/dev-python.nix
       ../../modules/desktop-media.nix
     ];
@@ -22,11 +23,6 @@
   console.keyMap = "de";
 
   environment.systemPackages = with pkgs; [
-    # Gleam/Erlang dev
-    beam28Packages.erlang
-    erlang_28
-    gleam
-
     # Python dev
     jetbrains.pycharm
     python313
