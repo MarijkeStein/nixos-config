@@ -10,14 +10,12 @@
       ../../modules/desktop-latex.nix
       ../../modules/desktop-office.nix
       ../../modules/dev-generic.nix
+      ../../modules/lang-de.nix
     ];
 
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
   boot.supportedFilesystems = [ "nfs" ];
-
-  console.keyMap = "de";
-
 
   fileSystems."/pub" = {
     device = "192.168.0.250:/Backup";
@@ -45,17 +43,6 @@
   };
 
   i18n.defaultLocale = "de_DE.UTF-8";
-  i18n.extraLocaleSettings = {
-    LC_ADDRESS = "de_DE.UTF-8";
-    LC_IDENTIFICATION = "de_DE.UTF-8";
-    LC_MEASUREMENT = "de_DE.UTF-8";
-    LC_MONETARY = "de_DE.UTF-8";
-    LC_NAME = "de_DE.UTF-8";
-    LC_NUMERIC = "de_DE.UTF-8";
-    LC_PAPER = "de_DE.UTF-8";
-    LC_TELEPHONE = "de_DE.UTF-8";
-    LC_TIME = "de_DE.UTF-8";
-  };
 
   networking.hostName = "athene";
   #networking.wireless.enable = false;

@@ -11,6 +11,7 @@
       ../../modules/desktop-media.nix
       ../../modules/desktop-office.nix
       ../../modules/dev-generic.nix
+      ../../modules/lang-de.nix
     ];
 
   boot.kernelModules = [ "sg" ];
@@ -18,8 +19,6 @@
   boot.loader.grub.device = "/dev/sda";
   boot.loader.grub.useOSProber = true;
   boot.supportedFilesystems = [ "nfs" ];
-
-  console.keyMap = "de";
 
   environment.systemPackages = with pkgs; [
     # Scanner support
@@ -64,17 +63,6 @@
   hardware.sane.extraBackends = [ pkgs.sane-airscan ];
 
   i18n.defaultLocale = "de_DE.UTF-8";
-  i18n.extraLocaleSettings = {
-    LC_ADDRESS = "de_DE.UTF-8";
-    LC_IDENTIFICATION = "de_DE.UTF-8";
-    LC_MEASUREMENT = "de_DE.UTF-8";
-    LC_MONETARY = "de_DE.UTF-8";
-    LC_NAME = "de_DE.UTF-8";
-    LC_NUMERIC = "de_DE.UTF-8";
-    LC_PAPER = "de_DE.UTF-8";
-    LC_TELEPHONE = "de_DE.UTF-8";
-    LC_TIME = "de_DE.UTF-8";
-  };
 
   networking.hostName = "venus";
   networking.networkmanager.enable = true;
