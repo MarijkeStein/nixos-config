@@ -5,10 +5,9 @@
       ./hardware-configuration.nix
       ../../modules/base.nix
       ../../modules/desktop-apps.nix
-      ../../modules/desktop-kde.nix
-      ../../modules/backup.nix
-      ../../modules/desktop-office.nix
       ../../modules/desktop-fonts.nix
+      ../../modules/desktop-kde.nix
+      ../../modules/desktop-office.nix
     ];
 
   boot.blacklistedKernelModules = [ "nouveau" ];

@@ -3,6 +3,8 @@
 {
   environment.systemPackages = with pkgs; [
     bat
+    borgbackup
+    borgmatic
     bottom
     curl
     direnv

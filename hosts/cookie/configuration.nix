@@ -5,15 +5,14 @@
       ./hardware-configuration.nix
       ../../modules/base.nix
       ../../modules/desktop-apps.nix
-      ../../modules/desktop-kde.nix
-      ../../modules/backup.nix
-      ../../modules/desktop-office.nix
-      ../../modules/desktop-latex.nix
       ../../modules/desktop-fonts.nix
+      ../../modules/desktop-kde.nix
+      ../../modules/desktop-latex.nix
+      ../../modules/desktop-media.nix
+      ../../modules/desktop-office.nix
       ../../modules/dev-generic.nix
       ../../modules/dev-gleam.nix
       ../../modules/dev-python.nix
-      ../../modules/desktop-media.nix
     ];
 
   boot.loader.systemd-boot.enable = true;

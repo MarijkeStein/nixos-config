@@ -5,11 +5,10 @@
       ./hardware-configuration.nix
       ../../modules/base.nix
       ../../modules/desktop-apps.nix
-      ../../modules/desktop-kde.nix
-      ../../modules/backup.nix
-      ../../modules/desktop-office.nix
-      ../../modules/desktop-latex.nix
       ../../modules/desktop-fonts.nix
+      ../../modules/desktop-kde.nix
+      ../../modules/desktop-latex.nix
+      ../../modules/desktop-office.nix
       ../../modules/dev-generic.nix
     ];
 
