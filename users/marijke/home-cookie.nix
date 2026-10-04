@@ -117,11 +117,6 @@
     enableFishIntegration = true;
   };
 
-  # Flatpak:
-  #xdg.portal.enable = true;
-  #services.flatpak.enable = true;
-  #xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-xapp ];
-
   services.gpg-agent = {
     defaultCacheTtl = 30000;
     enable = true;

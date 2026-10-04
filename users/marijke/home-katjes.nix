@@ -13,8 +13,6 @@
   # release notes.
   home.stateVersion = "25.05"; # Please read the comment before changing.
 
-  # The home.packages option allows you to install Nix packages into your
-  # environment.
   home.packages = [
     pkgs.autorandr
     pkgs.nix-output-monitor
@@ -23,8 +21,8 @@
     pkgs.qrencode
 
     # Fonts
-    corefonts
-    vista-fonts
+    pkgs.corefonts
+    pkgs.vista-fonts
 
     pkgs.nextcloud-client
     pkgs.remmina
@@ -57,12 +55,6 @@
     # (pkgs.writeShellScriptBin "my-hello" ''
     #   echo "Hello, ${config.home.username}!"
     # '')
-  ];
-
-
-  nixpkgs.config.permittedInsecurePackages = [
-    "fluffychat-linux-1.27.0"
-    "olm-3.2.16"
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
@@ -108,18 +100,52 @@
         co = "checkout";
         st = "status";
       };
-      commit.gpgsign = "true";
+      commit.gpgsign = "false";
       core.editor = "mcedit";
       init.defaultBranch = "main";
       push.autoSetupRemote = true;
       signing.format = "openpgp";
-      signing.signByDefault = true;
+      signing.signByDefault = false;
+    };
+  };
+
+  programs.ssh = {
+    enable = true;
+    enableDefaultConfig = false;   # defaults will be removed in future release and get replaced by "*" (see below)
+    settings = {
+      "github.com" = {
+        Hostname = "github.com";
+        User = "git";
+        IdentityFile = "~/.ssh/Marijke2025-GitHub";
+      };
+      "git.rz.hfmdk-frankfurt.de" = {
+        Hostname = "git.rz.hfmdk-frankfurt.de";
+        Port = 8022;
+        User = "git";
+        IdentityFile = "~/.ssh/git.rz.hfmdk-frankfurt.de";
+      };
+      "*" = {
+        ForwardAgent = false;
+        AddKeysToAgent = "no";
+        Compression = false;
+        ServerAliveInterval = 0;
+        ServerAliveCountMax = 3;
+        HashKnownHosts = false;
+        UserKnownHostsFile = "~/.ssh/known_hosts";
+        ControlMaster = "no";
+        ControlPath = "~/.ssh/master-%r@%n:%p";
+        ControlPersist = "no";
+      };
     };
   };
 
   programs.starship = {
     enable = true;
-    enableBashIntegration = true;
+    enableFishIntegration = true;
+  };
+
+  programs.zellij = {
+    enable = true;
     enableFishIntegration = true;
   };
 
@@ -130,16 +156,6 @@ disable-ccid
     '';
   };
 
-#  services.udev.extraRules = ''
-#    KERNEL=="hidraw*", ATTRS{idVendor}=="20a0", ATTRS{idProduct}=="4108", TAG+="uaccess"
-#  '';
-#
-#  # If you want to use GPG/PCSC daemon with it, you might need these as well
-#  services.udev.extraRules = ''
-#    # Yubico PCSC daemon
-#    ATTRS{idVendor}=="20a0", ATTRS{idProduct}=="4108", ENV{ID_SMARTCARD_READER}="1", TAG+="uaccess"
-#  '';
-
   services.gpg-agent = {
     defaultCacheTtl = 30000;
     enable = true;
@@ -148,6 +164,7 @@ disable-ccid
     pinentry.package = pkgs.pinentry-gtk2;
   };
 
+  gtk.gtk4.theme = null;
   gtk.enable = true;
   gtk.theme.name = "Adwaita-dark";
 
