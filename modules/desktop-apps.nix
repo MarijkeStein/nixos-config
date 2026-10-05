@@ -28,6 +28,7 @@
     thunar-volman
     thunderbird
     totem
+    usbimager
     v4l-utils
     vlc
     xdg-desktop-portal-gtk              # e.g. Gtk FileChooser used by various tools
