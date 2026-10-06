@@ -31,8 +31,6 @@
 
   networking.hostName = "venus";
 
-  programs.firefox.enable = true;
-
   security.rtkit.enable = true;
 
   services.flatpak.enable = true;

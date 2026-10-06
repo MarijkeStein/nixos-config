@@ -31,8 +31,6 @@
 
   networking.hostName = "hercules";
 
-  programs.firefox.enable = true;
-
   programs.steam = {
     enable = true;
     dedicatedServer.openFirewall = true;

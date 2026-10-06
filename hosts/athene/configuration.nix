@@ -18,8 +18,6 @@
 
   networking.hostName = "athene";
 
-  programs.firefox.enable = true;
-
   security.rtkit.enable = true;
 
   services.flatpak.enable = true;

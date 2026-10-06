@@ -19,8 +19,6 @@
     "pynitrokey"
   ];
 
-  programs.firefox.enable = true;
-
   programs.niri.enable = true;
 
 #  security.pam.services = {

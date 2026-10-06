@@ -47,6 +47,10 @@
 #     };
   };
 
+  programs.firefox.enable = true;
+
+  programs.thunderbird.enable = true;
+
   services.avahi = {
     enable = true;
     nssmdns4 = true;
