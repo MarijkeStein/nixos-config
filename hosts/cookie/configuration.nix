@@ -2,25 +2,22 @@
 
 {
   imports = [
-      ./hardware-configuration.nix
-      ../../modules/base.nix
-      ../../modules/boot-systemd.nix
-      ../../modules/desktop-apps.nix
-      ../../modules/desktop-fonts.nix
-      ../../modules/desktop-kde.nix
-      ../../modules/desktop-latex.nix
-      ../../modules/desktop-media.nix
-      ../../modules/desktop-office.nix
-      ../../modules/dev-generic.nix
-      ../../modules/dev-gleam.nix
-      ../../modules/dev-python.nix
-      ../../modules/lang-de.nix
-      ../../modules/mount-of1-pub.nix
-      ../../modules/network-nfs.nix
-      ../../modules/network-wifi.nix
-    ];
-
-  environment.systemPackages = with pkgs; [
+    ./hardware-configuration.nix
+    ../../modules/base.nix
+    ../../modules/boot-systemd.nix
+    ../../modules/desktop-apps.nix
+    ../../modules/desktop-fonts.nix
+    ../../modules/desktop-kde.nix
+    ../../modules/desktop-latex.nix
+    ../../modules/desktop-media.nix
+    ../../modules/desktop-office.nix
+    ../../modules/dev-generic.nix
+    ../../modules/dev-gleam.nix
+    ../../modules/dev-python.nix
+    ../../modules/lang-de.nix
+    ../../modules/mount-of1-pub.nix
+    ../../modules/network-nfs.nix
+    ../../modules/network-wifi.nix
   ];
 
   networking.hostName = "cookie";

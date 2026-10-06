@@ -2,24 +2,21 @@
 
 {
   imports = [
-      ./hardware-configuration.nix
-      ../../modules/base.nix
-      ../../modules/boot-systemd.nix
-      ../../modules/desktop-apps.nix
-      ../../modules/desktop-fonts.nix
-      ../../modules/desktop-kde.nix
-      ../../modules/desktop-office.nix
-      ../../modules/lang-de.nix
-      ../../modules/mount-of1-pub.nix
-      ../../modules/network-nfs.nix
-    ];
+    ./hardware-configuration.nix
+    ../../modules/base.nix
+    ../../modules/boot-systemd.nix
+    ../../modules/desktop-apps.nix
+    ../../modules/desktop-fonts.nix
+    ../../modules/desktop-kde.nix
+    ../../modules/desktop-office.nix
+    ../../modules/lang-de.nix
+    ../../modules/mount-of1-pub.nix
+    ../../modules/network-nfs.nix
+  ];
 
   boot.blacklistedKernelModules = [ "nouveau" ];
 
   environment.sessionVariables.NVD_BACKEND = "direct";
-
-  environment.systemPackages = with pkgs; [
-  ];
 
   hardware.graphics = {
     enable = true;

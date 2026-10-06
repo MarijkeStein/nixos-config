@@ -1,19 +1,15 @@
 { config, pkgs, ... }:
 
 {
-  imports =
-    [
-      ./hardware-configuration.nix
-      ../../modules/base.nix
-      ../../modules/boot-systemd.nix
-      ../../modules/desktop-apps.nix
-      ../../modules/lang-us.nix
-      ../../modules/network-nfs.nix
-      ../../modules/network-wifi.nix
-      ../../modules/security-fido2.nix
-    ];
-
-  environment.systemPackages = with pkgs; [
+  imports = [
+    ./hardware-configuration.nix
+    ../../modules/base.nix
+    ../../modules/boot-systemd.nix
+    ../../modules/desktop-apps.nix
+    ../../modules/lang-us.nix
+    ../../modules/network-nfs.nix
+    ../../modules/network-wifi.nix
+    ../../modules/security-fido2.nix
   ];
 
   networking.hostName = "kitkat";

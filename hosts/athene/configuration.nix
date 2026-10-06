@@ -2,21 +2,18 @@
 
 {
   imports = [
-      ./hardware-configuration.nix
-      ../../modules/base.nix
-      ../../modules/boot-systemd.nix
-      ../../modules/desktop-apps.nix
-      ../../modules/desktop-fonts.nix
-      ../../modules/desktop-kde.nix
-      ../../modules/desktop-latex.nix
-      ../../modules/desktop-office.nix
-      ../../modules/dev-generic.nix
-      ../../modules/lang-de.nix
-      ../../modules/mount-of1-pub.nix
-      ../../modules/network-nfs.nix
-    ];
-
-  environment.systemPackages = with pkgs; [
+    ./hardware-configuration.nix
+    ../../modules/base.nix
+    ../../modules/boot-systemd.nix
+    ../../modules/desktop-apps.nix
+    ../../modules/desktop-fonts.nix
+    ../../modules/desktop-kde.nix
+    ../../modules/desktop-latex.nix
+    ../../modules/desktop-office.nix
+    ../../modules/dev-generic.nix
+    ../../modules/lang-de.nix
+    ../../modules/mount-of1-pub.nix
+    ../../modules/network-nfs.nix
   ];
 
   networking.hostName = "athene";

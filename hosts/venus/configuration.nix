@@ -2,26 +2,23 @@
 
 {
   imports = [
-      ./hardware-configuration.nix
-      ../../modules/base.nix
-      ../../modules/boot-grub.nix
-      ../../modules/desktop-apps.nix
-      ../../modules/desktop-fonts.nix
-      ../../modules/desktop-kde.nix
-      ../../modules/desktop-latex.nix
-      ../../modules/desktop-media.nix
-      ../../modules/desktop-office.nix
-      ../../modules/desktop-scanner.nix
-      ../../modules/dev-generic.nix
-      ../../modules/lang-de.nix
-      ../../modules/mount-of1-pub.nix
-      ../../modules/network-nfs.nix
-    ];
+    ./hardware-configuration.nix
+    ../../modules/base.nix
+    ../../modules/boot-grub.nix
+    ../../modules/desktop-apps.nix
+    ../../modules/desktop-fonts.nix
+    ../../modules/desktop-kde.nix
+    ../../modules/desktop-latex.nix
+    ../../modules/desktop-media.nix
+    ../../modules/desktop-office.nix
+    ../../modules/desktop-scanner.nix
+    ../../modules/dev-generic.nix
+    ../../modules/lang-de.nix
+    ../../modules/mount-of1-pub.nix
+    ../../modules/network-nfs.nix
+  ];
 
   boot.kernelModules = [ "sg" ];
-
-  environment.systemPackages = with pkgs; [
-  ];
 
   fileSystems."/mnt/scratch" = {
     device = "/dev/sdb2";

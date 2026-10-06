@@ -2,28 +2,25 @@
 
 {
   imports = [
-      ./hardware-configuration.nix
-      ../../modules/base.nix
-      ../../modules/boot-systemd.nix
-      ../../modules/desktop-apps.nix
-      ../../modules/desktop-fonts.nix
-      ../../modules/desktop-kde.nix
-      ../../modules/desktop-latex.nix
-      ../../modules/desktop-media.nix
-      ../../modules/desktop-office.nix
-      ../../modules/dev-generic.nix
-      ../../modules/dev-rust.nix
-      ../../modules/dev-web.nix
-      ../../modules/lang-us.nix
-      ../../modules/network-cifs.nix
-      ../../modules/network-nfs.nix
-      ../../modules/network-vpn.nix
-      ../../modules/network-wifi.nix
-      ../../modules/printer-fra1-hp400.nix
-      ../../modules/security-fido2.nix
-    ];
-
-  environment.systemPackages = with pkgs; [
+    ./hardware-configuration.nix
+    ../../modules/base.nix
+    ../../modules/boot-systemd.nix
+    ../../modules/desktop-apps.nix
+    ../../modules/desktop-fonts.nix
+    ../../modules/desktop-kde.nix
+    ../../modules/desktop-latex.nix
+    ../../modules/desktop-media.nix
+    ../../modules/desktop-office.nix
+    ../../modules/dev-generic.nix
+    ../../modules/dev-rust.nix
+    ../../modules/dev-web.nix
+    ../../modules/lang-us.nix
+    ../../modules/network-cifs.nix
+    ../../modules/network-nfs.nix
+    ../../modules/network-vpn.nix
+    ../../modules/network-wifi.nix
+    ../../modules/printer-fra1-hp400.nix
+    ../../modules/security-fido2.nix
   ];
 
   # networking.firewall.enable = false;
