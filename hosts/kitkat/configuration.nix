@@ -17,29 +17,6 @@
   boot.supportedFilesystems = [ "nfs" ];
 
   environment.systemPackages = with pkgs; [
-# #     hyprland
-# #     kitty
-# #     waybar
-# #     mako
-# #     hyprpaper
-# #     hyprlock
-# #     rofi
-#     alacritty
-#     bibata-cursors
-#     cava
-#     dgop
-#     dms-shell
-#     foot
-#     fprintd
-#     khal
-#     mako
-#     matugen
-#     niri
-#     quickshell
-#     swaybg
-#     waybar
-#     wayland
-#     wlogout
   ];
 
   hardware.bluetooth = {
