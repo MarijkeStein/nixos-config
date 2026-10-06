@@ -11,11 +11,15 @@
       ../../modules/desktop-office.nix
       ../../modules/dev-generic.nix
       ../../modules/lang-de.nix
+      ../../modules/network-nfs.nix
     ];
 
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
   boot.supportedFilesystems = [ "nfs" ];
+
+  environment.systemPackages = with pkgs; [
+  ];
 
   fileSystems."/pub" = {
     device = "192.168.0.250:/Backup";

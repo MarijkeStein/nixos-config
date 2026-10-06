@@ -20,7 +20,6 @@
     killall
     mc
     mmv
-    nfs-utils
     nix-direnv
     nix-index
     ox

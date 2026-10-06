@@ -7,6 +7,8 @@
       ../../modules/base.nix
       ../../modules/desktop-apps.nix
       ../../modules/lang-de.nix
+      ../../modules/network-nfs.nix
+      ../../modules/network-wifi.nix
       ../../modules/security-fido2.nix
     ];
 
@@ -15,29 +17,29 @@
   boot.supportedFilesystems = [ "nfs" ];
 
   environment.systemPackages = with pkgs; [
-#     hyprland
-#     kitty
-#     waybar
+# #     hyprland
+# #     kitty
+# #     waybar
+# #     mako
+# #     hyprpaper
+# #     hyprlock
+# #     rofi
+#     alacritty
+#     bibata-cursors
+#     cava
+#     dgop
+#     dms-shell
+#     foot
+#     fprintd
+#     khal
 #     mako
-#     hyprpaper
-#     hyprlock
-#     rofi
-    alacritty
-    bibata-cursors
-    cava
-    dgop
-    dms-shell
-    foot
-    fprintd
-    khal
-    mako
-    matugen
-    niri
-    quickshell
-    swaybg
-    waybar
-    wayland
-    wlogout
+#     matugen
+#     niri
+#     quickshell
+#     swaybg
+#     waybar
+#     wayland
+#     wlogout
   ];
 
   hardware.bluetooth = {

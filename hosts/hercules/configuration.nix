@@ -9,6 +9,7 @@
       ../../modules/desktop-kde.nix
       ../../modules/desktop-office.nix
       ../../modules/lang-de.nix
+      ../../modules/network-nfs.nix
     ];
 
   boot.blacklistedKernelModules = [ "nouveau" ];
@@ -19,10 +20,6 @@
   environment.sessionVariables.NVD_BACKEND = "direct";
 
   environment.systemPackages = with pkgs; [
-    # Burn-in tests
-    memtest_vulkan
-    memtester
-    mprime
   ];
 
   fileSystems."/pub" = {

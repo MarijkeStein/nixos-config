@@ -10,8 +10,10 @@
       ../../modules/desktop-latex.nix
       ../../modules/desktop-media.nix
       ../../modules/desktop-office.nix
+      ../../modules/desktop-scanner.nix
       ../../modules/dev-generic.nix
       ../../modules/lang-de.nix
+      ../../modules/network-nfs.nix
     ];
 
   boot.kernelModules = [ "sg" ];
@@ -21,12 +23,6 @@
   boot.supportedFilesystems = [ "nfs" ];
 
   environment.systemPackages = with pkgs; [
-    # Scanner support
-    (xsane.override { gimpSupport = true; })
-
-    # Unfree standalone applications
-    makemkv
-    ungoogled-chromium
   ];
 
   fileSystems."/mnt/scratch" = {
@@ -164,7 +160,7 @@
     extraGroups = [ "cdrom" "lp" "networkmanager" "scanner" "wheel" ];
     shell = pkgs.fish;
     packages = with pkgs; [
-    #  thunderbird
+      makemkv
     ];
   };
 

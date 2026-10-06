@@ -14,6 +14,8 @@
       ../../modules/dev-gleam.nix
       ../../modules/dev-python.nix
       ../../modules/lang-de.nix
+      ../../modules/network-nfs.nix
+      ../../modules/network-wifi.nix
     ];
 
   boot.loader.systemd-boot.enable = true;
@@ -21,18 +23,6 @@
   boot.supportedFilesystems = [ "nfs" ];
 
   environment.systemPackages = with pkgs; [
-    # Python dev
-    jetbrains.pycharm
-    python313
-    python313Packages.ipython
-    uv
-
-#     # Hexaglot dev
-#     jetbrains.idea
-
-    # Networking AddOn's
-    nmap
-    wirelesstools
   ];
 
   fileSystems."/pub" = {
