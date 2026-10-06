@@ -16,6 +16,7 @@
     ../../modules/lang-de.nix
     ../../modules/mount-of1-pub.nix
     ../../modules/network-nfs.nix
+    ../../modules/nix-flakes.nix
   ];
 
   boot.kernelModules = [ "sg" ];
@@ -29,13 +30,6 @@
   hardware.sane.extraBackends = [ pkgs.sane-airscan ];
 
   networking.hostName = "venus";
-
-  nix = {
-    settings = {
-      experimental-features = [ "nix-command" "flakes" ];
-    };
-#     package = pkgs.lix;
-  };
 
   programs.firefox.enable = true;
 

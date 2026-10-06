@@ -18,16 +18,10 @@
     ../../modules/mount-of1-pub.nix
     ../../modules/network-nfs.nix
     ../../modules/network-wifi.nix
+    ../../modules/nix-flakes.nix
   ];
 
   networking.hostName = "cookie";
-
-  nix = {
-    settings = {
-      experimental-features = [ "nix-command" "flakes" ];
-    };
-    package = pkgs.lix;
-  };
 
   programs.firefox.enable = true;
 

@@ -9,17 +9,11 @@
     ../../modules/lang-us.nix
     ../../modules/network-nfs.nix
     ../../modules/network-wifi.nix
+    ../../modules/nix-flakes.nix
     ../../modules/security-fido2.nix
   ];
 
   networking.hostName = "kitkat";
-
-  nix = {
-    settings = {
-      experimental-features = [ "nix-command" "flakes" ];
-    };
-    package = pkgs.lix;
-  };
 
   nixpkgs.config.permittedInsecurePackages = [
     "pynitrokey"

@@ -19,6 +19,7 @@
     ../../modules/network-nfs.nix
     ../../modules/network-vpn.nix
     ../../modules/network-wifi.nix
+    ../../modules/nix-flakes.nix
     ../../modules/printer-fra1-hp400.nix
     ../../modules/security-fido2.nix
   ];
@@ -26,13 +27,6 @@
   # networking.firewall.enable = false;
 
   networking.hostName = "katjes";
-
-  nix = {
-    settings = {
-      experimental-features = [ "nix-command" "flakes" ];
-    };
-    package = pkgs.lix;
-  };
 
   nixpkgs.config.permittedInsecurePackages = [
     "pynitrokey"
