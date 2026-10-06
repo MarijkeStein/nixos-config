@@ -21,35 +21,10 @@
 
   programs.niri.enable = true;
 
-#  security.pam.services = {
-#    login.u2fAuth = true;
-#    sudo.u2fAuth = true;
-#  };
-#
-#  security.pam.u2f = {
-#    enable = true;
-#    settings = {
-#      authfile = "/etc/u2f_mappings";
-#      cue = true;
-#      interactive = true;
-#      pinverification = 1;
-#    };
-#  };
-
-  security.rtkit.enable = true;
-
-#  services.autorandr.enable = true;
-
   services.displayManager.sddm = {
     enable = true;
     wayland.enable = true;
   };
-
-#  services.flatpak.enable = true;
-
-  services.greetd.enable = true;
-
-  services.libinput.enable = true;
 
   services.openssh = {
     enable = true;
@@ -57,15 +32,6 @@
   };
 
 #  services.pcscd.enable = true;
-
-  services.pulseaudio.enable = false;
-
-  services.pipewire = {
-    enable = true;
-    alsa.enable = true;
-    alsa.support32Bit = true;
-    pulse.enable = true;
-  };
 
   services.resolved.enable = true;               # needed by OpenVPN
 

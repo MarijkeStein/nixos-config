@@ -23,35 +23,10 @@
 
   networking.hostName = "cookie";
 
-  security.rtkit.enable = true;
-
-  services.flatpak.enable = true;
-
-  services.gvfs.enable = true;
-
   services.openssh = {
     enable = true;
     settings.PermitRootLogin = "yes";
   };
-
-  services.pipewire = {
-    enable = true;
-    alsa.enable = true;
-    alsa.support32Bit = true;
-    pulse.enable = true;
-    wireplumber.extraConfig = {
-    "10-bluez" = {
-      "monitor.bluez.properties" = {
-        "bluez5.enable-sbc-xq" = true;
-        "bluez5.enable-msbc" = true;
-        "bluez5.enable-hw-volume" = true;
-        "bluez5.roles" = [ "hsp_hs" "hsp_ag" "hfp_hf" "hfp_ag" "a2dp_sink" "a2dp_source" ];
-        };
-      };
-    };
-  };
-
-  services.pulseaudio.enable = false;
 
   services.smartd.enable = true;
 

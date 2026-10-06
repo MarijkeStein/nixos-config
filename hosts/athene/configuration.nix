@@ -18,14 +18,6 @@
 
   networking.hostName = "athene";
 
-  security.rtkit.enable = true;
-
-  services.flatpak.enable = true;
-
-  services.gvfs.enable = true;
-
-  services.libinput.enable = true;
-
   services.openssh = {
     enable = true;
     settings.PermitRootLogin = "yes";
@@ -47,8 +39,6 @@
       };
     };
   };
-
-  services.pulseaudio.enable = false;
 
   services.rpcbind.enable = true;
 

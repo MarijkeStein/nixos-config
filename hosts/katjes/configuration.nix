@@ -53,31 +53,14 @@
     ./hfmdk-eduroam-root.crt
   ];
 
-  security.rtkit.enable = true;
-
   services.autorandr.enable = true;
-
-  services.flatpak.enable = true;
-
-  services.gvfs.enable = true;
-
-  services.libinput.enable = true;
 
   services.openssh = {
     enable = true;
     settings.PermitRootLogin = "yes";
   };
 
-  services.pipewire = {
-    enable = true;
-    alsa.enable = true;
-    alsa.support32Bit = true;
-    pulse.enable = true;
-  };
-
   services.pcscd.enable = true;
-
-  services.pulseaudio.enable = false;
 
   services.resolved.enable = true;               # needed by OpenVPN
 
