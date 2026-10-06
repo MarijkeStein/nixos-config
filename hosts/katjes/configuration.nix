@@ -30,12 +30,6 @@
   environment.systemPackages = with pkgs; [
   ];
 
-
-  hardware.bluetooth = {
-    enable = true;
-    powerOnBoot = true;
-  };
-
 #   hardware.printers = {
 #     ensurePrinters = [
 #       {
@@ -117,8 +111,6 @@
   security.rtkit.enable = true;
 
   services.autorandr.enable = true;
-
-  services.blueman.enable = true;
 
   services.flatpak.enable = true;
 

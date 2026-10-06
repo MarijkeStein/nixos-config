@@ -18,11 +18,6 @@
   environment.systemPackages = with pkgs; [
   ];
 
-  hardware.bluetooth = {
-    enable = true;
-    powerOnBoot = true;
-  };
-
 #   hardware.printers = {
 #     ensurePrinters = [
 #       {

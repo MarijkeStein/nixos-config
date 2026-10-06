@@ -30,11 +30,6 @@
     fsType = "ext4";
   };
 
-  hardware.bluetooth = {
-    enable = true;
-    powerOnBoot = true;
-  };
-
   hardware.printers = {
     ensureDefaultPrinter = "Brother9570";
     ensurePrinters = [
@@ -93,8 +88,6 @@
     nssmdns4 = true;
     openFirewall = true;
   };
-
-  services.blueman.enable = true;
 
   services.flatpak.enable = true;
 

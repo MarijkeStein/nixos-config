@@ -22,11 +22,6 @@
   environment.systemPackages = with pkgs; [
   ];
 
-  hardware.bluetooth = {
-    enable = true;
-    powerOnBoot = true;
-  };
-
   hardware.graphics = {
     enable = true;
     extraPackages = with pkgs; [
@@ -91,8 +86,6 @@
   programs.gamescope.enable = true;
 
   security.rtkit.enable = true;
-
-  services.blueman.enable = true;
 
   services.flatpak.enable = true;
 

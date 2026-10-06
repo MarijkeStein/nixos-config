@@ -25,17 +25,6 @@
   environment.systemPackages = with pkgs; [
   ];
 
-  hardware.bluetooth = {
-    enable = true;
-    powerOnBoot = true;
-    settings = {
-      General = {
-        Experimental = true;
-        Enable = "Source,Sink,Media,Socket";
-      };
-    };
-  };
-
   hardware.printers = {
     ensureDefaultPrinter = "Brother9570";
     ensurePrinters = [
@@ -92,8 +81,6 @@
     nssmdns4 = true;
     openFirewall = true;
   };
-
-  services.blueman.enable = true;
 
   services.flatpak.enable = true;
 

@@ -21,11 +21,6 @@
   environment.systemPackages = with pkgs; [
   ];
 
-  hardware.bluetooth = {
-    enable = true;
-    powerOnBoot = true;
-  };
-
   hardware.printers = {
     ensureDefaultPrinter = "Brother9570";
     ensurePrinters = [
@@ -69,8 +64,6 @@
   };
 
   security.rtkit.enable = true;
-
-  services.blueman.enable = true;
 
   services.flatpak.enable = true;
 
