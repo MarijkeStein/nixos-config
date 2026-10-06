@@ -29,8 +29,6 @@
     "pynitrokey"
   ];
 
-  nixpkgs.config.allowUnfree = true;
-
   programs.bash.shellAliases = {
     la = "eza -ahl";
   };

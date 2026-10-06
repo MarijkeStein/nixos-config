@@ -43,4 +43,6 @@
     persistent = true;
     randomizedDelaySec = "3h";
   };
+
+  nixpkgs.config.allowUnfree = true;
 }

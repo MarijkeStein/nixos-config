@@ -40,8 +40,6 @@
 #     package = pkgs.lix;
   };
 
-  nixpkgs.config.allowUnfree = true;
-
   programs.bash.shellAliases = {
     la = "eza -ahl";
   };
