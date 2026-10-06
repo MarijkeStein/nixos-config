@@ -32,8 +32,6 @@
 
   hardware.nvidia.open = true;
 
-  i18n.defaultLocale = "de_DE.UTF-8";
-
   networking.hostName = "hercules";
   networking.networkmanager.enable = true;
   networking.wireless.enable = false;

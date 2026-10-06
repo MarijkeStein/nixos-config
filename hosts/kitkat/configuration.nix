@@ -7,7 +7,7 @@
       ../../modules/base.nix
       ../../modules/boot-systemd.nix
       ../../modules/desktop-apps.nix
-      ../../modules/lang-de.nix
+      ../../modules/lang-us.nix
       ../../modules/network-nfs.nix
       ../../modules/network-wifi.nix
       ../../modules/security-fido2.nix
@@ -15,8 +15,6 @@
 
   environment.systemPackages = with pkgs; [
   ];
-
-  i18n.defaultLocale = "en_US.UTF-8";
 
   networking.hostName = "kitkat";
 

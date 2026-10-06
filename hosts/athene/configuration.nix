@@ -19,8 +19,6 @@
   environment.systemPackages = with pkgs; [
   ];
 
-  i18n.defaultLocale = "de_DE.UTF-8";
-
   networking.hostName = "athene";
   #networking.wireless.enable = false;
   networking.networkmanager.enable = true;

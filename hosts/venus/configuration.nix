@@ -31,8 +31,6 @@
   hardware.sane.enable = true;
   hardware.sane.extraBackends = [ pkgs.sane-airscan ];
 
-  i18n.defaultLocale = "de_DE.UTF-8";
-
   networking.hostName = "venus";
   networking.networkmanager.enable = true;
 

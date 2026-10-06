@@ -23,8 +23,6 @@
   environment.systemPackages = with pkgs; [
   ];
 
-  i18n.defaultLocale = "de_DE.UTF-8";
-
   networking.hostName = "cookie";
   networking.networkmanager.enable = true;
 

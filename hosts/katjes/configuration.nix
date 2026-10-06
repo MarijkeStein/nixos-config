@@ -14,7 +14,7 @@
       ../../modules/dev-generic.nix
       ../../modules/dev-rust.nix
       ../../modules/dev-web.nix
-      ../../modules/lang-de.nix
+      ../../modules/lang-us.nix
       ../../modules/network-cifs.nix
       ../../modules/network-nfs.nix
       ../../modules/network-vpn.nix
@@ -25,8 +25,6 @@
 
   environment.systemPackages = with pkgs; [
   ];
-
-  i18n.defaultLocale = "en_US.UTF-8";
 
   # networking.firewall.enable = false;
 
