@@ -16,20 +16,6 @@
   environment.systemPackages = with pkgs; [
   ];
 
-#   hardware.printers = {
-#     ensurePrinters = [
-#       {
-#         # "lpinfo -v" shows the device URI of found printers
-#         name = "HP_M400dn";
-#         model = "everywhere";
-#         # deviceUri = "ipp://HP%20LaserJet%20Pro%20M404-M405%20%5B814EDC%5D%20(USB)._ipp._tcp.local/";
-#         deviceUri = "ipp://127.0.0.1:60000/ipp/print";
-#         location = "B123";
-#       }
-#     ];
-#     ensureDefaultPrinter = "HP_M400dn";
-#   };
-
   i18n.defaultLocale = "en_US.UTF-8";
 
   networking.hostName = "kitkat";
@@ -101,16 +87,12 @@
 
   services.greetd.enable = true;
 
-#  services.ipp-usb.enable = true;
-
   services.libinput.enable = true;
 
   services.openssh = {
     enable = true;
     settings.PermitRootLogin = "yes";
   };
-
-  services.printing.enable = true;
 
 #  services.pcscd.enable = true;
 
@@ -146,11 +128,6 @@
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "26.05"; # Did you read the comment?
-
-#  systemd.services.ensure-printers = {
-#    after = [ "ipp-usb.service" "cups.service" ];
-#    requires = [ "ipp-usb.service" ];
-#  };
 
 #  systemd.services.openvpn-dns-link = {
 #    description = "Link openvpn-update-systemd-resolved to a predictable path";

@@ -28,21 +28,6 @@
     fsType = "ext4";
   };
 
-  hardware.printers = {
-    ensureDefaultPrinter = "Brother9570";
-    ensurePrinters = [
-      {
-        name = "Brother9570";
-        description = "Brother MFC-L9570CDW";
-        deviceUri = "ipp://192.168.0.100:631/ipp/print";
-        model = "everywhere";
-        ppdOptions = {
-          PageSize = "A4";
-        };
-      }
-    ];
-  };
-
   hardware.sane.enable = true;
   hardware.sane.extraBackends = [ pkgs.sane-airscan ];
 
@@ -102,9 +87,6 @@
     alsa.support32Bit = true;
     pulse.enable = true;
   };
-
-  services.printing.enable = true;
-  services.printing.drivers = [ pkgs.cups-filters pkgs.gutenprint ];
 
   services.pulseaudio.enable = false;
 
