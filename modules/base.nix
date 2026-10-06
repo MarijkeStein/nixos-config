@@ -35,4 +35,12 @@
   ];
 
   networking.networkmanager.enable = true;
+
+  nix.gc = {
+    automatic = true;
+    dates = "weekly";
+    options = "--delete-generations +10 --delete-older-than 90d";
+    persistent = true;
+    randomizedDelaySec = "3h";
+  };
 }

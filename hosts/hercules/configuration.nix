@@ -34,15 +34,6 @@
 
   networking.hostName = "hercules";
 
-  nix.gc = {
-    automatic = true;
-    dates = "weekly";
-#     options = "--delete-generations +10";
-    options = "--delete-older-than 90d";
-    persistent = true;
-    randomizedDelaySec = "3h";
-  };
-
   nixpkgs.config.allowUnfree = true;
 
   programs.bash.shellAliases = {

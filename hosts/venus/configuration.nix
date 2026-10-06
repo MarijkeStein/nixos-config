@@ -40,14 +40,6 @@
 #     package = pkgs.lix;
   };
 
-  nix.gc = {
-    automatic = true;
-    dates = "weekly";
-    options = "--delete-older-than 90d";
-    persistent = true;
-    randomizedDelaySec = "3h";
-  };
-
   nixpkgs.config.allowUnfree = true;
 
   programs.bash.shellAliases = {
