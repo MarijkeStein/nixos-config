@@ -15,7 +15,6 @@
   boot.blacklistedKernelModules = [ "nouveau" ];
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
-  boot.supportedFilesystems = [ "nfs" ];
 
   environment.sessionVariables.NVD_BACKEND = "direct";
 

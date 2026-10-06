@@ -26,7 +26,6 @@
     configurationLimit = 10;
   };
   boot.loader.efi.canTouchEfiVariables = true;
-  boot.supportedFilesystems = [ "nfs" ];
 
   environment.systemPackages = with pkgs; [
   ];
