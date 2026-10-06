@@ -45,4 +45,14 @@
   };
 
   nixpkgs.config.allowUnfree = true;
+
+  programs.bash.enable = true;
+  programs.bash.shellAliases = {
+    la = "eza -ahl";
+  };
+
+  programs.fish.enable = true;
+  programs.fish.shellAliases = {
+    la = "eza -ahl";
+  };
 }

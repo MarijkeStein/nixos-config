@@ -34,16 +34,7 @@
 
   networking.hostName = "hercules";
 
-  programs.bash.shellAliases = {
-    la = "eza -ahl";
-  };
-
   programs.firefox.enable = true;
-
-  programs.fish.enable = true;
-  programs.fish.shellAliases = {
-    la = "eza -ahl";
-  };
 
   programs.steam = {
     enable = true;

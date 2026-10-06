@@ -29,16 +29,7 @@
     "pynitrokey"
   ];
 
-  programs.bash.shellAliases = {
-    la = "eza -ahl";
-  };
-
   programs.firefox.enable = true;
-
-  programs.fish.enable = true;
-  programs.fish.shellAliases = {
-    la = "eza -ahl";
-  };
 
   programs.niri.enable = true;
 
