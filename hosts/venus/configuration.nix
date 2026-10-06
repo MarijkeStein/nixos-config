@@ -4,6 +4,7 @@
   imports = [
       ./hardware-configuration.nix
       ../../modules/base.nix
+      ../../modules/boot-grub.nix
       ../../modules/desktop-apps.nix
       ../../modules/desktop-fonts.nix
       ../../modules/desktop-kde.nix
@@ -18,9 +19,6 @@
     ];
 
   boot.kernelModules = [ "sg" ];
-  boot.loader.grub.enable = true;
-  boot.loader.grub.device = "/dev/sda";
-  boot.loader.grub.useOSProber = true;
 
   environment.systemPackages = with pkgs; [
   ];

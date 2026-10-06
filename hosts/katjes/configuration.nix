@@ -4,6 +4,7 @@
   imports = [
       ./hardware-configuration.nix
       ../../modules/base.nix
+      ../../modules/boot-systemd.nix
       ../../modules/desktop-apps.nix
       ../../modules/desktop-fonts.nix
       ../../modules/desktop-kde.nix
@@ -20,12 +21,6 @@
       ../../modules/network-wifi.nix
       ../../modules/security-fido2.nix
     ];
-
-  boot.loader.systemd-boot = {
-    enable = true;
-    configurationLimit = 10;
-  };
-  boot.loader.efi.canTouchEfiVariables = true;
 
   environment.systemPackages = with pkgs; [
   ];

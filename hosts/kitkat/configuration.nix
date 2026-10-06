@@ -5,15 +5,13 @@
     [
       ./hardware-configuration.nix
       ../../modules/base.nix
+      ../../modules/boot-systemd.nix
       ../../modules/desktop-apps.nix
       ../../modules/lang-de.nix
       ../../modules/network-nfs.nix
       ../../modules/network-wifi.nix
       ../../modules/security-fido2.nix
     ];
-
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
 
   environment.systemPackages = with pkgs; [
   ];

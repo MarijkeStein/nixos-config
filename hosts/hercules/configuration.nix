@@ -4,6 +4,7 @@
   imports = [
       ./hardware-configuration.nix
       ../../modules/base.nix
+      ../../modules/boot-systemd.nix
       ../../modules/desktop-apps.nix
       ../../modules/desktop-fonts.nix
       ../../modules/desktop-kde.nix
@@ -14,8 +15,6 @@
     ];
 
   boot.blacklistedKernelModules = [ "nouveau" ];
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
 
   environment.sessionVariables.NVD_BACKEND = "direct";
 

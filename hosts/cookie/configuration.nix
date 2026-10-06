@@ -4,6 +4,7 @@
   imports = [
       ./hardware-configuration.nix
       ../../modules/base.nix
+      ../../modules/boot-systemd.nix
       ../../modules/desktop-apps.nix
       ../../modules/desktop-fonts.nix
       ../../modules/desktop-kde.nix
@@ -18,9 +19,6 @@
       ../../modules/network-nfs.nix
       ../../modules/network-wifi.nix
     ];
-
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
 
   environment.systemPackages = with pkgs; [
   ];
