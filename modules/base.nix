@@ -33,4 +33,6 @@
     zellij
     zip
   ];
+
+  networking.networkmanager.enable = true;
 }

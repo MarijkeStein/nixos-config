@@ -18,10 +18,6 @@
 
   networking.hostName = "kitkat";
 
-  networking.networkmanager.enable = true;
-
-  networking.wireless.enable = true;
-
   nix = {
     settings = {
       experimental-features = [ "nix-command" "flakes" ];

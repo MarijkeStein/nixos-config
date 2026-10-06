@@ -33,8 +33,6 @@
   hardware.nvidia.open = true;
 
   networking.hostName = "hercules";
-  networking.networkmanager.enable = true;
-  networking.wireless.enable = false;
 
   nix.gc = {
     automatic = true;

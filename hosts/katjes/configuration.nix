@@ -29,10 +29,6 @@
   # networking.firewall.enable = false;
 
   networking.hostName = "katjes";
-  networking.networkmanager.enable = true;
-
-#   conflicts with NetworkManager
-#   networking.wireless.enable = true;
 
   nix = {
     settings = {

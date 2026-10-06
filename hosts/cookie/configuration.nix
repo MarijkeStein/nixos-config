@@ -24,7 +24,6 @@
   ];
 
   networking.hostName = "cookie";
-  networking.networkmanager.enable = true;
 
   nix = {
     settings = {

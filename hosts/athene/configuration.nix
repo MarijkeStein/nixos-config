@@ -20,8 +20,7 @@
   ];
 
   networking.hostName = "athene";
-  #networking.wireless.enable = false;
-  networking.networkmanager.enable = true;
+
 
   nix.gc = {
     automatic = true;

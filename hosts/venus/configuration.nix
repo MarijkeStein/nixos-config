@@ -32,7 +32,6 @@
   hardware.sane.extraBackends = [ pkgs.sane-airscan ];
 
   networking.hostName = "venus";
-  networking.networkmanager.enable = true;
 
   nix = {
     settings = {
