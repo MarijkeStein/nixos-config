@@ -11,6 +11,7 @@
       ../../modules/desktop-office.nix
       ../../modules/dev-generic.nix
       ../../modules/lang-de.nix
+      ../../modules/mount-of1-pub.nix
       ../../modules/network-nfs.nix
     ];
 
@@ -19,11 +20,6 @@
 
   environment.systemPackages = with pkgs; [
   ];
-
-  fileSystems."/pub" = {
-    device = "192.168.0.250:/Backup";
-    fsType = "nfs";
-  };
 
   hardware.bluetooth = {
     enable = true;

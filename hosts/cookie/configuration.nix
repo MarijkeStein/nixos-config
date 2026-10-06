@@ -14,6 +14,7 @@
       ../../modules/dev-gleam.nix
       ../../modules/dev-python.nix
       ../../modules/lang-de.nix
+      ../../modules/mount-of1-pub.nix
       ../../modules/network-nfs.nix
       ../../modules/network-wifi.nix
     ];
@@ -23,11 +24,6 @@
 
   environment.systemPackages = with pkgs; [
   ];
-
-  fileSystems."/pub" = {
-    device = "192.168.0.250:/Backup";
-    fsType = "nfs";
-  };
 
   hardware.bluetooth = {
     enable = true;

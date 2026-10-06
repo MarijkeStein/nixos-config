@@ -13,6 +13,7 @@
       ../../modules/desktop-scanner.nix
       ../../modules/dev-generic.nix
       ../../modules/lang-de.nix
+      ../../modules/mount-of1-pub.nix
       ../../modules/network-nfs.nix
     ];
 
@@ -27,11 +28,6 @@
   fileSystems."/mnt/scratch" = {
     device = "/dev/sdb2";
     fsType = "ext4";
-  };
-
-  fileSystems."/pub" = {
-    device = "192.168.0.250:/Backup";
-    fsType = "nfs";
   };
 
   hardware.bluetooth = {
