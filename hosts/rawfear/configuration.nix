@@ -1,0 +1,57 @@
+{ config, pkgs, ... }:
+
+{
+  imports = [
+    ../../modules/base.nix
+    ../../modules/boot-systemd.nix
+    ../../modules/lang-de.nix
+    ../../modules/nix-flakes.nix
+  ];
+
+  networking.hostName = "rawfear";
+
+  services.openssh = {
+    enable = true;
+    settings = {
+      PermitRootLogin = "no";
+      PasswordAuthentication = false;
+    };
+  };
+
+  services.smartd.enable = true;
+
+#   system.autoUpgrade = {
+#     enable = true;
+#     allowReboot = false;
+#     dates = "daily";
+#     randomizedDelaySec = "30min";
+#   };
+
+
+  # This value determines the NixOS release from which the default
+  # settings for stateful data, like file locations and database versions
+  # on your system were taken. It‘s perfectly fine and recommended to leave
+  # this value at the release version of the first install of this system.
+  # Before changing this value read the documentation for this option
+  # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
+  system.stateVersion = "25.05"; # Did you read the comment?
+
+  time.timeZone = "Europe/Berlin";
+
+  users.groups.ai.gid = 2026;
+
+  users.users.marijke = {
+    description = "Marijke Stein";
+    uid = 2020;
+    group = "ai";
+    isNormalUser = true;
+    extraGroups = [ "wheel" ];
+    openssh.authorizedKeys.keys = [
+      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFG3K8Qyjl/UMT+nimrNw6tHg/3285xi0KEUI0iGDdpw marijke@venus"
+    ];
+    packages = with pkgs; [
+    ];
+    shell = pkgs.fish;
+  };
+}
+
