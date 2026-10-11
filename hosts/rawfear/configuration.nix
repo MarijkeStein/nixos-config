@@ -8,7 +8,22 @@
     ../../modules/nix-flakes.nix
   ];
 
-  networking.hostName = "rawfear";
+  networking.firewall = {
+    enable = true;
+
+    allowedTCPPorts = [
+      22
+    ];
+
+    allowedUDPPorts = [];
+
+    allowPing = true;
+  };
+}
+
+  networking.hostName = "de-fsn01-rawfear";
+
+  nix.settings.trusted-users = [ "root" "marijke" ];
 
   services.openssh = {
     enable = true;
@@ -19,14 +34,6 @@
   };
 
   services.smartd.enable = true;
-
-#   system.autoUpgrade = {
-#     enable = true;
-#     allowReboot = false;
-#     dates = "daily";
-#     randomizedDelaySec = "30min";
-#   };
-
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions

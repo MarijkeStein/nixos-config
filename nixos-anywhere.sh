@@ -7,7 +7,7 @@ then
 fi
 
 
-nix run github:nix-community/nixos-anywhere -- --flake .#DE-FSN01-RAWFEAR root@de-fsn01-rawfear
+nix run github:nix-community/nixos-anywhere -- --flake .#de-fsn01-rawfear root@de-fsn01-rawfear
 
 
 # EOF

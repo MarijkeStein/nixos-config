@@ -1,5 +1,5 @@
 {
-  description = "DE-FSN01-RAWFEAR: AI server";
+  description = "de-fsn01-rawfear: AI server";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-26.05";
@@ -12,7 +12,7 @@
 
   outputs = { self, nixpkgs, disko, ... }@inputs: {
     nixosConfigurations = {
-      "DE-FSN01-RAWFEAR" = nixpkgs.lib.nixosSystem {
+      "de-fsn01-rawfear" = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
           disko.nixosModules.disko
