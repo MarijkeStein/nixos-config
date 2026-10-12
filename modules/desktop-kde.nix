@@ -9,5 +9,6 @@
     kdePackages.konsole
     kdePackages.okular
     marksman
+    qdirstat
   ];
 }
