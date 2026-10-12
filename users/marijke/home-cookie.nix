@@ -89,7 +89,6 @@
     settings = {
       "de-fsn01-rawfear" = {
         Hostname = "157.90.82.85";
-        User = "root";
         IdentityFile = "~/.ssh/2026-09-13_IniAItion";
       };
       "github.com" = {

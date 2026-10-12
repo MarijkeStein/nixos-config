@@ -19,7 +19,6 @@
 
     allowPing = true;
   };
-}
 
   networking.hostName = "de-fsn01-rawfear";
 
@@ -60,5 +59,10 @@
     ];
     shell = pkgs.fish;
   };
-}
 
+  users.users.root = {
+    openssh.authorizedKeys.keys = [
+      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFG3K8Qyjl/UMT+nimrNw6tHg/3285xi0KEUI0iGDdpw marijke@venus"
+    ];
+  };
+}
