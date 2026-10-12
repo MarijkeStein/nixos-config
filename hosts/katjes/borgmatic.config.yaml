@@ -2,8 +2,8 @@ source_directories:
     - /home
 
 repositories:
-    - path: /home/mstein/misc/volumes/pub/backup/snapshots/borg/katjes
-      label: DE-FRA-01-KATJES
+    - path: /pub/backup/snapshots/borg/de-fra01-katjes
+      label: de-fra01-katjes
 
 exclude_caches: true
 exclude_patterns:
