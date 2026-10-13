@@ -96,6 +96,9 @@
         User = "git";
         IdentityFile = "~/.ssh/Marijke2025-GitHub";
       };
+      "Match host ssh.strato.de user wvpm.org" = {
+        IdentityFile = "~/.ssh/2026-10-09_wvpm-website";
+      };
       "*" = {
         ForwardAgent = false;
         AddKeysToAgent = "no";
