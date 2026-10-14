@@ -12,6 +12,7 @@
     ../../modules/desktop-media.nix
     ../../modules/desktop-office.nix
     ../../modules/dev-generic.nix
+    ../../modules/dev-python.nix
     ../../modules/dev-rust.nix
     ../../modules/dev-web.nix
     ../../modules/lang-us.nix
