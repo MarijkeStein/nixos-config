@@ -6,6 +6,7 @@
     ../../modules/boot-systemd.nix
     ../../modules/lang-de.nix
     ../../modules/nix-flakes.nix
+    ../../modules/server-security.nix
   ];
 
   networking.firewall = {
@@ -27,6 +28,7 @@
   services.openssh = {
     enable = true;
     settings = {
+      AllowUsers = [ "marijke" ];
       KbdInteractiveAuthentication = false;
       PasswordAuthentication = false;
       PermitRootLogin = "no";
@@ -54,7 +56,7 @@
     uid = 2020;
     group = "ai";
     extraGroups = [ "wheel" ];
-    initialHashedPassword = "$6$lKJZPKU6V13zhSNg$PmkHJGtPClTu4sXdLbWlAzTHums4r7A4N7WMVypjNkF46KZSSvUjitGR4QDwoiX2rTQUTneKc27Kp2YqECPIz0";
+    initialHashedPassword = "$6$K.VzaEaMT228tBA5$Di5OoWQzUNTHDnE2IPNj7n6AyzeqIEeRI3p9NFpKjxsnTKwg7uyDPFfxR3uio/fCU25D0wb0xOymti5jWvU3B1";  # temporary only, save your time to brute-force it :)
     isNormalUser = true;
     openssh.authorizedKeys.keys = [
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFG3K8Qyjl/UMT+nimrNw6tHg/3285xi0KEUI0iGDdpw marijke@venus"
