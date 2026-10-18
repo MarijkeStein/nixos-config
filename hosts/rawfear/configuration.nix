@@ -27,8 +27,9 @@
   services.openssh = {
     enable = true;
     settings = {
-      PermitRootLogin = "no";
+      KbdInteractiveAuthentication = false;
       PasswordAuthentication = false;
+      PermitRootLogin = "no";
     };
   };
 
@@ -46,12 +47,15 @@
 
   users.groups.ai.gid = 2026;
 
+  users.mutableUsers = true; # Users can change their password
+
   users.users.marijke = {
     description = "Marijke Stein";
     uid = 2020;
     group = "ai";
-    isNormalUser = true;
     extraGroups = [ "wheel" ];
+    initialHashedPassword = "$6$lKJZPKU6V13zhSNg$PmkHJGtPClTu4sXdLbWlAzTHums4r7A4N7WMVypjNkF46KZSSvUjitGR4QDwoiX2rTQUTneKc27Kp2YqECPIz0";
+    isNormalUser = true;
     openssh.authorizedKeys.keys = [
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFG3K8Qyjl/UMT+nimrNw6tHg/3285xi0KEUI0iGDdpw marijke@venus"
     ];
@@ -61,8 +65,6 @@
   };
 
   users.users.root = {
-    openssh.authorizedKeys.keys = [
-      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFG3K8Qyjl/UMT+nimrNw6tHg/3285xi0KEUI0iGDdpw marijke@venus"
-    ];
+    hashedPassword = "!"; # Login disabled
   };
 }
