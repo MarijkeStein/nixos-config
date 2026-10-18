@@ -3,7 +3,7 @@ source_directories:
 
 repositories:
     - path: /pub/backup/snapshots/borg/cookie
-      label: DE-OFF-01-COOKIE
+      label: de-off01-cookie
 
 exclude_caches: true
 exclude_patterns:

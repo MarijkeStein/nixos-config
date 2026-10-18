@@ -3,7 +3,7 @@ source_directories:
 
 repositories:
     - path: /pub/backup/snapshots/borg/venus
-      label: DE-OFF-01-VENUS
+      label: de-off01-venus
 
 exclude_caches: true
 exclude_patterns:
