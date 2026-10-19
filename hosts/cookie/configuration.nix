@@ -16,6 +16,7 @@
     ../../modules/dev-python.nix
     ../../modules/lang-de.nix
     ../../modules/mount-of1-pub.nix
+    ../../modules/network-debug.nix
     ../../modules/network-nfs.nix
     ../../modules/network-wifi.nix
     ../../modules/nix-flakes.nix

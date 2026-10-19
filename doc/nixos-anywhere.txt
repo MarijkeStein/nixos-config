@@ -1,0 +1,17 @@
+NIXOS-ANYWHERE
+==============
+
+
+on machine:
+
+  - passwd
+    * set yourself a new password
+
+
+clone nixos-config and place symlink /etc/nixos to host-config
+
+
+add NixOS channels:  ./nixos-upgrade.sh
+
+
+

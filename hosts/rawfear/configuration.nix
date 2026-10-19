@@ -6,6 +6,7 @@
     ../../modules/boot-systemd.nix
     ../../modules/lang-de.nix
     ../../modules/nix-flakes.nix
+    ../../modules/server-ai.nix
     ../../modules/server-security.nix
   ];
 
