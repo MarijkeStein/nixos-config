@@ -31,6 +31,15 @@
     settings = {
       AllowUsers = [ "marijke" ];
       KbdInteractiveAuthentication = false;
+
+      # Enable Post-Quantum Key Exchange Algorithms
+      KexAlgorithms = [
+        "mlkem768x25519-sha256"
+        "sntrup761x25519-sha512@openssh.com"
+        "curve25519-sha256"
+        "curve25519-sha256@libssh.org"
+      ];
+
       PasswordAuthentication = false;
       PermitRootLogin = "no";
     };

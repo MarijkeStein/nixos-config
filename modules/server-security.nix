@@ -1,29 +1,23 @@
 { ... }:
 
 {
-  # Log rejected or dropped incoming packets to the system journal
   networking.firewall.logRefusedConnections = true;
 
-  # Kill processes that have a profile but are running unconfined
   security.apparmor = {
     enable = true;
     killUnconfinedConfinables = true;
   };
 
-  # Enable Kernel Page-Table Isolation (KPTI) to mitigate Meltdown/Spectre
   security.forcePageTableIsolation = true;
 
-  # Prevent replacing or patching the running kernel image (e.g. via kexec)
   security.protectKernelImage = true;
 
-  # Restrict sudo to members of the wheel group only
   security.sudo.execWheelOnly = true;
 
-  # Enable Kernel auditing + the Linux audit daemon
   security.audit.enable = true;
+
   security.auditd.enable = true;
 
-  # Ban IPs that repeatedly fail authentication
   services.fail2ban = {
     enable = true;
     bantime = "24h";
@@ -37,11 +31,8 @@
   };
 
   services.openssh.settings = {
-    # Disable SSH agent forwarding to prevent credential pivoting
     AllowAgentForwarding = false;
-
-    # Disable TCP port forwarding through SSH tunnels
-    AllowTcpForwarding = false;
+    AllowTcpForwarding = true;
 
     # Restrict to strong authenticated-encryption ciphers only
     Ciphers = [
