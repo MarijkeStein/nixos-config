@@ -76,6 +76,20 @@
     shell = pkgs.fish;
   };
 
+  users.users.yvonne = {
+    description = "Yvonne";
+    uid = 2020;
+    group = "ai";
+    extraGroups = [ "wheel" ];
+    isNormalUser = true;
+    openssh.authorizedKeys.keys = [
+      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJ3NqIhCoS+c0J3KsJ1a+xeXcNXbrik9Cix1qqo9MwWb yvonne@petcheetah"
+    ];
+    packages = with pkgs; [
+    ];
+    shell = pkgs.fish;
+  };
+
   users.users.root = {
     hashedPassword = "!"; # Login disabled
   };
