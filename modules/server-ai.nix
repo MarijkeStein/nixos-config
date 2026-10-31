@@ -3,17 +3,17 @@
 {
   boot.blacklistedKernelModules = [ "nouveau" ];
 
-  environment.sessionVariables = [
-    NVD_BACKEND = "direct";
-    OLLAMA_KEEP_ALIVE=-1;
-    OLLAMA_NUM_PARALLEL = 2;
-  ];
+#   environment.sessionVariables = [
+#     NVD_BACKEND = "direct";
+#     OLLAMA_KEEP_ALIVE = "-1";
+#     OLLAMA_NUM_PARALLEL = "2";
+#   ];
 
   environment.systemPackages = with pkgs; [
      nvtopPackages.nvidia
      ollama-cuda
      open-webui
-   ];
+  ];
 
   hardware.graphics = {
     enable = true;
