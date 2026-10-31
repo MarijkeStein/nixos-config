@@ -1,0 +1,165 @@
+{ config, pkgs, ... }:
+
+{
+  home.homeDirectory = "/home/yvonne";
+  home.username = "yvonne";
+
+  # This value determines the Home Manager release that your configuration is
+  # compatible with. This helps avoid breakage when a new Home Manager release
+  # introduces backwards incompatible changes.
+  #
+  # You should not change this value, even if you update Home Manager. If you do
+  # want to update the value, then make sure to first check the Home Manager
+  # release notes.
+  home.stateVersion = "25.05"; # Please read the comment before changing.
+
+  home.packages = [
+    # # It is sometimes useful to fine-tune packages, for example, by applying
+    # # overrides. You can do that directly here, just don't forget the
+    # # parentheses. Maybe you want to install Nerd Fonts with a limited number of
+    # # fonts?
+    # (pkgs.nerdfonts.override { fonts = [ "FantasqueSansMono" ]; })
+
+    # # You can also create simple shell scripts directly inside your
+    # # configuration. For example, this adds a command 'my-hello' to your
+    # # environment:
+    # (pkgs.writeShellScriptBin "my-hello" ''
+    #   echo "Hello, ${config.home.username}!"
+    # '')
+  ];
+
+  # Home Manager is pretty good at managing dotfiles. The primary way to manage
+  # plain files is through 'home.ls file'.
+  home.file = {
+    # # Building this configuration will create a copy of 'dotfiles/screenrc' in
+    # # the Nix store. Activating the configuration will then make '~/.screenrc' a
+    # # symlink to the Nix store copy.
+    # ".screenrc".source = dotfiles/screenrc;
+
+    # # You can also set the file content immediately.
+    # ".gradle/gradle.properties".text = ''
+    #   org.gradle.console=verbose
+    #   org.gradle.daemon.idletimeout=3600000
+    # '';
+  };
+
+  nixpkgs.config.allowUnfree = true;
+
+  # Let Home Manager install and manage itself.
+  programs.home-manager.enable = true;
+
+  home.sessionVariables = {
+    EDITOR = "mcedit";
+  };
+
+  programs.bash = {
+    enable = true;
+    shellAliases = {
+      la="eza -al --icons --git";
+    };
+  };
+
+  programs.git = {
+    enable = true;
+    settings = {
+      alias = {
+        co = "checkout";
+        st = "status";
+      };
+      commit.gpgsign = "false";
+      core.editor = "mcedit";
+      init.defaultBranch = "main";
+      push.autoSetupRemote = true;
+      signing.format = "openpgp";
+      signing.signByDefault = false;
+    };
+  };
+
+  programs.starship = {
+    enable = true;
+    enableFishIntegration = true;
+  };
+
+  programs.zellij = {
+    enable = true;
+    enableFishIntegration = true;
+  };
+
+  services.gpg-agent = {
+    defaultCacheTtl = 30000;
+    enable = true;
+    enableBashIntegration = true;
+    enableFishIntegration = true;
+    pinentry.package = pkgs.pinentry-gtk2;
+  };
+
+  gtk.gtk4.theme = null;
+  gtk.enable = true;
+  gtk.theme.name = "Adwaita-dark";
+
+  qt.enable = true;
+  qt.style.name = "darker";
+
+  xfconf = {
+    settings = {
+      xfce4-desktop = {
+        "backdrop/screen0/monitoreDP-1/workspace0/image-style" = 0;
+        "desktop-icons/file-icons/show-filesystem" = 0;
+        "desktop-icons/file-icons/show-trash" = 1;
+      };
+
+      xfce4-notifyd = {
+        "mute-sounds" = true;
+      };
+
+      xfce4-panel = {
+        "panels/dark-mode" = true;
+        "panels/panel-1/icon-size" = 12;
+        "panels/panel-1/output-name" = "eDP-1";
+        "panels/panel-1/size" = 24;
+
+        "plugin-1" = "applicationsmenu";
+
+        "plugin-2" = "tasklist";
+        "plugin-2/grouping" = 0;
+
+        "plugin-3" = "separator";
+        "plugin-3/expand" = true;
+        "plugin-3/style" = 0;
+
+        "plugin-4" = "pager";
+
+        "plugin-5" = "separator";
+
+        "plugin-6" = "systray";
+
+        "plugin-7" = "separator";
+
+        "plugin-8" = "clock";
+        "plugin-8/digital-date-font" = "Sans 10";
+        "plugin-8/timezone" = "Europe/Berlin";
+
+        "plugin-9" = "separator";
+
+        "plugin-10" = "actions";
+
+        "plugin-11" = "power-manager-plugin";
+
+        "plugin-13" = "clock";
+        "plugin-13/digital-layout" = 3;
+        "plugin-13/digital-time-font" = "Sans 10";
+      };
+
+      xfce4-screensaver = {
+        "lock/saver-activation/enabled" = false;
+        "saver/enabled" = false;
+      };
+
+      xsettings = {
+        "MonospaceFontName" = "Gtk/JetBrainsMono Nerd Font 10";
+        "Net/IconThemeName" = "Adwaita";
+        "Net/ThemeName" = "Adwaita-dark";
+      };
+    };
+  };
+}
