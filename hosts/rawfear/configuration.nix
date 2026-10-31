@@ -29,7 +29,7 @@
   services.openssh = {
     enable = true;
     settings = {
-      AllowUsers = [ "marijke" ];
+      AllowUsers = [ "marijke" "yvonne" ];
       KbdInteractiveAuthentication = false;
 
       # Enable Post-Quantum Key Exchange Algorithms
