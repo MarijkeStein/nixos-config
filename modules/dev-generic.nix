@@ -5,6 +5,7 @@
     claude-code
     claude-monitor
     gcc
+    gitui
     gnumake
     just
     pkg-config
