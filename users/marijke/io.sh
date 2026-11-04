@@ -2,8 +2,6 @@
 
 flatpak run org.signal.Signal &
 
-fluffychat &
-
 thunderbird &
 
 nextcloud &
