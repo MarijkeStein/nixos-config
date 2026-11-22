@@ -1,0 +1,4 @@
+[core]
+	sshCommand = ssh -i /Users/marijke/.ssh/2026-03-31_mstein-MacOS -F /dev/null
+[alias]
+	st = status
