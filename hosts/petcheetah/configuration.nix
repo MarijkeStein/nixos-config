@@ -12,6 +12,7 @@
       ../../modules/dev-generic.nix
       ../../modules/dev-python.nix
       ../../modules/lang-de.nix
+      ../../modules/network-teamviewer.nix
     ];
 
   boot.loader.grub.enable = true;
@@ -78,8 +79,6 @@
   services.pulseaudio.enable = false;
 
   services.smartd.enable = true;
-
-  services.teamviewer.enable = true;
 
   services.xserver.enable = true;
   services.xserver.displayManager.lightdm.enable = true;
