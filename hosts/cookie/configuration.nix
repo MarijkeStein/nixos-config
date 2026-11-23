@@ -12,6 +12,7 @@
     ../../modules/desktop-media.nix
     ../../modules/desktop-office.nix
     ../../modules/dev-generic.nix
+    ../../modules/dev-generic-extra.nix
     ../../modules/dev-gleam.nix
     ../../modules/dev-python.nix
     ../../modules/lang-de.nix
