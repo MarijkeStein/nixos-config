@@ -1,0 +1,26 @@
+source_directories:
+    - /home
+
+repositories:
+    - path: /pub/backup/snapshots/borg/athene
+      label: DE-OFF-01-ATHENE
+
+exclude_caches: true
+exclude_patterns:
+    - '*/.cache'
+
+encryption_passcommand: "cat /root/.borg-passphrase-athene"
+
+keep_daily: 30
+keep_weekly: 4
+keep_monthly: 60   # 5 years
+keep_yearly: 20
+
+checks:
+  - name: repository
+    frequency: 2 weeks
+  - name: archives
+    frequency: 1 month
+
+check_last: 3
+

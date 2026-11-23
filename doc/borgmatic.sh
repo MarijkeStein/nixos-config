@@ -13,11 +13,10 @@ borg init --encryption=repokey-blake2 "${REPO_PATH}"
 bat "${KEY_PATH}"
 borg key export "${REPO_PATH}" > "${KEY_PATH}"
 
-mkdir /etc/borgmatic
-cd /etc/borgmatic
-ln -s "/home/marijke/code/nixos-config/hosts/${HOSTNAME}/borgmatic.config.yaml" config.yaml
-cd
-
+sudo mkdir /etc/borgmatic
+sudo cd /etc/borgmatic
+sudo ln -s "/home/marijke/code/nixos-config/hosts/${HOSTNAME}/borgmatic.config.yaml" config.yaml
+sudo cd
 
 # then:
 #
