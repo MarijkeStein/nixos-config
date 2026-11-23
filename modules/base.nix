@@ -39,7 +39,7 @@
   nix.gc = {
     automatic = true;
     dates = "weekly";
-    options = "--delete-generations +10 --delete-older-than 90d";
+    options = "--delete-generations +5";
     persistent = true;
     randomizedDelaySec = "3h";
   };
